@@ -1,10 +1,5 @@
 <template>
   <section>
-    <img
-      class="logo"
-      src="../../public/pet-pals-logo.png"
-      alt="Pet Pals Logo"
-    />
     <div id="register" class="text-center">
       <form class="form-register" @submit.prevent="register">
         <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
@@ -151,13 +146,13 @@ button:hover {
   font-family: "Quattrocento Sans", sans-serif;
   color: #5da2d5;
 }
-body {
-  background-color: #f3d250;
+/* body {
+  background-color: white;
   height: 55em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} */
 #homeLink {
   font-family: "Quattrocento Sans", sans-serif;
   color: #5da2d5;
