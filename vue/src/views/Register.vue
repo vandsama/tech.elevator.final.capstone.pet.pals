@@ -1,45 +1,66 @@
 <template>
-  <div id="register" class="text-center">
-    <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
-      <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-        {{ registrationErrorMsg }}
-      </div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
-      <br />
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      <input
-        type="password"
-        id="confirmPassword"
-        class="form-control"
-        placeholder="Confirm Password"
-        v-model="user.confirmPassword"
-        required
-      />
-      <br />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create Account
-      </button>
-    </form>
-  </div>
+  <section>
+    <img
+      class="logo"
+      src="../../public/pet-pals-logo.png"
+      alt="Pet Pals Logo"
+    />
+    <div id="register" class="text-center">
+      <form class="form-register" @submit.prevent="register">
+        <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+        <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+          {{ registrationErrorMsg }}
+        </div>
+        <div>
+          <label for="username" class="sr-only">Username </label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            placeholder="Username"
+            v-model="user.username"
+            required
+            autofocus
+          />
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password </label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Password"
+            v-model="user.password"
+            required
+          />
+        </div>
+        <div>
+          <label for="password" class="sr-only">Confirm Password </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            class="form-control"
+            placeholder="Confirm Password"
+            v-model="user.confirmPassword"
+            required
+          />
+        </div>
+        <div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Create Account
+          </button>
+        </div>
+        <div>
+          <router-link id="haveAccLink" :to="{ name: 'login' }"
+            >Have an account?</router-link
+          >
+        </div>
+        <router-link id="homeLink" v-bind:to="{ name: 'home' }"
+          >Return to Home Page</router-link
+        >
+      </form>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -113,12 +134,20 @@ button {
   font-family: "Quattrocento Sans", sans-serif;
   color: #ececec;
   background-color: #f54c4c;
-  border: solid, 5px, black;
+  border: solid, 3px, black;
   border-radius: 12px;
   width: 20%;
   cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
 }
-#accountLink {
+button:hover {
+  background-color: #5da2d5;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+#haveAccLink {
   font-family: "Quattrocento Sans", sans-serif;
   color: #5da2d5;
 }
@@ -132,5 +161,10 @@ body {
 #homeLink {
   font-family: "Quattrocento Sans", sans-serif;
   color: #5da2d5;
+}
+.logo {
+  width: 25%;
+  height: auto;
+  margin-bottom: 10px;
 }
 </style>
