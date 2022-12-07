@@ -72,7 +72,6 @@ export default {
         password: "",
       },
       invalidCredentials: false,
-      isActive: false,
     };
   },
   methods: {

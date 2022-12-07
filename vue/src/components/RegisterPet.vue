@@ -170,7 +170,7 @@
           v-bind="pet.activities"
         />
         <label for="play hunting/wrestling">Play hunting/wrestling </label>
-        <label for="other">Other</label>
+        <label for="other">Other: </label>
         <input
           type="text"
           id="other"
@@ -276,5 +276,9 @@ h3 {
 div {
   font-family: "Quattrocento Sans", sans-serif;
   color: #f54c4c;
+  margin: 1em;
+}
+#pet-registration {
+  text-align: center;
 }
 </style>

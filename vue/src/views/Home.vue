@@ -1,24 +1,18 @@
 <template>
   <div>
-    <!-- <header><img src="../../public/pet-pals-logo.png" alt="" /></header>
-    <nav>
-      <button>Home</button>
-      <button>Find Pets</button>
-      <button>Play Dates</button>
-      <button>Account</button>
-    </nav> -->
+    <!-- <header><img src="../../public/pet-pals-logo.png" alt="" /></header> -->
     <!-- <div class="home">
       <h1 id="home">Home</h1>
     </div> -->
-    <pet-registration></pet-registration>
+    <!-- <pet-registration></pet-registration> -->
   </div>
 </template>
 
 <script>
-import petRegistration from "../components/RegisterPet.vue";
+// import petRegistration from "../components/RegisterPet.vue";
 export default {
   name: "home",
-  components: { petRegistration },
+  // components: { petRegistration },
 };
 </script>
 <style scoped>
