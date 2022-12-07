@@ -124,7 +124,7 @@ button {
   font-family: "Quattrocento Sans", sans-serif;
   color: #ececec;
   background-color: #f54c4c;
-  border: solid, 5px, black;
+  border: solid, 3px, black;
   border-radius: 12px;
   width: 20%;
   cursor: pointer;
@@ -143,7 +143,5 @@ body {
 #homeLink {
   font-family: "Quattrocento Sans", sans-serif;
   color: #5da2d5;
-}
-section {
 }
 </style>
