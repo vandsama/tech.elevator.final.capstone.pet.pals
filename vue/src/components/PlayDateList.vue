@@ -2,12 +2,16 @@
   <div class = "playDate-list">
     <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
         {{ playDate.playDateId }}
+        {{ playDate.location }}
+        {{ playDate.timestamp }}
+        {{ playDate.requestMessage }}
     </div>
   </div>
 </template>
 
 <script>
 import playDateService from '../services/PlayDateService'
+
 export default {
     data() {
         return {
@@ -23,5 +27,7 @@ export default {
 </script>
 
 <style scoped>
-
+div {
+    justify-content: space-between;
+}
 </style>

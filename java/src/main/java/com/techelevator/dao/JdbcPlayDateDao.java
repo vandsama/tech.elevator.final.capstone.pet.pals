@@ -1,10 +1,12 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.PlayDate;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +47,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
 
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {
         PlayDate playDate = new PlayDate();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("E MM dd yyyy H:m");
         playDate.setInviteePetId(rowSet.getInt("invitee_pet_id"));
         playDate.setInviterPetId(rowSet.getInt("inviter_pet_id"));
         playDate.setInviteeUserId(rowSet.getInt("invitee_user_id"));

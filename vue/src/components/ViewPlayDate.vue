@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+      <h1>Test Play Date View</h1>
+  </div>
 </template>
 
 <script>
