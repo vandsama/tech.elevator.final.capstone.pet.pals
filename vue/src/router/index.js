@@ -6,6 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import petRegistration from '../components/RegisterPet.vue'
+import playDateList from '../components/PlayDateList.vue'
 
 Vue.use(Router)
 
@@ -58,6 +59,14 @@ const router = new Router({
       path: "/pets/register",
       name: "petRegistration",
       component: petRegistration,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/playdates",
+      name: "playDates",
+      component: playDateList,
       meta: {
         requiresAuth: true
       }
