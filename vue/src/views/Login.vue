@@ -2,6 +2,11 @@
   <html>
     <body>
       <section>
+        <img
+          class="logo"
+          src="../../public/pet-pals-logo.png"
+          alt="Pet Pals Logo"
+        />
         <div id="login" class="text-center">
           <form class="form-signin" @submit.prevent="login">
             <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -128,6 +133,14 @@ button {
   border-radius: 12px;
   width: 20%;
   cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  background-color: #5da2d5;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }
 #accountLink {
   font-family: "Quattrocento Sans", sans-serif;
@@ -143,5 +156,10 @@ body {
 #homeLink {
   font-family: "Quattrocento Sans", sans-serif;
   color: #5da2d5;
+}
+.logo {
+  width: 25%;
+  height: auto;
+  margin-bottom: 10px;
 }
 </style>
