@@ -4,6 +4,7 @@ import ch.qos.logback.core.pattern.PatternLayoutEncoderBase;
 import com.techelevator.dao.PlayDateDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.PlayDate;
+import com.techelevator.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,10 +24,16 @@ public class PlayDateController {
         this.userDao = userDao;
     }
 
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    @RequestMapping(value = "/playdates", method = RequestMethod.GET)
-    public List<PlayDate> viewPlayDates(Principal principal) {
-        return playDateDao.listAllPlayDates();
+//    @ResponseStatus(HttpStatus.ACCEPTED)
+//    @RequestMapping(value = "/playdates", method = RequestMethod.GET)
+//    public List<PlayDate> viewAllPlayDates(Principal principal) {
+//        return playDateDao.listAllPlayDates();
+//    }
+
+    @GetMapping(value = "/playdates")
+    public List<PlayDate> viewOwnPlayDates(Principal principal) {
+        User user = userDao.findByUsername(principal.getName());
+        return playDateDao.listMyPlayDates(user.getId());
     }
 
     @GetMapping("/playdates/{playdate_id}")

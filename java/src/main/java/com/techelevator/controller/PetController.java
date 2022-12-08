@@ -39,4 +39,9 @@ public class PetController {
         }
     }
 
+    @GetMapping("/pets/{id}")
+    public Pet getPetById(@PathVariable int id) {
+        return petDao.getPetById(id);
+    }
+
 }

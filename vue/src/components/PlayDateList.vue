@@ -1,21 +1,23 @@
 <template>
   <div class = "playDate-list">
     <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
-        {{ playDate.playDateId }}
-        {{ playDate.location }}
-        {{ playDate.timestamp }}
-        {{ playDate.requestMessage }}
+        <playdatecard v-bind:playDate="playDate"></playdatecard>
     </div>
   </div>
 </template>
 
 <script>
 import playDateService from '../services/PlayDateService'
+import playdatecard from './ViewPlayDate.vue'
+
 
 export default {
+    components: {
+        playdatecard
+    },
     data() {
         return {
-            playDates: []
+            playDates: [],
         }
     },
     created() {
@@ -27,7 +29,8 @@ export default {
 </script>
 
 <style scoped>
-div {
-    justify-content: space-between;
+.playDate-list {
+    display: flex;
+    justify-content: center;
 }
 </style>

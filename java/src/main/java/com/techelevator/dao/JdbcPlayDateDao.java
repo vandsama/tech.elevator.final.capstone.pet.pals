@@ -1,12 +1,10 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.PlayDate;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +30,21 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
 
     @Override
+    public List<PlayDate> listMyPlayDates(int userId) {
+        List<PlayDate> playDateList = new ArrayList<>();
+        String sql = "SELECT playdate_id, dateandtime, location, requestmessage, inviter_user_id, inviter_pet_id, invitee_user_id, invitee_pet_id\n" +
+                "\tFROM playdates\n" +
+                "\tWHERE (inviter_user_id = ?) OR (invitee_user_id = ?);";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql,userId,userId);
+
+        while(result.next()) {
+            playDateList.add(mapRowToPlayDate(result));
+        }
+
+        return playDateList;
+    }
+
+    @Override
     public PlayDate getPlayDateById(int playDateId) {
         PlayDate playDate = null;
         String sql = "SELECT playdate_id, dateandtime, location, requestmessage, inviter_user_id, inviter_pet_id, invitee_user_id, invitee_pet_id\n" +
@@ -47,7 +60,6 @@ public class JdbcPlayDateDao implements PlayDateDao {
 
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {
         PlayDate playDate = new PlayDate();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("E MM dd yyyy H:m");
         playDate.setInviteePetId(rowSet.getInt("invitee_pet_id"));
         playDate.setInviterPetId(rowSet.getInt("inviter_pet_id"));
         playDate.setInviteeUserId(rowSet.getInt("invitee_user_id"));

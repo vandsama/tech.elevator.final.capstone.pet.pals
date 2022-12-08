@@ -34,6 +34,10 @@ public class Pet {
         this.img = img;
     }
 
+    public Pet() {
+
+    }
+
 
     public int getId() {
         return id;

@@ -9,5 +9,7 @@ public interface PlayDateDao {
 
     List<PlayDate> listAllPlayDates();
 
+    List<PlayDate> listMyPlayDates(int userId);
+
     PlayDate getPlayDateById(int playDateId);
 }
