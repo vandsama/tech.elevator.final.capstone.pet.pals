@@ -2,10 +2,10 @@
   <div class="playdatecard">
     <div class="images">
       <div class="thumbnail">
-        <img v-bind:src="this.inviteePet.img" />
+        <img :class="{portrait : PetImgPortrait(this.inviteePet.img)}" v-bind:src="this.inviteePet.img" />
       </div>
       <div class="thumbnail">
-        <img class="portrait" v-bind:src="this.inviterPet.img" /> <br />
+        <img :class="{portrait : PetImgPortrait(this.inviterPet.img)}" v-bind:src="this.inviterPet.img" /> <br />
       </div>
     </div>
     <h3>
@@ -30,8 +30,6 @@ export default {
       inviterPet: {
         name: "",
         img: "",
-        imgwidth: "",
-        imgheight: "",
       },
       inviteePet: {
         name: "",
@@ -46,6 +44,20 @@ export default {
     petService.get(this.playDate.inviteePetId).then((response) => {
       this.inviteePet = response.data;
     });
+  },
+  methods: {
+    PetImgPortrait(src) {
+      let img = new Image();
+      img.src = src
+      // img.onload = () => {
+        console.log(img.height)
+        if (img.height > img.width)
+        
+        return true
+      // }
+
+      else return false;
+    },
   },
 };
 </script>
@@ -89,11 +101,4 @@ export default {
   width: 100%;
   height: auto;
 }
-/* img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-  height: 150px;
-} */
 </style>
