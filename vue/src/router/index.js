@@ -5,7 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-import petRegistration from '../components/RegisterPet.vue'
+import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
 
 Vue.use(Router)
