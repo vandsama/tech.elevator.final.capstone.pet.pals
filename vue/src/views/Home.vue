@@ -17,15 +17,17 @@
           area, and make a new friend today.
         </p>
       </div>
+      <pet-cards></pet-cards>
     </main>
+    <footer>&copy; <span>All Rights Reserved.</span></footer>
   </div>
 </template>
 
 <script>
-// import petRegistration from "../components/RegisterPet.vue";
+import petCards from "../components/ViewPetCards.vue";
 export default {
   name: "home",
-  // components: { petRegistration },
+  components: { petCards },
 };
 </script>
 <style scoped>
