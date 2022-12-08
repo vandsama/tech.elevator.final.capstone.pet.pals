@@ -23,7 +23,7 @@
       <button>
         <router-link
           style="text-decoration: none; color: white"
-          v-bind:to="{ name: 'playdates' }"
+          v-bind:to="{ name: 'playDates' }"
           >Play Dates</router-link
         >
       </button>

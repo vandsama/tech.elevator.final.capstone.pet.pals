@@ -26,7 +26,7 @@
         />
       </div>
       <section>
-        <h3>Has your pet played with other pets before?</h3>
+        <p>Has your pet played with other pets before?</p>
         <input
           type="radio"
           class="form-control"
@@ -43,7 +43,7 @@
       </section>
 
       <section>
-        <h3>Is your pet up to date on vaccinations?</h3>
+        <p>Is your pet up to date on vaccinations?</p>
         <input
           type="radio"
           class="form-control"
@@ -60,7 +60,7 @@
       </section>
 
       <section>
-        <h3>Has your pet been spayed/neutered?</h3>
+        <p>Has your pet been spayed/neutered?</p>
         <input
           type="radio"
           class="form-control"
@@ -87,7 +87,7 @@
         </select>
       </div>
       <section>
-        <h3>What is the sex of your pet?</h3>
+        <p>What is the sex of your pet?</p>
         <input
           type="radio"
           class="form-control"
@@ -142,40 +142,40 @@
         </select>
       </div>
       <section required>
-        <h3>What is your pet's favorite hobby?</h3>
+        <p>What is your pet's favorite hobby?</p>
         <input
           type="radio"
-          id="swimming"
+          value="swimming"
           class="form-control"
-          v-bind="pet.activities"
+          v-model="pet.activities"
         />
         <label for="swimming">Swimming</label>
         <input
           type="radio"
-          id="walks"
+          value="walks"
           class="form-control"
-          v-bind="pet.activities"
+          v-model="pet.activities"
         />
         <label for="walks">Walks</label>
         <input
           type="radio"
-          id="fetch"
+          value="fetch"
           class="form-control"
-          v-bind="pet.activities"
+          v-model="pet.activities"
         />
         <label for="fetch">Fetch</label>
         <input
           type="radio"
-          id="napping"
+          value="napping"
           class="form-control"
-          v-bind="pet.activities"
+          v-model="pet.activities"
         />
         <label for="napping">Napping</label>
         <input
           type="radio"
-          id="play hunting/wrestling"
+          value="play hunting/wrestling"
           class="form-control"
-          v-bind="pet.activities"
+          v-model="pet.activities"
         />
         <label for="play hunting/wrestling">Play hunting/wrestling </label>
       </section>
@@ -273,9 +273,10 @@ export default {
 .form-control {
   font-family: "Quattrocento Sans", sans-serif;
 }
-h3 {
+p {
   font-family: "Bebas Neue", cursive;
   color: #5da2d5;
+  font-size: x-large;
 }
 div {
   font-family: "Bebas Neue", cursive;
@@ -284,14 +285,21 @@ div {
 }
 #pet-registration {
   text-align: center;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 input[type="text"] {
-  width: 100%;
+  width: 90%;
   padding: 14px 20px;
   margin: 8px 0;
   border-radius: 4px;
   cursor: pointer;
   margin: auto;
+  color: #f54c4c;
+}
+input[type="text"]:hover {
+  background-color: #90ccf4;
 }
 label {
   font-size: x-large;
@@ -305,5 +313,14 @@ select {
 }
 option {
   color: #f54c4c;
+}
+#img {
+  width: 90%;
+}
+select:hover {
+  background-color: #90ccf4;
+}
+.petRegistrationBtn {
+  height: 2em;
 }
 </style>
