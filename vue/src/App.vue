@@ -86,5 +86,9 @@ nav {
   flex-direction: left;
   font-family: "Bebas Neue", cursive;
 }
+img {
+  height: 300px;
+  width: 300px;
+}
 </style>
 
