@@ -32,13 +32,14 @@
           class="form-control"
           value="True"
           v-model="pet.pet_experience"
-        />Yes
+        />
+        <label>Yes </label>
         <input
           type="radio"
           class="form-control"
           value="False"
           v-model="pet.pet_experience"
-        />No
+        /><label>No</label>
       </section>
 
       <section>
@@ -48,13 +49,14 @@
           class="form-control"
           value="True"
           v-model="pet.vaccinated"
-        />Yes
+        /><label> Yes</label>
         <input
           type="radio"
           class="form-control"
           value="False"
           v-model="pet.vaccinated"
-        />No
+        />
+        <label>No</label>
       </section>
 
       <section>
@@ -64,13 +66,14 @@
           class="form-control"
           value="True"
           v-model="pet.spayed"
-        />Yes
+        />
+        <label>Yes</label>
         <input
           type="radio"
           class="form-control"
           value="False"
           v-model="pet.spayed"
-        />No
+        /><label>No</label>
       </section>
       <div>
         <label for="age">How old is your pet?</label>
@@ -90,19 +93,19 @@
           class="form-control"
           value="Male"
           v-model="pet.sex"
-        />Male
+        /><label>Male</label>
         <input
           type="radio"
           class="form-control"
           value="Female"
           v-model="pet.sex"
-        />Female
+        /><label>Female</label>
         <input
           type="radio"
           class="form-control"
           value="Intersex"
           v-model="pet.sex"
-        />Intersex
+        /><label>Intersex</label>
       </section>
       <div>
         <label for="pet_friendliness"
@@ -281,5 +284,26 @@ div {
 }
 #pet-registration {
   text-align: center;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: auto;
+}
+label {
+  font-size: x-large;
+}
+select {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+option {
+  color: #f54c4c;
 }
 </style>
