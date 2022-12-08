@@ -37,6 +37,30 @@
     </nav>
     <!-- </div> -->
     <router-view />
+    <footer v-if="isActive">
+      <div>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'playDates' }"
+          >contact us</router-link
+        >
+      </div>
+      <div>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'home' }"
+          >about us</router-link
+        >
+      </div>
+      <div>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'playDates' }"
+          >account</router-link
+        >
+      </div>
+      <section>&copy; <span>All Rights Reserved.</span></section>
+    </footer>
   </div>
 </template>
 
@@ -69,7 +93,7 @@ button {
 }
 button:hover {
   background-color: #5da2d5;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  box-shadow: 0px 15px 20px #69dcf0;
   color: #fff;
   transform: translateY(-7px);
 }
@@ -86,9 +110,32 @@ nav {
   flex-direction: left;
   font-family: "Bebas Neue", cursive;
 }
-img {
-  height: 300px;
-  width: 300px;
+footer {
+  width: 100%;
+  height: 15em;
+  background-color: #f54c4c;
+  border-radius: 12px;
+}
+footer > div {
+  display: inline-block;
+  color: #fff;
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 1.4em;
+  transition: all 0.3s ease 0s;
+  height: 15px;
+  margin-top: 2%;
+}
+footer > section {
+  color: #fff;
+  margin-top: 15%;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+footer > div:hover {
+  background-color: #5da2d5;
+  box-shadow: 0px 15px 20px #69dcf0;
+  color: #f54c4c;
+  transform: translateY(-7px);
+  border-radius: 12px;
 }
 </style>
 
