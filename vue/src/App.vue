@@ -1,24 +1,35 @@
 <template>
   <div id="app">
     <!-- <div id="nav"> -->
-    <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-    <router-link
-        v-bind:to="{ name: 'logout' }"
-        v-if="$store.state.token != ''"
-        >Logout</router-link> -->
+    <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
+    <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"
+      >Logout</router-link
+    >
     <header>
       <img class="logo" src="../public/pet-pals-logo.png" alt="Pet Pals Logo" />
     </header>
-    <nav>
-      <button v-if="isActive">Home</button>
-      <button v-if="isActive">Find Pets</button>
-      <button v-if="isActive">Play Dates</button>
-      <button v-if="isActive">Account</button>
+    <nav v-if="isActive">
+      <button v-bind:to="{ name: 'home' }">Home</button>
+      <button>Find Pets</button>
+      <button>Play Dates</button>
+      <button>Account</button>
     </nav>
     <!-- </div> -->
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    isActive() {
+      return this.$store.state.token != "";
+    },
+  },
+};
+</script>
+
+
 <style scoped>
 button {
   display: inline-block;
@@ -46,7 +57,8 @@ header {
 }
 nav {
   display: flex;
-  justify-content: space-evenly;
+  width: 65%;
+  margin: auto;
 }
 </style>
 

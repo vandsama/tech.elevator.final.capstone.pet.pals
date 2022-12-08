@@ -72,6 +72,7 @@ export default {
         password: "",
       },
       invalidCredentials: false,
+      isActive: true,
     };
   },
   methods: {
@@ -147,5 +148,10 @@ button:hover {
   width: 25%;
   height: auto;
   margin-bottom: 10px;
+}
+#password,
+#username {
+  box-shadow: 0px 15px 20px rgba(35, 81, 231, 0.534);
+  border-radius: 6px;
 }
 </style>
