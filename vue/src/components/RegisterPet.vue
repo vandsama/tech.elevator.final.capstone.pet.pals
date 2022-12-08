@@ -3,6 +3,7 @@
     <form @submit.prevent="register">
       <div>
         <label for="name">Pet name:</label>
+        <br />
         <input
           type="text"
           id="name"
@@ -14,6 +15,7 @@
       </div>
       <div>
         <label for="type">Type of animal:</label>
+        <br />
         <input
           type="text"
           id="type"
@@ -72,6 +74,7 @@
       </section>
       <div>
         <label for="age">How old is your pet?</label>
+        <br />
         <select id="pet_friendliness" class="form-control" v-model="pet.age">
           <option value="1-11 Months">1-11 Months</option>
           <option value="1-3 Years">1-3 Years</option>
@@ -105,6 +108,7 @@
         <label for="pet_friendliness"
           >Does your pet get along with other pets?</label
         >
+        <br />
         <select
           id="pet_friendliness"
           class="form-control"
@@ -121,6 +125,7 @@
         <label for="human_friendliness"
           >Does your pet get along with people?</label
         >
+        <br />
         <select
           id="human_friendliness"
           class="form-control"
@@ -134,52 +139,46 @@
         </select>
       </div>
       <section required>
-        <h3></h3>
+        <h3>What is your pet's favorite hobby?</h3>
         <input
-          type="checkbox"
+          type="radio"
           id="swimming"
           class="form-control"
           v-bind="pet.activities"
         />
         <label for="swimming">Swimming</label>
         <input
-          type="checkbox"
+          type="radio"
           id="walks"
           class="form-control"
           v-bind="pet.activities"
         />
         <label for="walks">Walks</label>
         <input
-          type="checkbox"
+          type="radio"
           id="fetch"
           class="form-control"
           v-bind="pet.activities"
         />
         <label for="fetch">Fetch</label>
         <input
-          type="checkbox"
+          type="radio"
           id="napping"
           class="form-control"
           v-bind="pet.activities"
         />
         <label for="napping">Napping</label>
         <input
-          type="checkbox"
+          type="radio"
           id="play hunting/wrestling"
           class="form-control"
           v-bind="pet.activities"
         />
         <label for="play hunting/wrestling">Play hunting/wrestling </label>
-        <label for="other">Other: </label>
-        <input
-          type="text"
-          id="other"
-          class="form-control"
-          v-bind="pet.activities"
-        />
       </section>
       <div>
         <label for="toy">Favorite Toy:</label>
+        <br />
         <input
           type="text"
           id="toy"
@@ -191,6 +190,7 @@
       </div>
       <div>
         <label for="treat">Favorite Treat:</label>
+        <br />
         <input
           type="text"
           id="treat"
@@ -204,6 +204,7 @@
       <label for="img"
         >Please include a Google Drive link to a picture of your pet.</label
       >
+      <br />
       <input
         type="text"
         id="img"
@@ -274,8 +275,8 @@ h3 {
   color: #5da2d5;
 }
 div {
-  font-family: "Quattrocento Sans", sans-serif;
-  color: #f54c4c;
+  font-family: "Bebas Neue", cursive;
+  color: #5da2d5;
   margin: 1em;
 }
 #pet-registration {
