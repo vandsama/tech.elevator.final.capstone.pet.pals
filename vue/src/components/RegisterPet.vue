@@ -78,7 +78,7 @@
       <div>
         <label for="age">How old is your pet?</label>
         <br />
-        <select id="pet_friendliness" class="form-control" v-model="pet.age">
+        <select id="age" class="form-control" v-model="pet.age">
           <option value="1-11 Months">1-11 Months</option>
           <option value="1-3 Years">1-3 Years</option>
           <option value="4-7 Years">4-7 Years</option>
@@ -256,6 +256,7 @@ export default {
             //   this.$router.push({
             //       path: '/',
             //   })
+            this.$router.push({ name: 'home' });
           }
         })
         .catch((error) => {
