@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
+import java.util.List;
 
 
 @RestController
@@ -42,6 +43,10 @@ public class PetController {
     @GetMapping("/pets/{id}")
     public Pet getPetById(@PathVariable int id) {
         return petDao.getPetById(id);
+    }
+    @GetMapping("/pets")
+    public List<Pet> viewAllPets(){
+        return petDao.listAllPets();
     }
 
 }

@@ -6,9 +6,10 @@
     <div class="info">
       <h3>{{ this.pet.name }}</h3>
       <div class="infoNoName">
-        {{ this.pet.age }} <br />
         {{ this.pet.type }} <br />
-        Enjoys Swimming
+        {{ this.pet.age }} <br />
+        {{ this.pet.sex }} <br />
+        {{ this.pet.activities }}
       </div>
     </div>
   </div>
@@ -34,9 +35,9 @@ export default {
     petService.get(2).then((r) => {
       this.pet = r.data;
     });
-    petService.get(3).then((r) => {
-      this.pet = r.data;
-    });
+    // petService.get(3).then((r) => {
+    //   this.pet = r.data;
+    // });
   },
 };
 </script>

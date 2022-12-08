@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class JdbcPetDao implements PetDao {
 
@@ -42,6 +45,19 @@ public class JdbcPetDao implements PetDao {
         }
 
         return pet;
+    }
+    @Override
+    public List<Pet> listAllPets(){
+        List<Pet> petList = new ArrayList<>();
+        String sql = "SELECT pet_id, animal_type, pet_name, pet_experience, vaccinated, spayed," +
+        " age_years, sex, pet_friendliness, human_friendliness, favorite_activities," +
+                " favorite_toy, favorite_treat, img_link\n" +
+                "\tFROM pets\n;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+        while(result.next()){
+            petList.add(mapRowToPet(result));
+        }
+        return petList;
     }
 
     public Pet mapRowToPet(SqlRowSet rowSet) {
