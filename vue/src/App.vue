@@ -27,7 +27,13 @@
           >Play Dates</router-link
         >
       </button>
-      <button>Account</button>
+      <button>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'petRegistration' }"
+          >Account</router-link
+        >
+      </button>
     </nav>
     <!-- </div> -->
     <router-view />
