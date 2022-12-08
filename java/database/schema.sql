@@ -57,5 +57,24 @@ CREATE TABLE playDates (
     CONSTRAINT FK_invitee_pet_id FOREIGN KEY(invitee_pet_id) REFERENCES pets(pet_id)
 );
 
+CREATE SEQUENCE topics_serial;
+CREATE TABLE topics (
+    topic_id serial,
+    topic_title varchar(200) NOT NULL,
+    CONSTRAINT PK_topic PRIMARY KEY (topic_id)
+);
+
+CREATE SEQUENCE message_serial;
+CREATE TABLE messages (
+    message_id serial,
+    topic_id int NOT NULL,
+    message_title varchar(200) NOT NULL,
+    message_text varchar(500) NOT NULL,
+    --user id?
+    --pet id?
+    CONSTRAINT PK_message PRIMARY KEY (message_id),
+    CONSTRAINT FK_message_topic_id FOREIGN KEY (topic_id) REFERENCES topics(topic_id)
+);
+
 
 COMMIT TRANSACTION;
