@@ -1,17 +1,32 @@
 <template>
   <div id="app">
     <!-- <div id="nav"> -->
-    <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-    <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"
+    <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp; -->
+    <router-link
+      id="logout"
+      v-bind:to="{ name: 'logout' }"
+      v-if="$store.state.token != ''"
       >Logout</router-link
     >
     <header>
       <img class="logo" src="../public/pet-pals-logo.png" alt="Pet Pals Logo" />
     </header>
     <nav v-if="isActive">
-      <button v-bind:to="{ name: 'home' }">Home</button>
+      <button>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'home' }"
+          >Home</router-link
+        >
+      </button>
       <button>Find Pets</button>
-      <button>Play Dates</button>
+      <button>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'playdates' }"
+          >Play Dates</router-link
+        >
+      </button>
       <button>Account</button>
     </nav>
     <!-- </div> -->
@@ -59,6 +74,11 @@ nav {
   display: flex;
   width: 65%;
   margin: auto;
+}
+#logout {
+  display: flex;
+  flex-direction: left;
+  font-family: "Bebas Neue", cursive;
 }
 </style>
 
