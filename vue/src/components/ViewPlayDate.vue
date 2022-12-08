@@ -1,8 +1,17 @@
 <template>
   <div class="playdatecard">
-    <img v-bind:src="this.inviteePet.img" />
-    <img v-bind:src="this.inviterPet.img" /> <br />
-    <h3>{{this.inviteePet.name}} & {{this.inviterPet.name}}</h3>
+    <div class="images">
+      <div class="thumbnail">
+        <img v-bind:src="this.inviteePet.img" />
+      </div>
+      <div class="thumbnail">
+        <img class="portrait" v-bind:src="this.inviterPet.img" /> <br />
+      </div>
+    </div>
+    <h3>
+      {{ this.inviteePet.name }}
+      & {{ this.inviterPet.name }}
+    </h3>
     {{ this.playDate.location }} <br />
     {{ this.playDate.timestamp | formatDate }} <br />
     {{ this.playDate.timestamp | formatTime }} <br />
@@ -21,6 +30,8 @@ export default {
       inviterPet: {
         name: "",
         img: "",
+        imgwidth: "",
+        imgheight: "",
       },
       inviteePet: {
         name: "",
@@ -41,17 +52,48 @@ export default {
 
 
 <style scoped>
-.playdatecard {
-    border: 4px solid #5da2d5;
-    background-color: azure;
-    border-radius: 6px;
-    width: max-content;
+.images {
+  display: flex;
 }
 
-img {
+.playdatecard {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.4em;
+  border: 4px solid #5da2d5;
+  background-color: azure;
+  border-radius: 6px;
+  width: max-content;
+}
+
+.thumbnail {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: 10px;
+  border: 5px solid #5da2d5;
+  background-color: #5da2d5;
+  border-radius: 5px;
+}
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 200px;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
+/* img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 150px;
-}
+  height: 150px;
+} */
 </style>
