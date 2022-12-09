@@ -3,6 +3,7 @@
     <!-- <div id="nav"> -->
     <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp; -->
     <router-link
+      style="text-decoration: none; color: #f54c4c"
       id="logout"
       v-bind:to="{ name: 'logout' }"
       v-if="$store.state.token != ''"
@@ -41,14 +42,14 @@
       <div>
         <router-link
           style="text-decoration: none; color: white"
-          v-bind:to="{ name: 'playDates' }"
+          v-bind:to="{ name: 'aboutUs', hash: '#contactUs' }"
           >contact us</router-link
         >
       </div>
       <div>
         <router-link
           style="text-decoration: none; color: white"
-          v-bind:to="{ name: 'home' }"
+          v-bind:to="{ name: 'aboutUs', hash: '#aboutUs1' }"
           >about us</router-link
         >
       </div>
@@ -124,6 +125,8 @@ footer > div {
   transition: all 0.3s ease 0s;
   height: 15px;
   margin-top: 2%;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 footer > section {
   color: #fff;
@@ -133,7 +136,6 @@ footer > section {
 footer > div:hover {
   background-color: #5da2d5;
   box-shadow: 0px 15px 20px #69dcf0;
-  color: #f54c4c;
   transform: translateY(-7px);
   border-radius: 12px;
 }

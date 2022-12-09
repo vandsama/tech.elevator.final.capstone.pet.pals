@@ -16,8 +16,9 @@ public class Pet {
     private String toy;
     private String treat;
     private String img;
+    private String zipCode;
 
-    public Pet(int id, String type, String name, boolean pet_experience, boolean vaccinated, boolean spayed, String age, String sex, String pet_friendliness, String human_friendliness, String activities, String toy, String treat, String img) {
+    public Pet(int id, String type, String name, boolean pet_experience, boolean vaccinated, boolean spayed, String age, String sex, String pet_friendliness, String human_friendliness, String activities, String toy, String treat, String img, String zipCode) {
         this.id = id;
         this.type = type;
         this.name = name;
@@ -32,6 +33,7 @@ public class Pet {
         this.toy = toy;
         this.treat = treat;
         this.img = img;
+        this.zipCode = zipCode;
     }
 
     public Pet() {
@@ -149,5 +151,13 @@ public class Pet {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }

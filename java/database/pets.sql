@@ -16,6 +16,7 @@ favorite_activities varchar(200) NOT NULL,
 favorite_toy varchar(50) NOT NULL,
 favorite_treat varchar(50) NOT NULL,
 img_link varchar(100) NOT NULL,
+zip_code varchar(10) NOT NULL,
 CONSTRAINT PK_pet PRIMARY KEY (pet_id),
 CONSTRAINT FK_user FOREIGN KEY (pet_id) REFERENCES user_pet (pet_id)
 );

@@ -33,7 +33,7 @@ public class PetController {
         int userId = user.getId();
 
         try {
-            petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(), pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),pet.getToy(),pet.getTreat(),pet.getImg(), userId);
+            petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(), pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),pet.getToy(),pet.getTreat(),pet.getImg(), pet.getZipCode(),userId);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Error creating pet");
         }

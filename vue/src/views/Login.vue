@@ -20,6 +20,7 @@
           </div>
           <div class="username">
             <label for="username" class="sr-only">Username </label>
+            <br />
             <input
               type="text"
               id="username"
@@ -33,6 +34,7 @@
           <br />
           <div class="password">
             <label for="password" class="sr-only">Password </label>
+            <br />
             <input
               type="password"
               id="password"
@@ -123,16 +125,17 @@ button {
   font-family: "Quattrocento Sans", sans-serif;
   color: #ececec;
   background-color: #f54c4c;
-  border: solid, 3px, black;
+  border: none;
   border-radius: 12px;
   width: 20%;
+  height: 2em;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
 }
 button:hover {
   background-color: #5da2d5;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  box-shadow: 0px 15px 20px #69dcf0;
   color: #fff;
   transform: translateY(-7px);
 }
@@ -151,7 +154,7 @@ button:hover {
 }
 #password,
 #username {
-  box-shadow: 0px 15px 20px rgba(35, 81, 231, 0.534);
+  box-shadow: 0px 10px 10px #5da2d5;
   border-radius: 6px;
 }
 </style>

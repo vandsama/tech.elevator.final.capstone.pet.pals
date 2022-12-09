@@ -7,6 +7,8 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
+import aboutUs from '../views/AboutUs.vue'
+
 
 import Messages from '../views/ForumViews/Messages.vue';
 import AddMessage from '../views/ForumViews/AddMessage.vue';
@@ -30,6 +32,13 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  },
   routes: [
     {
       path: '/',
@@ -79,6 +88,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
+<<<<<<< HEAD
 
     {
       path: "/not-found",
@@ -114,6 +124,15 @@ const router = new Router({
       path: '/forum',
       name: 'ForumHome',
       component: ForumHome
+=======
+    {
+      path: "/aboutUs",
+      name: "aboutUs",
+      component: aboutUs,
+      meta: {
+        requiresAuth: true
+      }
+>>>>>>> 4657f04a429f3fd5ebf521a5e82729851a270390
     }
   ]
 })
