@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="forum_home">
     <h1>Topic Message Board</h1>
     <topic-list />
   </div>
@@ -9,7 +9,7 @@
 import TopicList from '../../components/ForumComponents/TopicList.vue';
 
 export default {
-  name: 'Home',
+  name: 'ForumHome',
   components: {
     TopicList
   }

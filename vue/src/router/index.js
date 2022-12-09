@@ -14,6 +14,7 @@ import AddTopic from '../views/ForumViews/AddTopic.vue';
 import EditTopic from '../views/ForumViews/EditTopic.vue';
 import NotFound from '../views/ForumViews/NotFound.vue';
 import EditMessage from '../views/ForumViews/EditMessage';
+import ForumHome from '../views/ForumViews/ForumHome';
 
 Vue.use(Router)
 
@@ -109,6 +110,11 @@ const router = new Router({
       name: 'EditMessage',
       component: EditMessage
     },
+    {
+      path: '/forum',
+      name: 'ForumHome',
+      component: ForumHome
+    }
   ]
 })
 

@@ -1,5 +1,6 @@
 <template>
   <div class="topic-details">
+    <h1>Topic Details</h1>
     <!-- <h1>{{ this.$store.state.activeTopic.title }}</h1> -->
     <!-- <router-link
       :to="{ name: 'AddMessage', params: {topicId: $store.state.activeTopic.id} }"
@@ -10,8 +11,8 @@
       v-bind:key="message.id"
       class="topic-message bubble"
     > -->
-      <h3 class="message-title">{{ message.title }}</h3>
-      <p class="message-body">{{ message.messageText }}</p>
+      <!-- <h3 class="message-title">{{ message.title }}</h3>
+      <p class="message-body">{{ message.messageText }}</p> -->
       <!-- <router-link
         :to="{name: 'EditMessage', params: {topicId: $store.state.activeTopic.id, messageId: message.id} }"
         tag="button"

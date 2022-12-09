@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id"> -->
+        <tr v-for="topic in this.topics" v-bind:key="topic.id">
           <td width="80%">
             <router-link
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
@@ -21,7 +21,7 @@
           <td>
             <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
           </td>
-        <!-- </tr> -->
+        </tr>
       </tbody>
     </table>
   </div>

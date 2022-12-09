@@ -48,15 +48,16 @@ INSERT INTO playDates(
 	VALUES ('2023-1-29 09:30:00-00', 'Washington Park', 'Want to go on a pet date?', 4, 2, 2, 3);
 
 
+
 INSERT INTO topics(
-	topic_id, topic_title)
-	VALUES (1, 'What''s the best way to socialize my puppy?');
+	topic_title)
+	VALUES ('What''s the best way to socialize my puppy?');
 INSERT INTO topics(
-	topic_id, topic_title)
-	VALUES (2, 'My sister''s cat loves to eat butter off the counter, does anyone else''s cat do this too or just him?');
+	topic_title)
+	VALUES ('My sister''s cat loves to eat butter off the counter, does anyone else''s cat do this too or just him?');
 INSERT INTO topics(
-	topic_id, topic_title)
-	VALUES (3, 'I think my bearded dragon is upset with me but I don''t know why. Help!');
+	topic_title)
+	VALUES ('I think my bearded dragon is upset with me but I don''t know why. Help!');
 
 
 
