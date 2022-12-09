@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Top Pets of the Week</h1>
+    <h1>Pets of the Week</h1>
     <div v-for="pet in pets" v-bind:key="pet.petId">
       <petCards v-bind:pet="pet"></petCards>
     </div>
