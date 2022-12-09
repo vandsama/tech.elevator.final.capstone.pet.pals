@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import messageService from "../../services/ForumServices/MessageService";
+import messageService from "../services/MessageService";
 
 export default {
   name: "create-message",
@@ -23,24 +23,25 @@ export default {
   data() {
     return {
       message: {
-        id: 1,
+        id: Math.floor(Math.random() * (1000 - 100) + 100),
         topicId: this.topicId,
         title: "",
-        messageText: "",
-      },
+        messageText: ""
+      }
     };
   },
   methods: {
     saveMessage() {
-      messageService.create(this.message).then((response) => {
-        if (response.status === 201) {
-          this.$router.push(`/${this.message.topicId}`);
-        }
-      });
-    },
-  },
+      messageService.create(this.message, this.topicId)
+                    .then((response) => {
+                      if(response.status === 201) {
+                        this.$router.push(`/${this.message.topicId}`)
+                      }
+                    })
+    }
+  }
 };
 </script>
 
-<style scoped>
+<style>
 </style>

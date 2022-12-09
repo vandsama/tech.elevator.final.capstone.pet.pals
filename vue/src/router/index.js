@@ -9,14 +9,14 @@ import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
 import aboutUs from '../views/AboutUs.vue'
 
+import forums from '../components/Forums.vue'
 
-import Messages from '../views/ForumViews/Messages.vue';
-import AddMessage from '../views/ForumViews/AddMessage.vue';
-import AddTopic from '../views/ForumViews/AddTopic.vue';
-import EditTopic from '../views/ForumViews/EditTopic.vue';
-import NotFound from '../views/ForumViews/NotFound.vue';
-import EditMessage from '../views/ForumViews/EditMessage';
-import ForumHome from '../views/ForumViews/ForumHome';
+import Messages from '../views/Messages.vue';
+import AddMessage from '../views/AddMessage.vue';
+import AddTopic from '../views/AddTopic.vue';
+import EditTopic from '../views/EditTopic.vue';
+import NotFound from '../views/NotFound.vue';
+import EditMessage from '../views/EditMessage';
 
 Vue.use(Router)
 
@@ -88,42 +88,47 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/forums",
+      name: "forums",
+      component: forums
+    },
 
     {
-      path: "/not-found",
+      path: "/forums/not-found",
       name: "NotFound",
       component: NotFound
     },
     {
-      path: '/add-topic',
+      path: '/forums/add-topic',
       name: 'AddTopic',
       component: AddTopic
     },
     {
-      path: '/edit-topic/:id',
+      path: '/forums/edit-topic/:id',
       name: 'EditTopic',
       component: EditTopic
     },
     {
-      path: '/:id',
+      path: '/forums/:id',
       name: 'Messages',
       component: Messages
     },
     {
-      path: '/:topicId/add-message',
+      path: '/forums/:id/add-message',
       name: 'AddMessage',
       component: AddMessage
     },
     {
-      path: '/:topicId/edit-message/:messageId',
+      path: '/forums/:id/edit-message/:messageId',
       name: 'EditMessage',
       component: EditMessage
     },
-    {
-      path: '/forum',
-      name: 'ForumHome',
-      component: ForumHome
-    },
+    // {
+    //   path: '/forum',
+    //   name: 'ForumHome',
+    //   component: ForumHome
+    // },
     {
       path: "/aboutUs",
       name: "aboutUs",

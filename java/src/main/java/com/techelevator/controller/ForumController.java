@@ -49,8 +49,8 @@ public class ForumController {
     }
 
     @RequestMapping(value = "/topics/{id}", method = RequestMethod.GET)
-    public List<Message> listTopicMessages(@PathVariable int topicId) {
-        return messageDao.listMessagesInTopic(topicId);
+    public List<Message> listTopicMessages(@PathVariable int id) {
+        return messageDao.listMessagesInTopic(id);
     }
 
     @RequestMapping(value = "/topics/{id}/create", method = RequestMethod.POST)

@@ -19,7 +19,19 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    topics: [],
+    activeTopic: {
+      id: 0,
+      title: '',
+      messages: []
+    },
+    activeMessage: {
+      id: null,
+      topicId: null,
+      title: '',
+      messageText: ''
+    }
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -37,6 +49,21 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
-    }
+    },
+    SET_TOPICS(state, data) {
+      state.topics = data;
+    },
+    SET_ACTIVE_TOPIC(state, data) {
+      state.activeTopic = data;
+    },
+    DELETE_MESSAGE(state, id) {
+      state.activeTopic.messages.splice(
+        state.activeTopic.messages.findIndex(message => message.id === id),
+        1
+      )
+    },
+    SET_ACTIVE_MESSAGE(state, data) {
+      state.activeMessage = data;
+    },
   }
 })

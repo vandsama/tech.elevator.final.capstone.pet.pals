@@ -1,70 +1,62 @@
 <template>
   <div class="topic-details">
-    <h1>Topic Details</h1>
-    <!-- <h1>{{ this.$store.state.activeTopic.title }}</h1> -->
-    <!-- <router-link
+    <h1>{{ this.$store.state.activeTopic.title }}</h1>
+    <router-link
       :to="{ name: 'AddMessage', params: {topicId: $store.state.activeTopic.id} }"
       class="addMessage"
-    >Add New Message</router-link> -->
-    <!-- <div
+    >Add New Message</router-link>
+    <div
       v-for="message in this.$store.state.activeTopic.messages"
       v-bind:key="message.id"
       class="topic-message bubble"
-    > -->
-    <!-- <h3 class="message-title">{{ message.title }}</h3>
-      <p class="message-body">{{ message.messageText }}</p> -->
-    <!-- <router-link
+    >
+      <h3 class="message-title">{{ message.title }}</h3>
+      <p class="message-body">{{ message.messageText }}</p>
+      <router-link
         :to="{name: 'EditMessage', params: {topicId: $store.state.activeTopic.id, messageId: message.id} }"
         tag="button"
         class="btnEditMessage"
-      >Edit</router-link> -->
-    <!-- <button class="btnDeleteMessage" v-on:click="deleteMessage(message.id)">Delete</button>
-    </div> -->
+      >Edit</router-link>
+      <button class="btnDeleteMessage" v-on:click="deleteMessage(message.id)">Delete</button>
+    </div>
   </div>
 </template>
 
 <script>
-import topicService from "@/services/ForumServices/TopicService.js";
-import messageService from "@/services/ForumServices/MessageService.js";
+import topicService from "@/services/TopicService.js";
+import messageService from "@/services/MessageService.js";
 export default {
   name: "topic-details",
   props: {
-    topicId: Number,
+    topicId: Number
   },
   methods: {
     deleteMessage(id) {
-      messageService.delete(id).then((response) => {
+        messageService
+      .delete(id)
+      .then(response => {
         if (response.status === 200) {
-          // this.$store.commit("DELETE_MESSAGE", id);
+          this.$store.commit("DELETE_MESSAGE", id);
         }
       });
-    },
-  },
-  data() {
-    return {
-      topic: {
-        topic_id: 1,
-        topic_title: "",
-      },
-    };
+    }
   },
   created() {
     topicService
       .get(this.topicId)
-      .then((response) => {
-        this.topic = response.data;
-        // this.$store.commit("SET_ACTIVE_TOPIC", response.data);
+      .then(response => {
+        this.$store.commit("SET_ACTIVE_TOPIC", response.data);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.response.status === 404) {
           this.$router.push("/not-found");
         }
       });
-  },
+  }
 };
 </script>
 
-<style scoped>
+<style>
 /** page structure **/
 .topic-details {
   padding: 20px 20px;

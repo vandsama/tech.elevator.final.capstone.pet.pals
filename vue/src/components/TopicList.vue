@@ -9,17 +9,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="topic in this.topics" v-bind:key="topic.id">
+        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id">
           <td width="80%">
             <router-link
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-              >{{ topic.title }}</router-link
-            >
+            >{{ topic.title }}</router-link>
           </td>
           <td>
-            <router-link :to="{ name: 'EditTopic', params: { id: topic.id } }"
-              >Edit</router-link
-            >
+            <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
           </td>
           <td>
             <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
@@ -31,37 +28,31 @@
 </template>
 
 <script>
-import topicService from "../../services/ForumServices/TopicService.js";
+import topicService from "../services/TopicService.js";
 
 export default {
   name: "topic-list",
-  data() {
-    return {
-      topics: [],
-    };
-  },
   methods: {
     getTopics() {
-      topicService.list().then((response) => {
-        this.topics = response.data;
-        // this.$store.commit("SET_TOPICS", response.data);
+      topicService.list().then(response => {
+        this.$store.commit("SET_TOPICS", response.data);
       });
     },
     deleteTopic(id) {
-      topicService.delete(id).then((response) => {
-        if (response.status == 200) {
-          this.getTopics();
-        }
-      });
-    },
+      topicService.delete(id).then(response => {
+          if (response.status == 200) {
+            this.getTopics();
+          }
+        });
+    }
   },
   created() {
     this.getTopics();
-  },
+  }
 };
 </script>
 
-<style scoped>
+<style>
 .topic-list {
   margin: 0 auto;
   max-width: 800px;
