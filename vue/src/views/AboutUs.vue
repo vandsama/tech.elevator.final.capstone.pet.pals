@@ -54,7 +54,7 @@
     </main>
   </div>
 </template>
-<style>
+<style scoped>
 #aboutUs1 {
   width: 60%;
   margin: auto;
