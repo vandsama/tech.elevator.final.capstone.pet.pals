@@ -1,17 +1,18 @@
 <template>
   <div>
-    <div v-for="pet in pets" v-bind:key="pet.id">
-      <petcards v-bind:pet="pet"></petcards>
+    <h1>Top Pets of the Week</h1>
+    <div v-for="pet in pets" v-bind:key="pet.petId">
+      <petCards v-bind:pet="pet"></petCards>
     </div>
   </div>
 </template>
 
 <script>
 import petService from "../services/PetService";
-import petcards from "./ViewPetCards.vue";
+import petCards from "./ViewPetCards.vue";
 export default {
   components: {
-    petcards,
+    petCards,
   },
   data() {
     return {
@@ -20,11 +21,18 @@ export default {
   },
   created() {
     petService.list().then((r) => {
-      this.pet = r.data;
+      this.pets = r.data;
     });
   },
 };
 </script>
 
 <style scoped>
+div {
+  display: inline-block;
+  margin-top: 30px;
+}
+h1 {
+  font-size: 48px;
+}
 </style>

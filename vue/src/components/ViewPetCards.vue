@@ -1,16 +1,16 @@
 <template>
-  <div class="info">
+  <div class="info2">
     <div class="petCard">
       <div class="thumbnail">
         <img v-bind:src="this.pet.img" alt="the goodest boy" />
       </div>
       <div class="info" id="specific">
-        <div class="name">
+        <div class="firstRow">
           <h3>{{ this.pet.name }}</h3>
-        </div>
-        <div class="zip">
           {{ this.pet.zipCode }}
         </div>
+      </div>
+      <div class="rowTwo">
         <div class="type">
           {{ this.pet.type }}
         </div>
@@ -20,8 +20,8 @@
         <div class="age">
           {{ this.pet.age }}
         </div>
-        <div class="hobby">Loves: {{ this.pet.activities }}</div>
       </div>
+      <div class="hobby">Loves: {{ this.pet.activities }}</div>
     </div>
   </div>
 </template>
@@ -30,26 +30,8 @@
 import petService from "../services/PetService";
 export default {
   component: petService,
-  data() {
-    return {
-      pet: {
-        name: "",
-        age: "",
-        type: "",
-        img: "",
-        zipCode: "",
-        imgheight: "",
-        imgwidth: "",
-      },
-    };
-  },
-  created() {
-    petService.get(2).then((r) => {
-      this.pet = r.data;
-    });
-    // petService.get(3).then((r) => {
-    //   this.pet = r.data;
-    // });
+  props: {
+    pet: Object,
   },
 };
 </script>
@@ -63,7 +45,6 @@ export default {
   background-color: #5da2d5;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 32px;
-  width: max-content;
   margin-top: 20px;
 }
 .thumbnail {
@@ -76,6 +57,8 @@ export default {
   background-color: #5da2d5;
   border-radius: 5px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .thumbnail img {
   position: absolute;
@@ -91,40 +74,50 @@ export default {
   font-family: "Quattrocento Sans", sans-serif;
 }
 .info {
-  background-color: #5da2d5;
+  /* background-color: #5da2d5; */
   display: grid;
-  margin-top: 35px;
-  grid-template-columns: 0.5fr 0.5fr;
-  grid-template-areas:
-    "petName    zipCode"
-    "type       sex"
-    "activity   age";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:
+    "name   name    zip"
+    "type   sex     age"
+    "hobby  hobby   hobby";
 }
 .name {
-  grid-area: "petName";
-  font-size: 24px;
+  /* grid-area: "petName"; */
+  font-size: 32px;
+  grid-area: "name";
 }
 .type {
-  grid-area: "type";
+  /* grid-area: "type"; */
   font-family: "Quattrocento Sans", sans-serif;
+  grid-area: "type";
 }
 .age {
-  grid-area: "age";
+  /* grid-area: "age"; */
   font-family: "Quattrocento Sans", sans-serif;
+  grid-area: "age";
 }
 .sex {
-  grid-area: "sex";
+  /* grid-area: "sex"; */
   font-family: "Quattrocento Sans", sans-serif;
+  grid-area: "sex";
 }
 .zip {
-  grid-area: "zipCode";
+  /* grid-area: "zipCode"; */
   font-family: "Quattrocento Sans", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-area: "zip";
 }
 .hobby {
   grid-area: "activity";
   font-family: "Quattrocento Sans", sans-serif;
+  grid-area: "hobby";
+}
+.firstRow {
+  display: flex;
+  flex-direction: row;
+}
+.rowTwo {
+  display: flex;
+  text-align: center;
 }
 </style>
