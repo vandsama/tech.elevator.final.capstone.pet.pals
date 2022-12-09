@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import messageService from "../../services/ForumServices/MessageService";
+import messageService from "../services/MessageService";
 
 export default {
   name: "create-message",
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       title: "",
-      messageText: "",
+      messageText: ""
     };
   },
   methods: {
@@ -32,31 +32,31 @@ export default {
         id: this.messageId,
         topicId: this.topicId,
         title: this.title,
-        messageText: this.messageText,
+        messageText: this.messageText
       };
-      messageService.update(message.id, message).then((response) => {
-        if (response.status === 200) {
+      messageService.update(message.id, message).then(response => {
+        if(response.status === 200) {
           this.$router.push(`/${message.topicId}`);
         }
       });
-    },
+    }
   },
   created() {
     messageService
       .get(this.messageId)
-      .then((response) => {
-        // this.$store.commit("SET_ACTIVE_MESSAGE", response.data);
+      .then(response => {
+        this.$store.commit("SET_ACTIVE_MESSAGE", response.data);
         this.title = response.data.title;
         this.messageText = response.data.messageText;
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.response.status == 404) {
           this.$router.push("/not-found");
         }
       });
-  },
+  }
 };
 </script>
 
-<style scoped>
+<style>
 </style>

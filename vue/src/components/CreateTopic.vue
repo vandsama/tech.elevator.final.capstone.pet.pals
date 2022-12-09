@@ -11,31 +11,33 @@
 </template>
 
 <script>
-import topicService from "../../services/ForumServices/TopicService";
+import topicService from "../services/TopicService";
 
 export default {
   name: "create-topic",
   data() {
     return {
       topic: {
-        id: 1,
-        title: "",
-      },
+        id: Math.floor(Math.random() * (1000 - 100) + 100),
+        title: ""
+      }
     };
   },
   methods: {
     saveTopic() {
-      topicService.create(this.topic).then((response) => {
-        if (response.status == 201) {
-          this.$router.push("/");
-        }
-      });
+        topicService
+          .create(this.topic)
+          .then((response) => {
+            if (response.status == 201) {
+              this.$router.push("/");
+            }
+          })  
     },
-  },
+  }
 };
 </script>
 
-<style scoped>
+<style>
 form {
   padding: 20px;
   font-size: 16px;

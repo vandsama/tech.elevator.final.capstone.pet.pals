@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CreateTopic from "../../components/ForumComponents/CreateTopic";
+import CreateTopic from "../components/CreateTopic";
 
 export default {
   components: {

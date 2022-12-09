@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CreateMessage from "../../components/ForumComponents/CreateMessage.vue";
+import CreateMessage from "../components/CreateMessage";
 
 export default {
   components: {

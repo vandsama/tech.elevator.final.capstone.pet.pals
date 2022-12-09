@@ -31,6 +31,13 @@
       <button>
         <router-link
           style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'forums' }"
+          >Forums</router-link
+        >
+      </button>
+      <button>
+        <router-link
+          style="text-decoration: none; color: white"
           v-bind:to="{ name: 'petRegistration' }"
           >Account</router-link
         >

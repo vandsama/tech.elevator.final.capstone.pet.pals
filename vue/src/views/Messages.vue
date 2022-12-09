@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TopicDetails from "../../components/ForumComponents/TopicDetails.vue";
+import TopicDetails from "../components/TopicDetails.vue";
 
 export default {
   name: "Messages",

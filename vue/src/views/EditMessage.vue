@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import UpdateMessage from "../../components/ForumComponents/UpdateMessage";
+import UpdateMessage from "../components/UpdateMessage";
 
 export default {
   components: {
