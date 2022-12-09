@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="playDate-list">
+  <div class="playDate-list">
+    <div>
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
         <playdateinfo v-bind:playDate="playDate"></playdateinfo>
@@ -28,4 +28,7 @@ export default {
 </script>
 
 <style scoped>
+.playDate-list {
+  background-color: #f5c423;
+}
 </style>

@@ -9,16 +9,16 @@
       <h2 id="aboutTitle">My Scheduled Play Dates</h2>
       <playdateinfo></playdateinfo>
     </div>
-    <pet-cards></pet-cards>
+    <pet-card-list></pet-card-list>
   </main>
 </template>
 
 <script>
-import petCards from "../components/ViewPetCards.vue";
 import playdateinfo from "../components/PlayDateInfoList.vue";
+import petCardList from "../components/PetCardList.vue";
 export default {
   name: "home",
-  components: { petCards, playdateinfo },
+  components: { playdateinfo, petCardList },
 };
 </script>
 <style scoped>
@@ -42,7 +42,7 @@ button {
 }
 #aboutDesc {
   font-family: "Quattrocento Sans", sans-serif;
-  color: white;
+  color: #f5c423;
   font-size: x-large;
   font-style: italic;
   width: 80%;
