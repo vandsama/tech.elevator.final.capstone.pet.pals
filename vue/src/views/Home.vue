@@ -19,7 +19,6 @@
       </div>
       <pet-cards></pet-cards>
     </main>
-    <footer>&copy; <span>All Rights Reserved.</span></footer>
   </div>
 </template>
 

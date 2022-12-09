@@ -7,6 +7,8 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
+import aboutUs from '../views/AboutUs.vue'
+
 
 Vue.use(Router)
 
@@ -22,6 +24,13 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  },
   routes: [
     {
       path: '/',
@@ -67,6 +76,14 @@ const router = new Router({
       path: "/playdates",
       name: "playDates",
       component: playDateList,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/aboutUs",
+      name: "aboutUs",
+      component: aboutUs,
       meta: {
         requiresAuth: true
       }
