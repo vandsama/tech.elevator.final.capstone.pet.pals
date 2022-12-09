@@ -1,16 +1,26 @@
 <template>
-  <div class="petCard">
-    <div class="thumbnail">
-      <img v-bind:src="this.pet.img" alt="the goodest boy" />
-    </div>
-    <div class="info">
-      <h3>{{ this.pet.name }}</h3>
-      <div class="infoNoName">
-        {{ this.pet.type }} <br />
-        {{ this.pet.age }} <br />
-        {{ this.pet.sex }} <br />
-        {{ this.pet.zipCode }} <br />
-        Enjoys: {{ this.pet.activities }}
+  <div class="info">
+    <div class="petCard">
+      <div class="thumbnail">
+        <img v-bind:src="this.pet.img" alt="the goodest boy" />
+      </div>
+      <div class="info">
+        <div class="name">
+          <h3>{{ this.pet.name }}</h3>
+        </div>
+        <div class="zip">
+          {{ this.pet.zipCode }}
+        </div>
+        <div class="type">
+          {{ this.pet.type }}
+        </div>
+        <div class="sex">
+          {{ this.pet.sex }}
+        </div>
+        <div class="age">
+          {{ this.pet.age }}
+        </div>
+        <div class="hobby">Enjoys: {{ this.pet.activities }}</div>
       </div>
     </div>
   </div>
@@ -49,14 +59,15 @@ export default {
   font-family: "Bebas Neue", cursive;
   font-size: 1.4em;
   border: 4px solid #5da2d5;
-  background-color: azure;
+  background-color: #5da2d5;
   border-radius: 6px;
   width: max-content;
+  margin-top: 20px;
 }
 .thumbnail {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 350px;
+  height: 350px;
   overflow: hidden;
   margin: 10px;
   border: 5px solid #5da2d5;
@@ -68,7 +79,7 @@ export default {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 200px;
+  height: 400px;
   width: auto;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -76,9 +87,41 @@ export default {
 }
 .infoNoName {
   font-family: "Quattrocento Sans", sans-serif;
-  background-color: #f78888;
 }
 .info {
-  background-color: #90ccf4;
+  background-color: #5da2d5;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-areas:
+    "petName    zipCode"
+    "type       sex"
+    "activity   age";
+}
+.name {
+  grid-area: "petName";
+  font-size: 24px;
+}
+.type {
+  grid-area: "type";
+  font-family: "Quattrocento Sans", sans-serif;
+}
+.age {
+  grid-area: "age";
+  font-family: "Quattrocento Sans", sans-serif;
+}
+.sex {
+  grid-area: "sex";
+  font-family: "Quattrocento Sans", sans-serif;
+}
+.zip {
+  grid-area: "zipCode";
+  font-family: "Quattrocento Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hobby {
+  grid-area: "activity";
+  font-family: "Quattrocento Sans", sans-serif;
 }
 </style>
