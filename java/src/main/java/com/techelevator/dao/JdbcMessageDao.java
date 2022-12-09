@@ -18,7 +18,7 @@ public class JdbcMessageDao implements MessageDao {
     @Override
     public List<Message> listMessagesInTopic(int topicId) {
         List<Message> messageList = new ArrayList<>();
-        String sql = "SELECT message_id, topic_id, message_title, message_text\n" +
+        String sql = "SELECT message_id, user_id, topic_id, message_title, message_text\n" +
                 "\tFROM messages\n" +
                 "\tWHERE topic_id = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql,topicId);
@@ -30,11 +30,19 @@ public class JdbcMessageDao implements MessageDao {
         return messageList;
     }
 
+    @Override
+    public boolean createMessage(int user_id, int topic_id, String message_text, String message_title) {
+        String sql = "INSERT INTO messages(\n" +
+                "\tuser_id, topic_id, message_title, message_text)\n" +
+                "\tVALUES (?, ?, ?, ?);";
+        return jdbcTemplate.update(sql, user_id, topic_id, message_title,message_text) == 1;
+    }
 
 
     private Message mapRowToMessage(SqlRowSet rowSet) {
         Message message = new Message();
         message.setMessage_id(rowSet.getInt("message_id"));
+        message.setUser_id(rowSet.getInt("user_id"));
         message.setTopic_id(rowSet.getInt("topic_id"));
         message.setText(rowSet.getString("message_text"));
         message.setTitle(rowSet.getString("message_title"));

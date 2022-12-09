@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users, pets, user_pet, playDates CASCADE;
-DROP SEQUENCE IF EXISTS users_serial, pets_serial, playDates_serial;
+DROP TABLE IF EXISTS users, pets, user_pet, playDates, topics, messages CASCADE;
+DROP SEQUENCE IF EXISTS users_serial, pets_serial, playDates_serial, topics_serial, messages_serial;
 
 
 CREATE SEQUENCE users_serial;
@@ -64,15 +64,15 @@ CREATE TABLE topics (
     CONSTRAINT PK_topic PRIMARY KEY (topic_id)
 );
 
-CREATE SEQUENCE message_serial;
+CREATE SEQUENCE messages_serial;
 CREATE TABLE messages (
     message_id serial,
+    user_id int NOT NULL,
     topic_id int NOT NULL,
     message_title varchar(200) NOT NULL,
     message_text varchar(500) NOT NULL,
-    --user id?
-    --pet id?
     CONSTRAINT PK_message PRIMARY KEY (message_id),
+    CONSTRAINT FK_message_user_id FOREIGN KEY (user_id) REFERENCES users(user_id),
     CONSTRAINT FK_message_topic_id FOREIGN KEY (topic_id) REFERENCES topics(topic_id)
 );
 
