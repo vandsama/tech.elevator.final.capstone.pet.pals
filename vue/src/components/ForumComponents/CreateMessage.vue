@@ -26,22 +26,21 @@ export default {
         id: 1,
         topicId: this.topicId,
         title: "",
-        messageText: ""
-      }
+        messageText: "",
+      },
     };
   },
   methods: {
     saveMessage() {
-      messageService.create(this.message)
-                    .then((response) => {
-                      if(response.status === 201) {
-                        this.$router.push(`/${this.message.topicId}`)
-                      }
-                    })
-    }
-  }
+      messageService.create(this.message).then((response) => {
+        if (response.status === 201) {
+          this.$router.push(`/${this.message.topicId}`);
+        }
+      });
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 </style>

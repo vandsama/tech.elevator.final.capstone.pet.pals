@@ -19,25 +19,23 @@ export default {
     return {
       topic: {
         id: 1,
-        title: ""
-      }
+        title: "",
+      },
     };
   },
   methods: {
     saveTopic() {
-        topicService
-          .create(this.topic)
-          .then((response) => {
-            if (response.status == 201) {
-              this.$router.push("/");
-            }
-          })  
+      topicService.create(this.topic).then((response) => {
+        if (response.status == 201) {
+          this.$router.push("/");
+        }
+      });
     },
-  }
+  },
 };
 </script>
 
-<style>
+<style scoped>
 form {
   padding: 20px;
   font-size: 16px;

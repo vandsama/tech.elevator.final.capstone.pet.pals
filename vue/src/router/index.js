@@ -88,7 +88,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-<<<<<<< HEAD
 
     {
       path: "/not-found",
@@ -124,7 +123,7 @@ const router = new Router({
       path: '/forum',
       name: 'ForumHome',
       component: ForumHome
-=======
+    },
     {
       path: "/aboutUs",
       name: "aboutUs",
@@ -132,7 +131,6 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
->>>>>>> 4657f04a429f3fd5ebf521a5e82729851a270390
     }
   ]
 })

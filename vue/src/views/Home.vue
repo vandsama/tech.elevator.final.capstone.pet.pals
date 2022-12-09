@@ -1,32 +1,24 @@
 <template>
-  <div>
-    <!-- <header><img src="../../public/pet-pals-logo.png" alt="" /></header> -->
-    <!-- <div class="home">
+  <!-- <header><img src="../../public/pet-pals-logo.png" alt="" /></header> -->
+  <!-- <div class="home">
       <h1 id="home">Home</h1>
     </div> -->
-    <!-- <pet-registration></pet-registration> -->
-    <main>
-      <div class="aboutUs">
-        <h2 id="aboutTitle">What We're All About</h2>
-        <p id="aboutDesc">
-          Our mission is to connect pets and their owners across the Cincinnati
-          area in order to form smaller communities and allow people and pets to
-          meet new friends! Many different kinds of animals, from dogs to cats
-          to bearded dragons, benefit from social interaction with other pets.
-          Connect with other pet owners by meeting at a pet park or pet-friendly
-          area, and make a new friend today.
-        </p>
-      </div>
-      <pet-cards></pet-cards>
-    </main>
-  </div>
+  <!-- <pet-registration></pet-registration> -->
+  <main>
+    <div class="aboutUs">
+      <h2 id="aboutTitle">Scheduled Play Dates</h2>
+      <play-date-info></play-date-info>
+    </div>
+    <pet-cards></pet-cards>
+  </main>
 </template>
 
 <script>
 import petCards from "../components/ViewPetCards.vue";
+import playDateInfo from "../components/PlayDateInfoList.vue";
 export default {
   name: "home",
-  components: { petCards },
+  components: { petCards, playDateInfo },
 };
 </script>
 <style scoped>
@@ -65,6 +57,7 @@ button {
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
   margin-top: 2em;
 }
+
 /* header {
   display: flex;
   align-content: flex-start;

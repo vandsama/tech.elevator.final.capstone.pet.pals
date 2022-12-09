@@ -11,14 +11,14 @@
       v-bind:key="message.id"
       class="topic-message bubble"
     > -->
-      <!-- <h3 class="message-title">{{ message.title }}</h3>
+    <!-- <h3 class="message-title">{{ message.title }}</h3>
       <p class="message-body">{{ message.messageText }}</p> -->
-      <!-- <router-link
+    <!-- <router-link
         :to="{name: 'EditMessage', params: {topicId: $store.state.activeTopic.id, messageId: message.id} }"
         tag="button"
         class="btnEditMessage"
       >Edit</router-link> -->
-      <!-- <button class="btnDeleteMessage" v-on:click="deleteMessage(message.id)">Delete</button>
+    <!-- <button class="btnDeleteMessage" v-on:click="deleteMessage(message.id)">Delete</button>
     </div> -->
   </div>
 </template>
@@ -29,44 +29,42 @@ import messageService from "@/services/ForumServices/MessageService.js";
 export default {
   name: "topic-details",
   props: {
-    topicId: Number
+    topicId: Number,
   },
   methods: {
     deleteMessage(id) {
-        messageService
-      .delete(id)
-      .then(response => {
+      messageService.delete(id).then((response) => {
         if (response.status === 200) {
           // this.$store.commit("DELETE_MESSAGE", id);
         }
       });
-    }
+    },
   },
   data() {
     return {
       topic: {
         topic_id: 1,
-        topic_title: ""
-      }
-    }
+        topic_title: "",
+      },
+    };
   },
   created() {
     topicService
       .get(this.topicId)
-      .then(response => {
+      .then((response) => {
         this.topic = response.data;
         // this.$store.commit("SET_ACTIVE_TOPIC", response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.response.status === 404) {
           this.$router.push("/not-found");
         }
       });
-  }
+  },
 };
 </script>
 
-<style>
+<style scoped>
 /** page structure **/
 .topic-details {
   padding: 20px 20px;

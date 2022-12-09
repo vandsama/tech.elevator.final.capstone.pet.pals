@@ -18,35 +18,35 @@ export default {
   props: ["topicID"],
   data() {
     return {
-      title: ""
+      title: "",
     };
   },
   methods: {
     updateTopic() {
       const topic = { id: this.topicID, title: this.title };
       // call topic service update method
-      topicService.update(topic.id,topic).then(response => {
+      topicService.update(topic.id, topic).then((response) => {
         if (response.status == 200) {
           this.$router.push("/");
         }
-      })
-    }
+      });
+    },
   },
   created() {
     topicService
       .get(this.topicID)
-      .then(response => {
+      .then((response) => {
         // this.$store.commit("SET_ACTIVE_TOPIC", response.data);
         this.title = response.data.title;
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.response.status == 404) {
-          this.$router.push({name: 'NotFound'});
+          this.$router.push({ name: "NotFound" });
         }
       });
-  }
+  },
 };
 </script>
 
-<style>
+<style scoped>
 </style>

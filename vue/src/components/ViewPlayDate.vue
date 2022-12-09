@@ -2,10 +2,17 @@
   <div class="playdatecard">
     <div class="images">
       <div class="thumbnail">
-        <img :class="{portrait : PetImgPortrait(this.inviteePet.img)}" v-bind:src="this.inviteePet.img" />
+        <img
+          :class="{ portrait: PetImgPortrait(this.inviteePet.img) }"
+          v-bind:src="this.inviteePet.img"
+        />
       </div>
       <div class="thumbnail">
-        <img :class="{portrait : PetImgPortrait(this.inviterPet.img)}" v-bind:src="this.inviterPet.img" /> <br />
+        <img
+          :class="{ portrait: PetImgPortrait(this.inviterPet.img) }"
+          v-bind:src="this.inviterPet.img"
+        />
+        <br />
       </div>
     </div>
     <h3>
@@ -48,14 +55,11 @@ export default {
   methods: {
     PetImgPortrait(src) {
       let img = new Image();
-      img.src = src
+      img.src = src;
       // img.onload = () => {
-        console.log(img.height)
-        if (img.height > img.width)
-        
-        return true
+      console.log(img.height);
+      if (img.height > img.width) return true;
       // }
-
       else return false;
     },
   },
