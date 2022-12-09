@@ -16,11 +16,11 @@ public class JdbcPetDao implements PetDao {
     public JdbcPetDao(JdbcTemplate jdbcTemplate){this.jdbcTemplate = jdbcTemplate;}
 
     @Override
-    public boolean create(String type, String name, boolean pet_experience, boolean vaccinated, boolean spayed, String age, String sex, String pet_friendliness, String human_friendliness, String activities, String toy, String treat, String img,int userId) {
+    public boolean create(String type, String name, boolean pet_experience, boolean vaccinated, boolean spayed, String age, String sex, String pet_friendliness, String human_friendliness, String activities, String toy, String treat, String img, String zipCode, int userId) {
         String insertPetSql = "WITH new_pet AS (\n" +
                 "INSERT INTO pets(\n" +
-                "\tanimal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link)\n" +
-                "\tVALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING pet_id)\n" +
+                "\tanimal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)\n" +
+                "\tVALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?) RETURNING pet_id)\n" +
                 "\tINSERT INTO user_pet(\n" +
                 "\tuser_id, pet_id)\n" +
                 "\tVALUES (?, (SELECT pet_id FROM new_pet));";
@@ -33,7 +33,7 @@ public class JdbcPetDao implements PetDao {
         Pet pet = null;
         String sql = "SELECT pet_id, animal_type, pet_name, pet_experience, vaccinated, spayed," +
                 " age_years, sex, pet_friendliness, human_friendliness, favorite_activities," +
-                " favorite_toy, favorite_treat, img_link\n" +
+                " favorite_toy, favorite_treat, img_link, zip_code\n" +
                 "\tFROM pets\n" +
                 "\tWHERE pet_id = ?;";
 
@@ -51,7 +51,7 @@ public class JdbcPetDao implements PetDao {
         List<Pet> petList = new ArrayList<>();
         String sql = "SELECT pet_id, animal_type, pet_name, pet_experience, vaccinated, spayed," +
         " age_years, sex, pet_friendliness, human_friendliness, favorite_activities," +
-                " favorite_toy, favorite_treat, img_link\n" +
+                " favorite_toy, favorite_treat, img_link, zip_code\n" +
                 "\tFROM pets\n;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
         while(result.next()){
@@ -76,6 +76,7 @@ public class JdbcPetDao implements PetDao {
         pet.setToy(rowSet.getString("favorite_toy"));
         pet.setTreat(rowSet.getString("favorite_treat"));
         pet.setImg(rowSet.getString("img_link"));
+        pet.setZipCode(rowSet.getString("zip_code"));
         return pet;
     }
 

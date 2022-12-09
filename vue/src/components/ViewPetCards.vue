@@ -9,7 +9,8 @@
         {{ this.pet.type }} <br />
         {{ this.pet.age }} <br />
         {{ this.pet.sex }} <br />
-        {{ this.pet.activities }}
+        {{ this.pet.zipCode }} <br />
+        Enjoys: {{ this.pet.activities }}
       </div>
     </div>
   </div>
@@ -26,6 +27,7 @@ export default {
         age: "",
         type: "",
         img: "",
+        zipCode: "",
         imgheight: "",
         imgwidth: "",
       },
@@ -60,6 +62,7 @@ export default {
   border: 5px solid #5da2d5;
   background-color: #5da2d5;
   border-radius: 5px;
+  display: flex;
 }
 .thumbnail img {
   position: absolute;
@@ -71,11 +74,11 @@ export default {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.thumbnail img.portrait {
-  width: 100%;
-  height: auto;
-}
 .infoNoName {
   font-family: "Quattrocento Sans", sans-serif;
+  background-color: #f78888;
+}
+.info {
+  background-color: #90ccf4;
 }
 </style>
