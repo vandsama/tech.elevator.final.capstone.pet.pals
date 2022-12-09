@@ -1,17 +1,18 @@
 <template>
   <div>
     <div v-for="pet in pets" v-bind:key="pet.id">
-      <pet-card v-bind:pet="pet"></pet-card>
+      <petcards v-bind:pet="pet"></petcards>
     </div>
   </div>
 </template>
 
 <script>
 import petService from "../services/PetService";
-import petCards from "./ViewPetCards.vue";
+import petcards from "./ViewPetCards.vue";
 export default {
-  components: petService,
-  petCards,
+  components: {
+    petcards,
+  },
   data() {
     return {
       pets: [],

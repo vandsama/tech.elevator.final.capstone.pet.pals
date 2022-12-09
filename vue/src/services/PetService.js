@@ -12,7 +12,7 @@ export default {
         return axios.get(`/pets/${id}`)
     },
     list() {
-        return axios.get(`/pets/`)
+        return axios.get(`/pets`)
     }
 
 }

@@ -4,7 +4,7 @@
       <div class="thumbnail">
         <img v-bind:src="this.pet.img" alt="the goodest boy" />
       </div>
-      <div class="info">
+      <div class="info" id="specific">
         <div class="name">
           <h3>{{ this.pet.name }}</h3>
         </div>
@@ -20,7 +20,7 @@
         <div class="age">
           {{ this.pet.age }}
         </div>
-        <div class="hobby">Enjoys: {{ this.pet.activities }}</div>
+        <div class="hobby">Loves: {{ this.pet.activities }}</div>
       </div>
     </div>
   </div>
@@ -53,14 +53,16 @@ export default {
   },
 };
 </script>
+#f3d250
 
 <style>
 .petCard {
   font-family: "Bebas Neue", cursive;
   font-size: 1.4em;
-  border: 4px solid #5da2d5;
+  border: 4px solid #f3d250;
   background-color: #5da2d5;
-  border-radius: 6px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 32px;
   width: max-content;
   margin-top: 20px;
 }
@@ -91,6 +93,7 @@ export default {
 .info {
   background-color: #5da2d5;
   display: grid;
+  margin-top: 35px;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-areas:
     "petName    zipCode"
