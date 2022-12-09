@@ -3,15 +3,13 @@
 </template>
 
 <script>
-import registerpet from '../components/RegisterPet.vue'
+import registerpet from "../components/RegisterPet.vue";
 export default {
-    components: {
-        registerpet,
-    }
-
-}
+  components: {
+    registerpet,
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

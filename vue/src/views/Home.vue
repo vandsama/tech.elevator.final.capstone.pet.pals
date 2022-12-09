@@ -6,8 +6,8 @@
   <!-- <pet-registration></pet-registration> -->
   <main>
     <div class="aboutUs">
-      <h2 id="aboutTitle">Scheduled Play Dates</h2>
-      <play-date-info></play-date-info>
+      <h2 id="aboutTitle">My Scheduled Play Dates</h2>
+      <playdateinfo></playdateinfo>
     </div>
     <pet-cards></pet-cards>
   </main>
@@ -15,10 +15,10 @@
 
 <script>
 import petCards from "../components/ViewPetCards.vue";
-import playDateInfo from "../components/PlayDateInfoList.vue";
+import playdateinfo from "../components/PlayDateInfoList.vue";
 export default {
   name: "home",
-  components: { petCards, playDateInfo },
+  components: { petCards, playdateinfo },
 };
 </script>
 <style scoped>

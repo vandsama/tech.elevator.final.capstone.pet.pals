@@ -1,7 +1,6 @@
 <template>
   <div class="playdatecard">
-    <div class="images">
-      <br />
+    <div class="dateInfo">
       <h3>
         {{ this.inviteePet.name }}
         & {{ this.inviterPet.name }}
@@ -44,4 +43,19 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 2em;
+  color: #5da2d5;
+}
+.dateInfo {
+  font-family: "Quattrocento Sans", sans-serif;
+}
+.playdatecard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3d250;
+}
 </style>
