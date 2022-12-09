@@ -33,7 +33,7 @@ public class ForumController {
     }
 
     @RequestMapping(value = "/topics/create", method = RequestMethod.POST)
-    public void createTopic(@RequestBody Topic topic, @RequestBody Message message, Principal principal) {
+    public void createTopic(@RequestBody Topic topic, Principal principal) {
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
 
@@ -41,7 +41,7 @@ public class ForumController {
             topicDao.createTopic(topic.getTitle());
             //TODO needs testing
             //not sure topic.getId() will actually return anything here
-            messageDao.createMessage(userId, topic.getId(), message.getText(), message.getTitle());
+//            messageDao.createMessage(userId, topic.getId(), message.getText(), message.getTitle());
         } catch (Exception e) {
             e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error creating topic");

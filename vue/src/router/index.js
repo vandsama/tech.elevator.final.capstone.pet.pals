@@ -8,6 +8,13 @@ import store from '../store/index'
 import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
 
+import Messages from '../views/ForumViews/Messages.vue';
+import AddMessage from '../views/ForumViews/AddMessage.vue';
+import AddTopic from '../views/ForumViews/AddTopic.vue';
+import EditTopic from '../views/ForumViews/EditTopic.vue';
+import NotFound from '../views/ForumViews/NotFound.vue';
+import EditMessage from '../views/ForumViews/EditMessage';
+
 Vue.use(Router)
 
 /**
@@ -70,7 +77,38 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    }
+    },
+
+    {
+      path: "/not-found",
+      name: "NotFound",
+      component: NotFound
+    },
+    {
+      path: '/add-topic',
+      name: 'AddTopic',
+      component: AddTopic
+    },
+    {
+      path: '/edit-topic/:id',
+      name: 'EditTopic',
+      component: EditTopic
+    },
+    {
+      path: '/:id',
+      name: 'Messages',
+      component: Messages
+    },
+    {
+      path: '/:topicId/add-message',
+      name: 'AddMessage',
+      component: AddMessage
+    },
+    {
+      path: '/:topicId/edit-message/:messageId',
+      name: 'EditMessage',
+      component: EditMessage
+    },
   ]
 })
 
