@@ -16,7 +16,8 @@ import AddMessage from '../views/AddMessage.vue';
 import AddTopic from '../views/AddTopic.vue';
 import EditTopic from '../views/EditTopic.vue';
 import NotFound from '../views/NotFound.vue';
-import EditMessage from '../views/EditMessage';
+import EditMessage from '../views/EditMessage.vue';
+import allPetCards from "../components/AllPetCardsList.vue";
 
 Vue.use(Router)
 
@@ -123,6 +124,11 @@ const router = new Router({
       path: '/forums/:id/edit-message/:messageId',
       name: 'EditMessage',
       component: EditMessage
+    },
+    {
+      path: "/findPets",
+      name: "ViewPets",
+      component: allPetCards
     },
     // {
     //   path: '/forum',

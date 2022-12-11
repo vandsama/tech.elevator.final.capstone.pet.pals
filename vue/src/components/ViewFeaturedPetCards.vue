@@ -39,7 +39,6 @@ export default {
   },
 };
 </script>
-#f3d250
 
 <style>
 .petCard {
