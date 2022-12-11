@@ -1,25 +1,8 @@
 <template>
   <div class="playdatecard">
-    <div class="images">
-      <div class="thumbnail">
-        <img
-          :class="{ portrait: PetImgPortrait(this.inviteePet.img) }"
-          v-bind:src="this.inviteePet.img"
-        />
-      </div>
-      <div class="thumbnail">
-        <img
-          :class="{ portrait: PetImgPortrait(this.inviterPet.img) }"
-          v-bind:src="this.inviterPet.img"
-        />
-        <br />
-      </div>
-    </div>
     <h3>
-      {{ this.inviteePet.name }}
-      & {{ this.inviterPet.name }}
+      {{ this.playDate.location }}
     </h3>
-    {{ this.playDate.location }} <br />
     {{ this.playDate.timestamp | formatDate }} <br />
     {{ this.playDate.timestamp | formatTime }} <br />
     {{ this.playDate.requestMessage }} <br />
@@ -57,7 +40,6 @@ export default {
       let img = new Image();
       img.src = src;
       // img.onload = () => {
-      console.log(img.height);
       if (img.height > img.width) return true;
       // }
       else return false;

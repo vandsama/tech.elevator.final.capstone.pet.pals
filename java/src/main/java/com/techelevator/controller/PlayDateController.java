@@ -1,14 +1,14 @@
 package com.techelevator.controller;
 
-import ch.qos.logback.core.pattern.PatternLayoutEncoderBase;
+import com.techelevator.dao.PetDao;
 import com.techelevator.dao.PlayDateDao;
 import com.techelevator.dao.UserDao;
+import com.techelevator.model.Pet;
 import com.techelevator.model.PlayDate;
 import com.techelevator.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.rmi.server.RMIClassLoader;
 import java.security.Principal;
 import java.util.List;
 
@@ -18,28 +18,46 @@ public class PlayDateController {
 
     private PlayDateDao playDateDao;
     private UserDao userDao;
+    private PetDao petDao;
 
-    public PlayDateController(PlayDateDao playDateDao, UserDao userDao) {
+    public PlayDateController(PlayDateDao playDateDao, UserDao userDao, PetDao petDao) {
         this.playDateDao = playDateDao;
         this.userDao = userDao;
+        this.petDao = petDao;
     }
 
-//    @ResponseStatus(HttpStatus.ACCEPTED)
-//    @RequestMapping(value = "/playdates", method = RequestMethod.GET)
-//    public List<PlayDate> viewAllPlayDates(Principal principal) {
-//        return playDateDao.listAllPlayDates();
-//    }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(value = "/playdates", method = RequestMethod.GET)
+    public List<PlayDate> viewAllPlayDates() {
+        return playDateDao.listAllPlayDates();
+    }
 
-    @GetMapping(value = "/playdates")
+    //TODO better mapping?
+    @GetMapping(value = "/myplaydates")
     public List<PlayDate> viewOwnPlayDates(Principal principal) {
         User user = userDao.findByUsername(principal.getName());
         return playDateDao.listMyPlayDates(user.getId());
     }
 
-    @GetMapping("/playdates/{playdate_id}")
-    public PlayDate getPlayDateById(@PathVariable int playDateId) {
-        return this.playDateDao.getPlayDateById(playDateId);
+    @GetMapping("/playdates/{playdateId}")
+    public PlayDate getPlayDateById(@PathVariable int playdateId) {
+        return this.playDateDao.getPlayDateById(playdateId);
     }
+
+    @GetMapping("playdates/{playdateId}/pets")
+    public List<Pet> getPetsAttendingPlaydate(@PathVariable int playdateId) {
+        return this.petDao.listPetsAttendingPlaydate(playdateId);
+    }
+
+    @GetMapping("/playdates/{playdateId}/users")
+    public List<User> getUsersAttendingPlaydate(@PathVariable int playdateId) {
+        List<User> users = this.userDao.listUsersAttendingPlaydate(playdateId);
+        for (User user : users) {
+            user.setPets(petDao.listPetsOwnedByUser(user.getId()));
+        }
+        return users;
+    }
+
 
 
 }

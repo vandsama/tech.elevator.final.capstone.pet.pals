@@ -11,4 +11,8 @@ public interface PetDao {
     Pet getPetById(int id);
 
     List<Pet> listAllPets();
+
+    List<Pet> listPetsOwnedByUser(int userId);
+
+    List<Pet> listPetsAttendingPlaydate(int playdateId);
 }

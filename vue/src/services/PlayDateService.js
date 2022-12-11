@@ -9,6 +9,18 @@ export default {
 
     get(id) {
         return axios.get(`/playdates/${id}`)
+    },
+
+    listOwn() {
+        return axios.get('/myplaydates')
+    },
+
+    listPlaydatePets(id) {
+        return axios.get(`/playdates/${id}/pets`)
+    },
+
+    listPlaydateUsers(id) {
+        return axios.get(`/playdates/${id}/users`)
     }
 
 }

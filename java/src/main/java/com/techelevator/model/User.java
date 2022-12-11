@@ -2,9 +2,7 @@ package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class User {
 
@@ -15,6 +13,7 @@ public class User {
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+   private List<Pet> pets = new ArrayList<>();
 
    public User() { }
 
@@ -99,5 +98,13 @@ public class User {
               ", activated=" + activated +
               ", authorities=" + authorities +
               '}';
+   }
+
+   public List<Pet> getPets() {
+      return pets;
+   }
+
+   public void setPets(List<Pet> pets) {
+      this.pets = pets;
    }
 }

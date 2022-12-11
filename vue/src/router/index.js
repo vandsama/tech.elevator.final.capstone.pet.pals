@@ -8,6 +8,7 @@ import store from '../store/index'
 import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
 import aboutUs from '../views/AboutUs.vue'
+import playdateview from '../views/playdateview.vue'
 
 import forums from '../components/Forums.vue'
 
@@ -87,6 +88,11 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: "/playdates/:id",
+      name: "playdatedetails",
+      component: playdateview
     },
     {
       path: "/forums",

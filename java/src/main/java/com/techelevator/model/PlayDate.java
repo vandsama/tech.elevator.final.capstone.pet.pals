@@ -8,20 +8,12 @@ public class PlayDate {
     private Timestamp timestamp;
     private String location;
     private String requestMessage;
-    private int inviterUserId;
-    private int inviterPetId;
-    private int inviteeUserId;
-    private int inviteePetId;
 
-    public PlayDate(int playDateId, Timestamp timestamp, String location, String requestMessage, int inviterUserId, int inviterPetId, int inviteeUserId, int inviteePetId) {
+    public PlayDate(int playDateId, Timestamp timestamp, String location, String requestMessage) {
         this.playDateId = playDateId;
         this.timestamp = timestamp;
         this.location = location;
         this.requestMessage = requestMessage;
-        this.inviterUserId = inviterUserId;
-        this.inviterPetId = inviterPetId;
-        this.inviteeUserId = inviteeUserId;
-        this.inviteePetId = inviteePetId;
     }
 
     public PlayDate() {
@@ -59,35 +51,4 @@ public class PlayDate {
         this.requestMessage = requestMessage;
     }
 
-    public int getInviterUserId() {
-        return inviterUserId;
-    }
-
-    public void setInviterUserId(int inviterUserId) {
-        this.inviterUserId = inviterUserId;
-    }
-
-    public int getInviterPetId() {
-        return inviterPetId;
-    }
-
-    public void setInviterPetId(int inviterPetId) {
-        this.inviterPetId = inviterPetId;
-    }
-
-    public int getInviteeUserId() {
-        return inviteeUserId;
-    }
-
-    public void setInviteeUserId(int inviteeUserId) {
-        this.inviteeUserId = inviteeUserId;
-    }
-
-    public int getInviteePetId() {
-        return inviteePetId;
-    }
-
-    public void setInviteePetId(int inviteePetId) {
-        this.inviteePetId = inviteePetId;
-    }
-}
+   }
