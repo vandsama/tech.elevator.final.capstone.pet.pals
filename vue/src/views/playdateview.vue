@@ -53,6 +53,8 @@ export default {
 };
 </script>
 
+
+<!-- could use more styling --> 
 <style scoped>
 h1 {
   margin: 1rem;
