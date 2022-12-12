@@ -36,6 +36,7 @@ INSERT INTO pets(
     VALUES('Fish', 'The Don Vito Corleone', 'No', 'No', 'No', '1-11 months', 'Male', 'They take some warming up to', 'They take some warming up to', 'Swimming', 'The blood of his enemies', 'The blood of his enemies','https://imgur.com/qY1qfwi.jpg', '45247');
 
 
+
 INSERT INTO user_pet(
 	user_id, pet_id)
 	VALUES (1, 1);

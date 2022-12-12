@@ -21,6 +21,7 @@
           <div class="username">
             <label for="username" class="sr-only">Username </label>
             <br />
+            <br />
             <input
               type="text"
               id="username"
@@ -35,6 +36,7 @@
           <div class="password">
             <label for="password" class="sr-only">Password </label>
             <br />
+            <br />
             <input
               type="password"
               id="password"
@@ -44,6 +46,7 @@
               required
             />
           </div>
+          <br />
           <div>
             <button type="submit">Sign in</button>
           </div>
@@ -150,11 +153,10 @@ button:hover {
 .logo {
   width: 25%;
   height: auto;
-  margin-bottom: 10px;
 }
 #password,
 #username {
-  box-shadow: 0px 10px 10px #5da2d5;
+  box-shadow: 0px 5px 5px #5da2d5;
   border-radius: 6px;
 }
 </style>
