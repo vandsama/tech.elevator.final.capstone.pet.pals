@@ -1,9 +1,9 @@
 <template>
   <form v-on:submit.prevent>
-    <div class="field">
+    <!-- <div class="field">
       <label for="title">Title</label>
       <input type="text" name="title" v-model="message.title" />
-    </div>
+    </div> -->
     <div class="field">
       <label for="messageText">Message</label>
       <input type="text" name="messageText" v-model="message.text" />

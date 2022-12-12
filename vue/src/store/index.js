@@ -22,7 +22,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     topics: [],
     activeTopic: {
-      id: 0,
+      id: Math.floor(Math.random() * (1000 - 100) + 100),
       title: '',
       messages: []
     },

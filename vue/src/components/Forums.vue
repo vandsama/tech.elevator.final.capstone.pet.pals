@@ -4,8 +4,8 @@
       <thead>
         <tr>
           <th>Topic</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <!-- <th>Edit</th>
+          <th>Delete</th> -->
         </tr>
       </thead>
       <tbody>
@@ -15,15 +15,21 @@
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
             >{{ topic.title }}</router-link>
           </td>
-          <td>
+          <!-- <td>
             <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
           </td>
           <td>
             <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>
+
+    <router-link
+      :to="{ name: 'AddTopic', params: {topicId: $store.state.activeTopic.id} }"
+      class="addTopic"
+    >Add New Topic</router-link>
+
   </div>
 </template>
 
