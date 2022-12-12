@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import petService from "../services/PetService";
+// import petService from "../services/PetService";
 export default {
   props: {
     playDate: Object,
@@ -27,14 +27,7 @@ export default {
       },
     };
   },
-  created() {
-    petService.get(this.playDate.inviterPetId).then((response) => {
-      this.inviterPet = response.data;
-    });
-    petService.get(this.playDate.inviteePetId).then((response) => {
-      this.inviteePet = response.data;
-    });
-  },
+  created() {},
   methods: {
     PetImgPortrait(src) {
       let img = new Image();

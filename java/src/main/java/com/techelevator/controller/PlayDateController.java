@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
+import java.sql.Timestamp;
+
 import java.util.List;
 
 @RestController
@@ -58,7 +60,8 @@ public class PlayDateController {
         }
         return users;
     }
-    @RequestMapping(path = "/playdates/schedule", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/playdates/schedule", method = RequestMethod.POST)
     public void createPlayDate(@RequestBody PlayDate playDate, Principal principal){
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
@@ -66,6 +69,7 @@ public class PlayDateController {
         try {
             playDateDao.schedulePlayDate(playDate.getDateandtime(), playDate.getLocation(), playDate.getRequestMessage());
         } catch (Exception e){
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error Scheduling Play Date");
         }
     }
