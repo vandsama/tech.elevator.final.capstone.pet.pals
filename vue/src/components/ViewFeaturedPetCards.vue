@@ -49,6 +49,7 @@ export default {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 32px;
   margin-top: 20px;
+  width: auto;
 }
 .thumbnail {
   position: relative;

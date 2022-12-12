@@ -21,15 +21,20 @@ INSERT INTO pets(
 
 INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES('Cat', 'Slayton', False, True, True, '1-3 years', 'Male', 'They take some warming up to', 'Yes', 'Fetch', 'Plastic Springs', 'Tuna patte', 'https://imgur.com/cfgHvyM.jpg', '45208');
+    VALUES('Cat', 'Slayton', False, True, True, '1-3 years', 'Male', 'They take some warming up to', 'Yes', 'Fetch', 'Plastic springs', 'Tuna patte', 'https://imgur.com/cfgHvyM.jpg', '45208');
 
 INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES()
+    VALUES('Cat', 'Mishka', True, True, True, '1-11 months', 'Female', 'They take some warming up to', 'Yes', 'Walks', 'Laser pointer', 'Sheba Pate', 'https://imgur.com/shU7viw.jpg', '45216');
 
 INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES()
+    VALUES('Dog', 'Daisy', True, True, True, '4-7 years', 'Female', 'Sometimes', 'Yes', 'Napping', 'Squeaky ball', 'PB bananas', 'https://imgur.com/xsXN5dO.jpg', '45241');
+
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Fish', 'The Don Vito Corleone', 'No', 'No', 'No', '1-11 months', 'Male', 'They take some warming up to', 'They take some warming up to', 'Swimming', 'The blood of his enemies', 'The blood of his enemies','https://imgur.com/qY1qfwi.jpg', '45247');
+
 
 INSERT INTO user_pet(
 	user_id, pet_id)
