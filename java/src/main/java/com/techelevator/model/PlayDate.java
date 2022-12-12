@@ -1,17 +1,21 @@
 package com.techelevator.model;
 
-import java.security.Timestamp;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.sql.Timestamp;
 
 public class PlayDate {
 
     private int playDateId;
-    private Timestamp timestamp;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Timestamp dateandtime;
     private String location;
     private String requestMessage;
 
-    public PlayDate(int playDateId, Timestamp timestamp, String location, String requestMessage) {
+    public PlayDate(int playDateId, Timestamp dateandtime, String location, String requestMessage) {
         this.playDateId = playDateId;
-        this.timestamp = timestamp;
+        this.dateandtime = dateandtime;
         this.location = location;
         this.requestMessage = requestMessage;
     }
@@ -27,12 +31,12 @@ public class PlayDate {
         this.playDateId = playDateId;
     }
 
-    public java.security.Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getDateandtime() {
+        return dateandtime;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setDateandtime(Timestamp dateandtime) {
+        this.dateandtime = dateandtime;
     }
 
     public String getLocation() {
@@ -51,6 +55,5 @@ public class PlayDate {
         this.requestMessage = requestMessage;
     }
 
-    public void setTimestamp(java.sql.Timestamp dateandtime) {
-    }
+
 }

@@ -19,6 +19,7 @@ import EditTopic from '../views/EditTopic.vue';
 import NotFound from '../views/NotFound.vue';
 import EditMessage from '../views/EditMessage.vue';
 import allPetCards from "../components/AllPetCardsList.vue";
+import schedulePlayDates from "../components/schedulePlayDate.vue";
 
 Vue.use(Router)
 
@@ -93,18 +94,27 @@ const router = new Router({
     {
       path: "/playdates/:id",
       name: "playdatedetails",
-      component: playdateview
+      component: playdateview,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/forums",
       name: "forums",
-      component: forums
+      component: forums,
+      meta: {
+        requiresAuth: true
+      }
     },
 
     {
       path: "/forums/not-found",
       name: "NotFound",
-      component: NotFound
+      component: NotFound,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/forums/add-topic',
@@ -135,6 +145,14 @@ const router = new Router({
       path: "/findPets",
       name: "ViewPets",
       component: allPetCards
+    },
+    {
+      path: "/playdates/schedule",
+      name: "schedule",
+      component: schedulePlayDates,
+      meta: {
+        requiresAuth: true
+      }
     },
     // {
     //   path: '/forum',

@@ -1,12 +1,11 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.PlayDate;
-import com.techelevator.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +64,6 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
     @Override
     public boolean schedulePlayDate(Timestamp timestamp, String location, String requestMessage){
-        PlayDate playDate = null;
         String sql = "INSERT INTO playdates(\n" +
                 "\tdateandtime, location, requestmessage)\n"+
                 "\tVALUES(?, ?, ?);";
@@ -77,7 +75,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
         playDate.setLocation(rowSet.getString("location"));
         playDate.setPlayDateId(rowSet.getInt("playdate_id"));
         playDate.setRequestMessage(rowSet.getString("requestmessage"));
-        playDate.setTimestamp(rowSet.getTimestamp("dateandtime"));
+        playDate.setDateandtime(rowSet.getTimestamp("dateandtime"));
         return playDate;
     }
 
