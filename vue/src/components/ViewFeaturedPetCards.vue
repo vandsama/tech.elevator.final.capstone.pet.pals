@@ -52,8 +52,8 @@ export default {
 }
 .thumbnail {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   margin: 10px;
   border: 5px solid #5da2d5;

@@ -45,7 +45,7 @@
         <router-link
           style="text-decoration: none; color: white"
           v-bind:to="{ name: 'petRegistration' }"
-          >Account</router-link
+          >Register a Pet</router-link
         >
       </button>
     </nav>
