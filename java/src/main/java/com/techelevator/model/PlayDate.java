@@ -1,6 +1,6 @@
 package com.techelevator.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class PlayDate {
 
@@ -27,7 +27,7 @@ public class PlayDate {
         this.playDateId = playDateId;
     }
 
-    public java.security.Timestamp getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
@@ -51,6 +51,4 @@ public class PlayDate {
         this.requestMessage = requestMessage;
     }
 
-    public void setTimestamp(java.sql.Timestamp dateandtime) {
-    }
 }

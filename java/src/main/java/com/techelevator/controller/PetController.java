@@ -31,7 +31,7 @@ public class PetController {
     public void registerPet(@RequestBody Pet pet, Principal principal) {
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
-        System.out.println(userId);
+
 
         try {
             petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(),

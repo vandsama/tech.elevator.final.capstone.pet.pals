@@ -2,7 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.PlayDate;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.List;
 
 public interface PlayDateDao {

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -59,6 +59,7 @@ public class PlayDateController {
         }
         return users;
     }
+
     @RequestMapping(value = "/playdates/schedule", method = RequestMethod.POST)
     public void createPlayDate(@RequestBody PlayDate playDate, Principal principal){
         User user = userDao.findByUsername(principal.getName());
