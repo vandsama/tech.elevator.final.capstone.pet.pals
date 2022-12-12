@@ -32,9 +32,13 @@ public class PetController {
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
 
+
         try {
-            petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(), pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),pet.getToy(),pet.getTreat(),pet.getImg(), pet.getZipCode(),userId);
+            petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(),
+                    pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),
+                    pet.getToy(),pet.getTreat(),pet.getImg(), pet.getZipCode(),userId);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Error creating pet");
         }
     }
@@ -47,6 +51,9 @@ public class PetController {
     public List<Pet> viewAllPets(){
         return petDao.listAllPets();
     }
+
+    @GetMapping("/pets/featured")
+    public List<Pet> viewFeaturedPets(){return petDao.listFeaturedPets();}
 
 //    @GetMapping("/users/{id}/pets")
 //    public List<Pet> getUserPets(@PathVariable int id) {

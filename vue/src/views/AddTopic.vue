@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add New Topic</h1>
+    <h1>Create New Thread</h1>
     <create-topic />
   </div>
 </template>

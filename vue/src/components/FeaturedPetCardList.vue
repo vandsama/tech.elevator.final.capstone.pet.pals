@@ -20,7 +20,7 @@ export default {
     };
   },
   created() {
-    petService.list().then((r) => {
+    petService.featured().then((r) => {
       this.pets = r.data;
     });
   },

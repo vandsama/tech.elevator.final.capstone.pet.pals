@@ -15,4 +15,6 @@ public interface PetDao {
     List<Pet> listPetsOwnedByUser(int userId);
 
     List<Pet> listPetsAttendingPlaydate(int playdateId);
+
+    List<Pet> listFeaturedPets();
 }

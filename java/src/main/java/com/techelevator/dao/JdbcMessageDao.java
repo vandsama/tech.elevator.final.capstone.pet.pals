@@ -38,6 +38,21 @@ public class JdbcMessageDao implements MessageDao {
         return jdbcTemplate.update(sql, user_id, topic_id, message_title,message_text) == 1;
     }
 
+    @Override
+    public List<Message> searchMessageText(String text) {
+        List<Message> messages = new ArrayList<>();
+        String sql = "SELECT * FROM messages\n" +
+                "WHERE message_text ILIKE '%' || ? || '%'";
+
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, text);
+        while (result.next()) {
+            Message message = mapRowToMessage(result);
+            messages.add(message);
+        }
+
+        return messages;
+    }
+
 
     private Message mapRowToMessage(SqlRowSet rowSet) {
         Message message = new Message();

@@ -11,9 +11,13 @@ export default {
     get(id) {
         return axios.get(`/pets/${id}`)
     },
-    
+
     list() {
         return axios.get(`/pets`)
+    },
+
+    featured() {
+        return axios.get(`/pets/featured`)
     }
 
 }

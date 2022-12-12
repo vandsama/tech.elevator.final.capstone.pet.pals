@@ -203,6 +203,19 @@
           required
         />
       </div>
+      <div>
+        <label for="ZipCode">What is your Zip Code</label>
+        <br />
+        <input
+          type="text"
+          name="ZipCode"
+          id="zip"
+          class="form-control"
+          placeholder="Zip Code"
+          v-model="pet.zipCode"
+          required
+        />
+      </div>
       <!-- TODO change from link??? -->
       <label for="img"
         >Please include a Google Drive link to a picture of your pet.</label
@@ -256,7 +269,7 @@ export default {
             //   this.$router.push({
             //       path: '/',
             //   })
-            this.$router.push({ name: 'home' });
+            this.$router.push({ name: "home" });
           }
         })
         .catch((error) => {

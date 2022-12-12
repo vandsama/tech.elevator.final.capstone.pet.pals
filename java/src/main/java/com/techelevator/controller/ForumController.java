@@ -35,6 +35,7 @@ public class ForumController {
 //    @RequestMapping(value = "/topics/{id}/messages", method = RequestMethod.GET)
 //    public List<Message> listMessages(@PathVariable int topicId) { return messageDao.listMessagesInTopic(topicId); }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/topics/create", method = RequestMethod.POST)
     public void createTopic(@RequestBody Topic topic, Principal principal) {
         User user = userDao.findByUsername(principal.getName());
@@ -51,7 +52,12 @@ public class ForumController {
         }
     }
 
-    @RequestMapping(value = "/topics/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "topics/{id}")
+    public Topic getTopicById(@PathVariable int id) {
+        return topicDao.getTopicById(id);
+    }
+
+    @RequestMapping(value = "/topics/{id}/messages", method = RequestMethod.GET)
     public List<Message> listTopicMessages(@PathVariable int id) {
         return messageDao.listMessagesInTopic(id);
     }
@@ -69,6 +75,11 @@ public class ForumController {
             e.printStackTrace();
 //            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error creating message");
         }
+    }
+
+    @GetMapping(value = "/messages/search")
+    public List<Message> searchMessageText(@RequestParam String text) {
+        return messageDao.searchMessageText(text);
     }
 
 

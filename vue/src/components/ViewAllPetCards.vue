@@ -26,11 +26,11 @@
       {{ this.pet.pet_experience }}
     </div>
     <div class="friendliness">
-      <span>How friendly is your pet towards other pets?</span>
+      <span>Is your pet friendly to other pets?</span>
       <br />
       {{ this.pet.pet_friendliness }}
       <br />
-      <span>How friendly is your pet towards humans?</span>
+      <span>Is your pet friendly to humans?</span>
       <br />
       {{ this.pet.human_friendliness }}
     </div>

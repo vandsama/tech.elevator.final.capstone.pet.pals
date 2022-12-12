@@ -25,7 +25,7 @@ public class JdbcPetDao implements PetDao {
                 "\tuser_id, pet_id)\n" +
                 "\tVALUES (?, (SELECT pet_id FROM new_pet));";
 
-        return jdbcTemplate.update(insertPetSql,type,name,pet_experience,vaccinated,spayed,age,sex,pet_experience,human_friendliness,activities,toy,treat,img,userId) == 1;
+        return jdbcTemplate.update(insertPetSql,type,name,pet_experience,vaccinated,spayed,age,sex,pet_experience,human_friendliness,activities,toy,treat,img, zipCode, userId) == 1;
     }
 
     @Override
@@ -53,6 +53,20 @@ public class JdbcPetDao implements PetDao {
         " age_years, sex, pet_friendliness, human_friendliness, favorite_activities," +
                 " favorite_toy, favorite_treat, img_link, zip_code\n" +
                 "\tFROM pets\n;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+        while(result.next()){
+            petList.add(mapRowToPet(result));
+        }
+        return petList;
+    }
+    @Override
+    public List<Pet>listFeaturedPets(){
+        List<Pet> petList = new ArrayList<>();
+        String sql = "SELECT pet_id, animal_type, pet_name, pet_experience, vaccinated, spayed," +
+                " age_years, sex, pet_friendliness, human_friendliness, favorite_activities," +
+                " favorite_toy, favorite_treat, img_link, zip_code\n" +
+                "\tFROM pets\n" +
+                "LIMIT 4;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
         while(result.next()){
             petList.add(mapRowToPet(result));

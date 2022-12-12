@@ -8,8 +8,10 @@ import com.techelevator.model.PlayDate;
 import com.techelevator.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -56,6 +58,18 @@ public class PlayDateController {
             user.setPets(petDao.listPetsOwnedByUser(user.getId()));
         }
         return users;
+    }
+
+    @RequestMapping(value = "/playdates/schedule", method = RequestMethod.POST)
+    public void createPlayDate(@RequestBody PlayDate playDate, Principal principal){
+        User user = userDao.findByUsername(principal.getName());
+        int userId = user.getId();
+
+        try {
+            playDateDao.schedulePlayDate(playDate.getTimestamp(), playDate.getLocation(), playDate.getRequestMessage());
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error Scheduling Play Date");
+        }
     }
 
 

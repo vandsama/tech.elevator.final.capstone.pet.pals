@@ -49,14 +49,13 @@ export default {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 32px;
   margin-top: 20px;
-  width: auto;
+  width: 90%;
 }
 .thumbnail {
   position: relative;
   width: 300px;
   height: 300px;
   overflow: hidden;
-  margin: 10px;
   border: 5px solid #5da2d5;
   background-color: #5da2d5;
   border-radius: 5px;
