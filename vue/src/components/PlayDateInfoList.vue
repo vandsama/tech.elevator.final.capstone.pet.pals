@@ -3,7 +3,12 @@
     <div>
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
+        <router-link
+        v-bind:to="{ name: 'playdatedetails', params: {id : playDate.playDateId}}"
+        style="text-decoration: none;"
+        >
         <playdateinfo v-bind:playDate="playDate"></playdateinfo>
+        </router-link>
       </div>
     </div>
   </div>
@@ -20,7 +25,7 @@ export default {
     };
   },
   created() {
-    playDateService.list().then((response) => {
+    playDateService.listOwn().then((response) => {
       this.playDates = response.data;
     });
   },

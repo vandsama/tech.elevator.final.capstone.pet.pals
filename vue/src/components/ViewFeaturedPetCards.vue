@@ -7,10 +7,10 @@
       <div class="info" id="specific">
         <div class="firstRow">
           <div class="name">
-            {{ this.pet.zipCode }}
+            {{ this.pet.name }}
           </div>
           <div class="zip">
-            <h3>{{ this.pet.name }}</h3>
+            {{ this.pet.zipCode }}
           </div>
         </div>
         <div class="rowTwo">
@@ -39,7 +39,6 @@ export default {
   },
 };
 </script>
-#f3d250
 
 <style>
 .petCard {
@@ -50,11 +49,12 @@ export default {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 32px;
   margin-top: 20px;
+  width: auto;
 }
 .thumbnail {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   margin: 10px;
   border: 5px solid #5da2d5;
@@ -83,9 +83,10 @@ export default {
 }
 .zip {
   display: flex;
+  font-size: xx-large;
 }
 .name {
-  position: absolute;
+  font-size: xx-large;
 }
 /* .info {
   display: grid;

@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users, pets, user_pet, playDates, topics, messages CASCADE;
+DROP TABLE IF EXISTS users, pets, user_pet, playDates, topics, messages, playdate_pet CASCADE;
 DROP SEQUENCE IF EXISTS users_serial, pets_serial, playDates_serial, topics_serial, messages_serial;
 
 
@@ -47,15 +47,15 @@ CREATE TABLE playDates (
     dateAndTime timestamp NOT NULL,
     location varchar(100) NOT NULL,
     requestMessage varchar(500) NOT NULL,
-    inviter_user_id int NOT NULL,
-    inviter_pet_id int NOT NULL,
-    invitee_user_id int NOT NULL,
-    invitee_pet_id int NOT NULL,
-    CONSTRAINT PK_playDate PRIMARY KEY (playDate_id),
-    CONSTRAINT FK_inviter_user_id FOREIGN KEY(inviter_user_id) REFERENCES users(user_id),
-    CONSTRAINT FK_inviter_pet_id FOREIGN KEY(inviter_pet_id) REFERENCES pets(pet_id),
-    CONSTRAINT FK_invitee_user_id FOREIGN KEY(invitee_user_id) REFERENCES users(user_id),
-    CONSTRAINT FK_invitee_pet_id FOREIGN KEY(invitee_pet_id) REFERENCES pets(pet_id)
+    CONSTRAINT PK_playDate PRIMARY KEY (playDate_id)
+);
+
+CREATE TABLE playdate_pet (
+    playdate_id int NOT NULL,
+    pet_id int NOT NULL,
+    CONSTRAINT PK_playdate_pet PRIMARY KEY(playDate_id, pet_id),
+    CONSTRAINT FK_playdate_pet_playdate FOREIGN KEY(playdate_id) REFERENCES playDates(playdate_id),
+    CONSTRAINT FK_playdate_pet_pet FOREIGN KEY(pet_id) REFERENCES pets(pet_id)
 );
 
 --CREATE SEQUENCE topics_serial;

@@ -19,6 +19,21 @@ INSERT INTO pets(
 	animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
 	VALUES ('Cat',	'Muffin', 	False,	True,	True,	'1-3 years',	'Male',	'Sometimes','Yes',	'Napping',	'Anything that bounces',	'Chicken',	'https://imgur.com/UMCgC12.jpg', '45242');
 
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Cat', 'Slayton', False, True, True, '1-3 years', 'Male', 'They take some warming up to', 'Yes', 'Fetch', 'Plastic springs', 'Tuna patte', 'https://imgur.com/cfgHvyM.jpg', '45208');
+
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Cat', 'Mishka', True, True, True, '1-11 months', 'Female', 'They take some warming up to', 'Yes', 'Walks', 'Laser pointer', 'Sheba Pate', 'https://imgur.com/shU7viw.jpg', '45216');
+
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Dog', 'Daisy', True, True, True, '4-7 years', 'Female', 'Sometimes', 'Yes', 'Napping', 'Squeaky ball', 'PB bananas', 'https://imgur.com/xsXN5dO.jpg', '45241');
+
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Fish', 'The Don Vito Corleone', 'No', 'No', 'No', '1-11 months', 'Male', 'They take some warming up to', 'They take some warming up to', 'Swimming', 'The blood of his enemies', 'The blood of his enemies','https://imgur.com/qY1qfwi.jpg', '45247');
 
 
 INSERT INTO user_pet(
@@ -27,26 +42,54 @@ INSERT INTO user_pet(
 
 INSERT INTO user_pet(
 	user_id, pet_id)
-	VALUES (1, 2);
+	VALUES (3, 2);
 
 INSERT INTO user_pet(
 	user_id, pet_id)
-	VALUES (1, 3);
+	VALUES (4, 3);
 
 
 
 INSERT INTO playDates(
-	dateandtime, location, requestmessage, inviter_user_id, inviter_pet_id, invitee_user_id, invitee_pet_id)
-	VALUES ('2023-06-22 19:10:00-00', 'Pet Play Park', 'Want to go on a pet date?', 1, 1, 2, 3);
+	dateandtime, location, requestmessage)
+	VALUES ('2023-06-22 19:10:00-00', 'Pet Play Park', 'Want to go on a pet date?');
 
 INSERT INTO playDates(
-	dateandtime, location, requestmessage, inviter_user_id, inviter_pet_id, invitee_user_id, invitee_pet_id)
-	VALUES ('2023-02-14 15:00:00-00', 'Pet Friendly Dogfe', 'Want to go on a pet date?', 3, 1, 4, 2);
+	dateandtime, location, requestmessage)
+	VALUES ('2023-02-14 15:00:00-00', 'Pet Friendly Dogfe', 'Want to go on a pet date?');
 
 INSERT INTO playDates(
-	dateandtime, location, requestmessage, inviter_user_id, inviter_pet_id, invitee_user_id, invitee_pet_id)
-	VALUES ('2023-1-29 09:30:00-00', 'Washington Park', 'Want to go on a pet date?', 4, 2, 2, 3);
+	dateandtime, location, requestmessage)
+	VALUES ('2023-1-29 09:30:00-00', 'Washington Park', 'Want to go on a pet date?');
 
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (1, 1);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (1, 2);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (2, 2);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (2, 3);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 1);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 2);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 3);
 
 
 INSERT INTO topics(topic_id,

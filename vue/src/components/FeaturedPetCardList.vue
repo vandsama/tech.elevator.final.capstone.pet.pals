@@ -9,7 +9,7 @@
 
 <script>
 import petService from "../services/PetService";
-import petCards from "./ViewPetCards.vue";
+import petCards from "./ViewFeaturedPetCards.vue";
 export default {
   components: {
     petCards,

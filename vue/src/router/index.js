@@ -8,6 +8,7 @@ import store from '../store/index'
 import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
 import aboutUs from '../views/AboutUs.vue'
+import playdateview from '../views/playdateview.vue'
 
 import forums from '../components/Forums.vue'
 
@@ -16,7 +17,8 @@ import AddMessage from '../views/AddMessage.vue';
 import AddTopic from '../views/AddTopic.vue';
 import EditTopic from '../views/EditTopic.vue';
 import NotFound from '../views/NotFound.vue';
-import EditMessage from '../views/EditMessage';
+import EditMessage from '../views/EditMessage.vue';
+import allPetCards from "../components/AllPetCardsList.vue";
 
 Vue.use(Router)
 
@@ -89,6 +91,11 @@ const router = new Router({
       }
     },
     {
+      path: "/playdates/:id",
+      name: "playdatedetails",
+      component: playdateview
+    },
+    {
       path: "/forums",
       name: "forums",
       component: forums
@@ -123,6 +130,11 @@ const router = new Router({
       path: '/forums/:id/edit-message/:messageId',
       name: 'EditMessage',
       component: EditMessage
+    },
+    {
+      path: "/findPets",
+      name: "ViewPets",
+      component: allPetCards
     },
     // {
     //   path: '/forum',

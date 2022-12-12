@@ -24,7 +24,7 @@ export default {
     };
   },
   created() {
-    playDateService.list().then((response) => {
+    playDateService.listOwn().then((response) => {
       this.playDates = response.data;
     });
   },

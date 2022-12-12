@@ -48,4 +48,9 @@ public class PetController {
         return petDao.listAllPets();
     }
 
+//    @GetMapping("/users/{id}/pets")
+//    public List<Pet> getUserPets(@PathVariable int id) {
+//        return petDao.listPetsOwnedByUser(id);
+//    }
+
 }

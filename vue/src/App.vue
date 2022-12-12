@@ -20,7 +20,13 @@
           >Home</router-link
         >
       </button>
-      <button>Find Pets</button>
+      <button>
+        <router-link
+          style="text-decoration: none; color: white"
+          v-bind:to="{ name: 'ViewPets' }"
+          >Find Pets</router-link
+        >
+      </button>
       <button>
         <router-link
           style="text-decoration: none; color: white"
@@ -39,7 +45,7 @@
         <router-link
           style="text-decoration: none; color: white"
           v-bind:to="{ name: 'petRegistration' }"
-          >Account</router-link
+          >Register a Pet</router-link
         >
       </button>
     </nav>
