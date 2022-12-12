@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Add New Message</h1>
-    <create-message v-bind:topicId="parseInt(this.$route.params.topicId)" />
+    <create-message v-bind:topicId="parseInt(this.$route.params.id)" />
   </div>
 </template>
 

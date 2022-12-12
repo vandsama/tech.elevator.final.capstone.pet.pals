@@ -6,7 +6,7 @@
     </div>
     <div class="field">
       <label for="messageText">Message</label>
-      <input type="text" name="messageText" v-model="message.messageText" />
+      <input type="text" name="messageText" v-model="message.text" />
     </div>
     <div class="actions">
       <button type="submit" v-on:click="saveMessage()">Save Message</button>
@@ -19,20 +19,24 @@ import messageService from "../services/MessageService";
 
 export default {
   name: "create-message",
-  props: ["topicId"],
+  props: {
+    topicId: Number
+  },
   data() {
     return {
       message: {
         id: Math.floor(Math.random() * (1000 - 100) + 100),
         topicId: this.topicId,
         title: "",
-        messageText: ""
+        text: ""
       }
     };
   },
   methods: {
+    
     saveMessage() {
-      messageService.create(this.message, this.topicId)
+      
+      messageService.create(this.message.topicId, this.message)
                     .then((response) => {
                       if(response.status === 201) {
                         this.$router.push(`/${this.message.topicId}`)
