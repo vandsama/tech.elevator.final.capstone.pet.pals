@@ -77,5 +77,10 @@ public class ForumController {
         }
     }
 
+    @GetMapping(value = "/messages/search")
+    public List<Message> searchMessageText(@RequestParam String text) {
+        return messageDao.searchMessageText(text);
+    }
+
 
 }
