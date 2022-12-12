@@ -15,7 +15,7 @@
 
 <script>
 import playdateinfo from "../components/PlayDateInfoList.vue";
-import petCardList from "../components/PetCardList.vue";
+import petCardList from "../components/FeaturedPetCardList.vue";
 export default {
   name: "home",
   components: { playdateinfo, petCardList },

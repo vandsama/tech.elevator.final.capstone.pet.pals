@@ -7,10 +7,10 @@
       <div class="info" id="specific">
         <div class="firstRow">
           <div class="name">
-            {{ this.pet.zipCode }}
+            {{ this.pet.name }}
           </div>
           <div class="zip">
-            <h3>{{ this.pet.name }}</h3>
+            {{ this.pet.zipCode }}
           </div>
         </div>
         <div class="rowTwo">
@@ -39,7 +39,6 @@ export default {
   },
 };
 </script>
-#f3d250
 
 <style>
 .petCard {
@@ -83,9 +82,10 @@ export default {
 }
 .zip {
   display: flex;
+  font-size: xx-large;
 }
 .name {
-  position: absolute;
+  font-size: xx-large;
 }
 /* .info {
   display: grid;
