@@ -1,11 +1,11 @@
 <template>
   <form v-on:submit.prevent>
     <div class="field">
-      <label for="title">Title</label>
+      <!-- <label for="title">Title</label> -->
       <input type="text" v-model="topic.title" />
     </div>
     <div class="actions">
-      <button type="submit" v-on:click="saveTopic()">Save Document</button>
+      <button type="submit" v-on:click="saveTopic()">Save New Thread</button>
     </div>
   </form>
 </template>
@@ -28,8 +28,9 @@ export default {
         topicService
           .create(this.topic)
           .then((response) => {
-            if (response.status == 201) {
-              this.$router.push("/");
+            if (response.status == 201) 
+            {
+              this.$router.push("/forums");
             }
           })  
     },

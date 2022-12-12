@@ -11,7 +11,7 @@ export default {
   },
 
   create(topic) {
-    return axios.post(`/topics/`, topic);
+    return axios.post(`/topics/create`, topic);
   },
 
   update(id, topic) {

@@ -35,6 +35,7 @@ public class ForumController {
 //    @RequestMapping(value = "/topics/{id}/messages", method = RequestMethod.GET)
 //    public List<Message> listMessages(@PathVariable int topicId) { return messageDao.listMessagesInTopic(topicId); }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/topics/create", method = RequestMethod.POST)
     public void createTopic(@RequestBody Topic topic, Principal principal) {
         User user = userDao.findByUsername(principal.getName());

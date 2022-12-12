@@ -1,17 +1,11 @@
 <template>
   <div class="forums">
-    <table>
-      <thead>
-        <tr>
-          <th>Topic</th>
-          <!-- <th>Edit</th>
-          <th>Delete</th> -->
-        </tr>
-      </thead>
+    <h1>Topics</h1>
+    <table class="forum-table">
       <tbody>
-        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id">
-          <td width="80%">
-            <router-link
+        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" >
+          <td width="80%" class="topic-list-css">
+            <router-link 
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
             >{{ topic.title }}</router-link>
           </td>
@@ -25,10 +19,14 @@
       </tbody>
     </table>
 
-    <router-link
-      :to="{ name: 'AddTopic', params: {topicId: $store.state.activeTopic.id} }"
-      class="addTopic"
-    >Add New Topic</router-link>
+    <br>
+    <br>
+    <div class="create-new-topic">
+      <router-link
+        :to="{ name: 'AddTopic', params: {topicId: $store.state.activeTopic.id} }"
+        class="addTopic"
+      >Create New Thread</router-link>
+    </div>
 
   </div>
 </template>
@@ -58,37 +56,56 @@ export default {
 };
 </script>
 
-<style>
-.topic-list {
-  margin: 0 auto;
-  max-width: 800px;
-}
-.topic {
-  font-size: 24px;
-  border-bottom: 1px solid #f2f2f2;
-  padding: 10px 20px;
-}
-.topic:last-child {
-  border: 0px;
-}
-table {
+<style scoped>
+.forum-table {
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
   text-align: left;
-  width: 800px;
-  border-collapse: collapse;
-}
-td {
-  padding: 4px;
-}
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
 }
 
-.topic-list a:link,
-.topic-list a:visited {
-  color: blue;
-  text-decoration: none;
+.create-new-topic {
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
 }
-.topic-list a:hover {
-  text-decoration: underline;
+
+
+.topic-list-css {
+  box-sizing: border-box;
+  width: auto;
+  position: relative;
+  clear: both;
+  flex-basis: flex;
+  justify-content: space-around;
+  background: #5da2d5;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.15, #bee2ff),
+    color-stop(1, #5da2d5)
+  );
+  background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: -o-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: linear-gradient(to top, #bee2ff 15%, #5da2d5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#5da2d5', endColorstr='#bee2ff');
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 6px 20px;
+  color: #000;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  word-wrap: break-word;
 }
 </style>

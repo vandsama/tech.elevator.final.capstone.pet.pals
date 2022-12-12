@@ -5,7 +5,7 @@
       <input type="text" name="title" v-model="message.title" />
     </div> -->
     <div class="field">
-      <label for="messageText">Message</label>
+      <!-- <label for="messageText">Message</label> -->
       <input type="text" name="messageText" v-model="message.text" />
     </div>
     <div class="actions">
@@ -39,7 +39,7 @@ export default {
       messageService.create(this.message.topicId, this.message)
                     .then((response) => {
                       if(response.status === 201) {
-                        this.$router.push(`/${this.message.topicId}`)
+                        this.$router.push(`/forums/${this.message.topicId}`)
                       }
                     })
     }

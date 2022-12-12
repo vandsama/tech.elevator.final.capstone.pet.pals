@@ -86,20 +86,20 @@ export default {
   width: auto;
   position: relative;
   clear: both;
-  background: #95c2fd;
+  background: #5da2d5;
   background-image: -webkit-gradient(
     linear,
     left bottom,
     left top,
     color-stop(0.15, #bee2ff),
-    color-stop(1, #95c2fd)
+    color-stop(1, #5da2d5)
   );
-  background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: -o-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: linear-gradient(to top, #bee2ff 15%, #95c2fd 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95c2fd', endColorstr='#bee2ff');
+  background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: -o-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
+  background-image: linear-gradient(to top, #bee2ff 15%, #5da2d5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#5da2d5', endColorstr='#bee2ff');
   border: solid 1px rgba(0, 0, 0, 0.5);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -117,15 +117,28 @@ export default {
   word-wrap: break-word;
 }
 .addMessage {
-  display: block;
-  padding: 0 0 10px 10px;
+  /* display: block;
+  padding: 0 0 10px 10px; */
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
+  text-align: left;
 }
 a.addMessage:link,
 a.addMessage:visited {
-  color: blue;
+  color: #5da2d5;
   text-decoration: none;
 }
 a.addMessage:hover {
   text-decoration: underline;
 }
+
+.topic-message {
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
+  text-align: left;
+
+}
+
 </style>
