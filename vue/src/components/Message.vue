@@ -17,7 +17,7 @@ data() {
     }
 },
 created() {
-    userService.get(this.message.message_id).then((response) => {
+    userService.get(this.message.user_id).then((response) => {
         this.user = response.data
     })
 }
