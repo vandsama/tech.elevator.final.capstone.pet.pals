@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS users, pets, user_pet, playDates, topics, messages, playdat
 DROP SEQUENCE IF EXISTS users_serial, pets_serial, playDates_serial, topics_serial, messages_serial;
 
 
-CREATE SEQUENCE users_serial;
+--CREATE SEQUENCE users_serial;
 CREATE TABLE users (
 	user_id SERIAL,
 	username varchar(50) NOT NULL UNIQUE,
@@ -41,7 +41,7 @@ CREATE TABLE user_pet(
     CONSTRAINT FK_user_pet_pet FOREIGN KEY(pet_id) REFERENCES pets(pet_id)
 );
 
-CREATE SEQUENCE playDates_serial;
+--CREATE SEQUENCE playDates_serial;
 CREATE TABLE playDates (
     playDate_id serial,
     dateAndTime timestamp NOT NULL,
@@ -58,14 +58,14 @@ CREATE TABLE playdate_pet (
     CONSTRAINT FK_playdate_pet_pet FOREIGN KEY(pet_id) REFERENCES pets(pet_id)
 );
 
-CREATE SEQUENCE topics_serial;
+--CREATE SEQUENCE topics_serial;
 CREATE TABLE topics (
     topic_id serial,
     topic_title varchar(200) NOT NULL,
     CONSTRAINT PK_topic PRIMARY KEY (topic_id)
 );
 
-CREATE SEQUENCE messages_serial;
+--CREATE SEQUENCE messages_serial;
 CREATE TABLE messages (
     message_id serial,
     user_id int NOT NULL,

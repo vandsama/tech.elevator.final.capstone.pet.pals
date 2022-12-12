@@ -4,11 +4,11 @@ import axios from 'axios';
 export default {
 
   get(id) {
-    return axios.get(`/messages/${id}`);
+    return axios.get(`/topics/${id}`);
   },
 
-  create(message, id) {
-    return axios.post(`/topics/${id}/create`, message);
+  create(topicId, message) {
+    return axios.post(`/topics/${topicId}/create`, message);
   },
 
   update(id, message) {

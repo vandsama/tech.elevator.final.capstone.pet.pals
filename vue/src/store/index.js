@@ -27,10 +27,10 @@ export default new Vuex.Store({
       messages: []
     },
     activeMessage: {
-      id: null,
-      topicId: null,
+      id: 0,
+      topicId: 0,
       title: '',
-      messageText: ''
+      text: ''
     }
   },
   mutations: {
@@ -65,5 +65,9 @@ export default new Vuex.Store({
     SET_ACTIVE_MESSAGE(state, data) {
       state.activeMessage = data;
     },
+  },
+  actions: {
+  },
+  modules: {
   }
 })

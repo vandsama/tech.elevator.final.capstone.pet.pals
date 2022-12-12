@@ -1,0 +1,78 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "title": "What's the best way to socialize my puppy?"
+    },
+    {
+      "id": 2,
+      "title": "My sister's cat loves to eat butter off the counter, does anyone else's cat do this too or just him?"
+    },
+    {
+      "id": 3,
+      "title": "I think my bearded dragon is upset with me but I don't know why. Help!"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "topicId": 1,
+      "title": "play with other dogs",
+      "messageText": "Get your puppy outside and make sure they play with lots of other dogs so they can get used to different attitudes and behaviors."
+    },
+    {
+      "id": 2,
+      "topicId": 3,
+      "title": "are you sure it's mad at you?",
+      "messageText": "sometimes I feel like my bearded dragon Stacy is mad at me but she's really just hungry for some flies."
+    },
+    {
+      "id": 3,
+      "topicId": 3,
+      "title": "get it a friend",
+      "messageText": "My bearded dragon buddy was always down in the dumps until I got him a friend to play with. Now he's happy all the time"
+    },
+    {
+      "id": 4,
+      "topicId": 2,
+      "title": "ridiculous",
+      "messageText": "you're making that up"
+    },
+    {
+      "id": 5,
+      "topicId": 1,
+      "title": "play with other animals, and take them out often",
+      "messageText": "make sure you play with them and introduce them to strangers and other animals. that way they will be used to the world around them"
+    },
+    {
+      "id": 6,
+      "topicId": 2,
+      "title": "nah",
+      "messageText": "nope you're the only one"
+    },
+    {
+      "id": 7,
+      "topicId": 3,
+      "title": "what did you do",
+      "messageText": "It must be mad at you for a reason. If you think really hard, you might be able to remember why it's upset at you! Then you can mend the bridge between you two."
+    },
+    {
+      "id": 8,
+      "topicId": 1,
+      "title": "why would you want to socialize them",
+      "messageText": "I like my puppies not social"
+    },
+    {
+      "id": 9,
+      "topicId": 2,
+      "title": "yeah actually it's so weird!",
+      "messageText": "My cats do this too. They are such unique little fluff balls!"
+    },
+    {
+      "id": 10,
+      "topicId": 1,
+      "title": "Train them while they're young!",
+      "messageText": "You simply must train them while they are very very young to get the absolute best results possible."
+    }
+  ]
+}
