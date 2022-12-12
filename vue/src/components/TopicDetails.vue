@@ -6,7 +6,7 @@
       class="addMessage"
     >Add New Message</router-link>
     <div
-      v-for="message in this.$store.state.activeTopic.messages"
+      v-for="message in this.messages"
       v-bind:key="message.id"
       class="topic-message bubble"
     >
@@ -45,13 +45,19 @@ export default {
     topicService
       .get(this.topicId)
       .then(response => {
-        this.$store.commit("SET_ACTIVE_TOPIC", response.data);
+        this.messages = response.data;
+        // this.$store.commit("SET_ACTIVE_TOPIC", response.data);
       })
       .catch(error => {
         if (error.response.status === 404) {
           this.$router.push("/not-found");
         }
       });
+  },
+  data() {
+    return {
+      messages: []
+    }
   }
 };
 </script>
