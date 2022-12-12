@@ -23,14 +23,6 @@ INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
     VALUES('Cat', 'Slayton', False, True, True, '1-3 years', 'Male', 'They take some warming up to', 'Yes', 'Fetch', 'Plastic Springs', 'Tuna patte', 'https://imgur.com/cfgHvyM.jpg', '45208');
 
-INSERT INTO pets(
-    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES()
-
-INSERT INTO pets(
-    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES()
-
 INSERT INTO user_pet(
 	user_id, pet_id)
 	VALUES (1, 1);

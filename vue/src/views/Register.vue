@@ -8,6 +8,8 @@
         </div>
         <div>
           <label for="username" class="sr-only">Username </label>
+          <br />
+          <br />
           <input
             type="text"
             id="username"
@@ -20,6 +22,8 @@
         </div>
         <div>
           <label for="password" class="sr-only">Password </label>
+          <br />
+          <br />
           <input
             type="password"
             id="password"
@@ -31,6 +35,8 @@
         </div>
         <div>
           <label for="password" class="sr-only">Confirm Password </label>
+          <br />
+          <br />
           <input
             type="password"
             id="confirmPassword"
@@ -40,6 +46,7 @@
             required
           />
         </div>
+        <br />
         <div>
           <button class="btn btn-lg btn-primary btn-block" type="submit">
             Create Account
@@ -129,9 +136,10 @@ button {
   font-family: "Quattrocento Sans", sans-serif;
   color: #ececec;
   background-color: #f54c4c;
-  border: solid, 3px, black;
+  border: none;
   border-radius: 12px;
   width: 20%;
+  height: 2em;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
@@ -160,6 +168,11 @@ button:hover {
 .logo {
   width: 25%;
   height: auto;
-  margin-bottom: 10px;
+}
+#password,
+#username,
+#confirmPassword {
+  box-shadow: 0px 5px 5px #5da2d5;
+  border-radius: 6px;
 }
 </style>
