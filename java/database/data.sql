@@ -92,14 +92,11 @@ INSERT INTO playdate_pet(
 	VALUES (3, 3);
 
 
-INSERT INTO topics(topic_id,
-	topic_title)
+INSERT INTO topics(topic_title)
 	VALUES ('What''s the best way to socialize my puppy?');
-INSERT INTO topics(topic_id,
-	topic_title)
+INSERT INTO topics(topic_title)
 	VALUES ('My sister''s cat loves to eat butter off the counter, does anyone else''s cat do this too or just him?');
-INSERT INTO topics(topic_id,
-	topic_title)
+INSERT INTO topics(topic_title)
 	VALUES ('I think my bearded dragon is upset with me but I don''t know why. Help!');
 
 --
