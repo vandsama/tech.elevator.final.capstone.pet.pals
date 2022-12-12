@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,6 +63,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
 
         return playDate;
     }
+
     @Override
     public boolean schedulePlayDate(Timestamp timestamp, String location, String requestMessage){
         PlayDate playDate = null;
