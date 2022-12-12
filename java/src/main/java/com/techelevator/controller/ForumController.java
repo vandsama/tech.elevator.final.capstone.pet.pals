@@ -51,7 +51,12 @@ public class ForumController {
         }
     }
 
-    @RequestMapping(value = "/topics/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "topics/{id}")
+    public Topic getTopicById(@PathVariable int id) {
+        return topicDao.getTopicById(id);
+    }
+
+    @RequestMapping(value = "/topics/{id}/messages", method = RequestMethod.GET)
     public List<Message> listTopicMessages(@PathVariable int id) {
         return messageDao.listMessagesInTopic(id);
     }

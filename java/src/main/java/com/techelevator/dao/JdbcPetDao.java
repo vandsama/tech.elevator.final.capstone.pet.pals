@@ -25,7 +25,7 @@ public class JdbcPetDao implements PetDao {
                 "\tuser_id, pet_id)\n" +
                 "\tVALUES (?, (SELECT pet_id FROM new_pet));";
 
-        return jdbcTemplate.update(insertPetSql,type,name,pet_experience,vaccinated,spayed,age,sex,pet_experience,human_friendliness,activities,toy,treat,img,userId) == 1;
+        return jdbcTemplate.update(insertPetSql,type,name,pet_experience,vaccinated,spayed,age,sex,pet_experience,human_friendliness,activities,toy,treat,img, zipCode, userId) == 1;
     }
 
     @Override

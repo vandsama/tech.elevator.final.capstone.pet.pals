@@ -8,4 +8,6 @@ public interface TopicDao {
     List<Topic> listTopics();
 
     boolean createTopic(String topicTitle);
+
+    Topic getTopicById(int id);
 }

@@ -4,7 +4,7 @@ import axios from 'axios';
 export default {
 
   get(id) {
-    return axios.get(`/topics/${id}`);
+    return axios.get(`/topics/${id}/messages`);
   },
 
   create(topicId, message) {

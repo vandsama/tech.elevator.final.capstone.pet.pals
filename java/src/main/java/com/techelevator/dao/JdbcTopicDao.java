@@ -39,6 +39,19 @@ public class JdbcTopicDao implements TopicDao {
         return jdbcTemplate.update(sql,topicTitle) == 1;
     }
 
+    @Override
+    public Topic getTopicById(int id) {
+        Topic topic = new Topic();
+        String sql = "SELECT * FROM topics WHERE topic_id = ?";
+
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, id);
+        if (result.next()) {
+            topic = mapRowToTopic(result);
+        }
+
+        return topic;
+    }
+
     private Topic mapRowToTopic(SqlRowSet rowSet) {
         Topic topic = new Topic();
         topic.setId(rowSet.getInt("topic_id"));

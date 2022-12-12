@@ -1,14 +1,17 @@
 <template>
   <div class="topic-details">
-    <h1>{{ this.$store.state.activeTopic.id }}</h1>
+    <h1>{{ this.topic.title }}</h1>
 
     <div
       v-for="message in this.messages"
       v-bind:key="message.id"
+      v-bind:message="message"
       class="topic-message bubble"
     >
+      <message v-bind:message="message"></message>
       <!-- <h3 class="message-title">{{ message.title }}</h3> -->
-      <p class="message-body">{{ message.text }}</p>
+      <!-- <p class="username"> {{getUsername(message.user_id)}} hi </p>
+      <p class="message-body">{{ message.text }}</p> -->
       <!-- <router-link
         :to="{name: 'EditMessage', params: {topicId: $store.state.activeTopic.id, messageId: message.id} }"
         tag="button"
@@ -28,10 +31,12 @@
 <script>
 import topicService from "@/services/TopicService.js";
 import messageService from "@/services/MessageService.js";
+import Message from './Message.vue';
 export default {
+  components: { Message },
   name: "topic-details",
   props: {
-    topicId: Number
+    topicId: Number,
   },
   methods: {
     deleteMessage(id) {
@@ -45,11 +50,13 @@ export default {
     }
   },
   created() {
-    topicService
+    topicService.get(this.topicId).then((response) => {
+      this.topic = response.data
+    })
+    messageService
       .get(this.topicId)
       .then(response => {
         this.messages = response.data;
-        // this.$store.commit("SET_ACTIVE_TOPIC", response.data);
       })
       .catch(error => {
         if (error.response.status === 404) {
@@ -59,7 +66,8 @@ export default {
   },
   data() {
     return {
-      messages: []
+      messages: [],
+      topic: {}
     }
   }
 };

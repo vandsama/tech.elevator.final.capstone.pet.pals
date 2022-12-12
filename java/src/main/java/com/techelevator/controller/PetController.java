@@ -31,10 +31,14 @@ public class PetController {
     public void registerPet(@RequestBody Pet pet, Principal principal) {
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
+        System.out.println(userId);
 
         try {
-            petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(), pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),pet.getToy(),pet.getTreat(),pet.getImg(), pet.getZipCode(),userId);
+            petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(),
+                    pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),
+                    pet.getToy(),pet.getTreat(),pet.getImg(), pet.getZipCode(),userId);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Error creating pet");
         }
     }
