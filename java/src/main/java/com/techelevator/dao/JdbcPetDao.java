@@ -59,6 +59,20 @@ public class JdbcPetDao implements PetDao {
         }
         return petList;
     }
+    @Override
+    public List<Pet>listFeaturedPets(){
+        List<Pet> petList = new ArrayList<>();
+        String sql = "SELECT pet_id, animal_type, pet_name, pet_experience, vaccinated, spayed," +
+                " age_years, sex, pet_friendliness, human_friendliness, favorite_activities," +
+                " favorite_toy, favorite_treat, img_link, zip_code\n" +
+                "\tFROM pets\n" +
+                "LIMIT 4;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+        while(result.next()){
+            petList.add(mapRowToPet(result));
+        }
+        return petList;
+    }
 
     @Override
     public List<Pet> listPetsOwnedByUser(int userId) {
