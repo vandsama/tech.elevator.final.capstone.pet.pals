@@ -39,7 +39,6 @@
       {{ this.pet.activities }}, {{ this.pet.toy }},
       {{ this.pet.treat }}
     </div>
-    <button>Request Play Date</button>
   </div>
 </template>
 
@@ -90,9 +89,6 @@ export default {
 }
 button:hover {
   background-color: #f3d250;
-}
-button {
-  width: 20%;
 }
 .nameZip {
   display: flex;

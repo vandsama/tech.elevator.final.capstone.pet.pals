@@ -45,7 +45,17 @@ INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
     VALUES('Dog', 'Baxter', True, True, True, '11+ Years', 'Male', 'Sometimes', 'Yes', 'Walks', 'Bones', 'Cheese', 'https://imgur.com/k6B8xvF.jpg', '45216');
 
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Dog', 'Charlotte', True, True, True, '4-7 years', 'Female','Yes','Yes', 'Walks', 'Plushies', 'Apples/Bananas','https://imgur.com/cAoRNqu.jpg' ,'45241');
 
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Dog', 'Penny', True, True, True, '4-7 years', 'Female', 'Yes', 'Yes', 'Play hunting/wrestling', 'Fake Snake','Liver', 'https://imgur.com/fS0GGe4.jpg', '45211');
+
+INSERT INTO pets(
+    animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
+    VALUES('Bearded Dragon', 'Max', False, False, False, '1-3 years', 'Male', 'Yes', 'Yes', 'laying on rocks', 'fake trees', 'crickets','https://imgur.com/V2pry45.jpg' , '45248');
 
 INSERT INTO user_pet(
 	user_id, pet_id)
