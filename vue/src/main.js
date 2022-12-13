@@ -14,7 +14,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faUserSecret, faMapPin, faCalendarDays, faClock, faMagnifyingGlass)
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false
 
 

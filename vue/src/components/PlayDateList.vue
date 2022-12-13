@@ -1,14 +1,24 @@
 <template>
   <div>
-    <h1>Upcoming Playdates</h1>
+    <h1>My Scheduled Playdates</h1>
+    <button>
+      <router-link
+        style="text-decoration: none; color: white"
+        v-bind:to="{ name: 'schedule' }"
+        >Schedule a Play Date</router-link
+      >
+    </button>
     <div class="playDate-list">
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
         <router-link
-        v-bind:to="{ name: 'playdatedetails', params: {id : playDate.playDateId}}"
-        style="text-decoration: none;"
+          v-bind:to="{
+            name: 'playdatedetails',
+            params: { id: playDate.playDateId },
+          }"
+          style="text-decoration: none"
         >
-        <playdatecard v-bind:playDate="playDate"></playdatecard>
+          <playdatecard v-bind:playDate="playDate"></playdatecard>
         </router-link>
       </div>
     </div>

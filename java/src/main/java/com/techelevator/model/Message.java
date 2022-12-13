@@ -1,8 +1,12 @@
 package com.techelevator.model;
 
+import java.sql.Timestamp;
+
 public class Message {
 
+
     private int message_id;
+    private Timestamp timestamp;
     private int user_id;
     private int topic_id;
     private String title;
@@ -10,12 +14,21 @@ public class Message {
 
     public Message() {}
 
-    public Message(int message_id, int user_id, int topic_id, String title, String text) {
+    public Message(int message_id, Timestamp timestamp, int user_id, int topic_id, String title, String text) {
         this.message_id = message_id;
+        this.timestamp = timestamp;
         this.user_id = user_id;
         this.topic_id = topic_id;
         this.title = title;
         this.text = text;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getText() {

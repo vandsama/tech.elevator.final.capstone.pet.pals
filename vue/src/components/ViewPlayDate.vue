@@ -3,8 +3,8 @@
     <h3>
       {{ this.playDate.location }}
     </h3>
-    {{ this.playDate.timestamp | formatDate }} <br />
-    {{ this.playDate.timestamp | formatTime }} <br />
+    {{ this.playDate.dateAndTime | formatDate }} <br />
+    {{ this.playDate.dateAndTime | formatTime }} <br />
     {{ this.playDate.requestMessage }} <br />
   </div>
 </template>

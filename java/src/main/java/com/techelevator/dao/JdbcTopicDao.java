@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class JdbcTopicDao implements TopicDao {
     public List<Topic> listTopics() {
         List<Topic> topics = new ArrayList<>();
 
-        String sql = "SELECT topic_id, topic_title\n" +
+        String sql = "SELECT topic_id, dateandtime, topic_title\n" +
                 "\tFROM topics;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
         while (result.next()) {
@@ -31,10 +32,9 @@ public class JdbcTopicDao implements TopicDao {
     }
 
     @Override
-    public boolean createTopic(String topicTitle) {
-        String sql = "INSERT INTO topics(\n" +
-                "\ttopic_title)\n" +
-                "\tVALUES (?);";
+    public boolean createTopic(Timestamp timestamp, String topicTitle) {
+        String sql = "INSERT INTO topics(dateandtime, topic_title)\n" +
+                "\tVALUES (NOW(),?);";
 
         return jdbcTemplate.update(sql,topicTitle) == 1;
     }
@@ -55,6 +55,7 @@ public class JdbcTopicDao implements TopicDao {
     private Topic mapRowToTopic(SqlRowSet rowSet) {
         Topic topic = new Topic();
         topic.setId(rowSet.getInt("topic_id"));
+        topic.setTimestamp(rowSet.getTimestamp("dateandtime"));
         topic.setTitle(rowSet.getString("topic_title"));
         return topic;
     }

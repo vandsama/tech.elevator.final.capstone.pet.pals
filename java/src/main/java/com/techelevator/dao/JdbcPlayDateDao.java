@@ -6,6 +6,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,12 +65,10 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
 
     @Override
-    public boolean schedulePlayDate(Timestamp timestamp, String location, String requestMessage){
-        PlayDate playDate = null;
-        String sql = "INSERT INTO playdates(\n" +
-                "\tdateandtime, location, requestmessage)\n"+
-                "\tVALUES(?, ?, ?);";
-        return jdbcTemplate.update(sql, timestamp, location, requestMessage) == 1;
+    public boolean schedulePlayDate(LocalDateTime dateAndTime, String location, String requestMessage){
+        final String sql = " INSERT INTO playdates (dateandtime, location, requestmessage) " +
+                " VALUES(?, ?, ?); ";
+        return jdbcTemplate.update(sql, dateAndTime, location, requestMessage) == 1;
     }
 
     @Override
@@ -85,10 +84,10 @@ public class JdbcPlayDateDao implements PlayDateDao {
 
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {
         PlayDate playDate = new PlayDate();
-        playDate.setLocation(rowSet.getString("location"));
         playDate.setPlayDateId(rowSet.getInt("playdate_id"));
+        playDate.setDateAndTime(rowSet.getTimestamp("dateandTime").toLocalDateTime());
+        playDate.setLocation(rowSet.getString("location"));
         playDate.setRequestMessage(rowSet.getString("requestmessage"));
-        playDate.setTimestamp(rowSet.getTimestamp("dateandtime"));
         return playDate;
     }
 

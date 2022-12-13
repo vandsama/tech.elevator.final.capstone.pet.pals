@@ -3,21 +3,6 @@
     <h1>Topics</h1>
     <table class="forum-table">
       <tbody>
-        <div class="topic-list">
-          <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-          &nbsp;
-          <input
-            type="text"
-            v-model.trim="search"
-            placeholder="Search..."
-            @keyup="getAllPetOwnersPeople"
-          />
-          <ul v-if="search">
-            <li v-for="person in people" :key="person.id">
-              {{ person.name }}
-            </li>
-          </ul>
-        </div>
         <div class="topic-list-css">
           <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id">
             <td>
@@ -25,6 +10,10 @@
                 v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
                 >{{ topic.title }}</router-link
               >
+            </td>
+            <td class="topic-list-css">
+              {{ topic.timestamp | formatDate }}
+              {{ topic.timestamp | formatTime }}
             </td>
             <!-- <td>
             <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
@@ -68,32 +57,9 @@ export default {
         }
       });
     },
-    getAllPetOwnersPeople() {
-      fetch("https://swapi.dev/api/people/")
-        .then((response) => response.json())
-        .then((res) => {
-          if (this.search) {
-            this.people = res.results.filter((people) =>
-              people.name.toLowerCase().includes(this.search.toLowerCase())
-            );
-          } else {
-            this.people = res.results;
-          }
-        });
-    },
   },
   created() {
     this.getTopics();
-    this.getAllPetOwnersPeople();
-  },
-  data() {
-    return {
-      people: [],
-      search: "",
-    };
-  },
-  mounted() {
-    console.log("Component mounted.");
   },
 };
 </script>
