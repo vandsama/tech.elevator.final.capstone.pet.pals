@@ -10,12 +10,18 @@ import java.sql.Timestamp;
 public class PlayDate {
 
     private int playDateId;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Timestamp dateandtime;
+//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+//    private Timestamp dateandtime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private Timestamp dateAndTime;
     private String location;
     private String requestMessage;
 
-
+    public PlayDate(Timestamp dateAndTime, String location, String requestMessage) {
+        this.dateAndTime = dateAndTime;
+        this.location = location;
+        this.requestMessage = requestMessage;
+    }
 
     public PlayDate() {
     }
@@ -28,13 +34,21 @@ public class PlayDate {
         this.playDateId = playDateId;
     }
 
-    public Timestamp getDateandtime() {
-        return dateandtime;
+    public Timestamp getDateAndTime() {
+        return dateAndTime;
     }
 
-    public void setDateandtime(Timestamp dateandtime) {
-        this.dateandtime = dateandtime;
+    public void setDateAndTime(Timestamp dateAndTime) {
+        this.dateAndTime = dateAndTime;
     }
+
+//    public Timestamp getDateandtime() {
+//        return dateandtime;
+//    }
+//
+//    public void setDateandtime(Timestamp dateandtime) {
+//        this.dateandtime = dateandtime;
+//    }
 
     public String getLocation() {
         return location;

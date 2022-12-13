@@ -67,7 +67,7 @@ public class PlayDateController {
         int userId = user.getId();
 
         try {
-            playDateDao.schedulePlayDate(playDate.getDateandtime(), playDate.getLocation(), playDate.getRequestMessage());
+            playDateDao.schedulePlayDate(playDate.getDateAndTime(), playDate.getLocation(), playDate.getRequestMessage());
         } catch (Exception e){
             e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error Scheduling Play Date");

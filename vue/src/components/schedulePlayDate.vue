@@ -1,6 +1,6 @@
 <template>
   <div class="schedulePlayDates">
-    <form @submit.prevent="schedule">
+    <form @submit.prevent="schedule()">
       <div class="timestamp">
         <label for="timestamp">Date and Time:</label>
         <br />
@@ -8,7 +8,7 @@
           type="datetime-local"
           class="form-control"
           placeholder="Date and Time"
-          v-model="playDate.timestamp"
+          v-model="playDate.dateAndTime"
           required
         />
       </div>
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       playDate: {
-        timestamp: "",
+        dateAndTime: "",
         location: "",
         requestMessage: "",
       },

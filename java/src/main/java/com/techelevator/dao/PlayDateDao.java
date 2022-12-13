@@ -14,5 +14,5 @@ public interface PlayDateDao {
 
     PlayDate getPlayDateById(int playDateId);
 
-    boolean schedulePlayDate(Timestamp timestamp, String location, String requestMessage);
+    boolean schedulePlayDate(Timestamp dateAndTime, String location, String requestMessage);
 }

@@ -64,19 +64,18 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
 
     @Override
-    public boolean schedulePlayDate(Timestamp timestamp, String location, String requestMessage){
-        String sql = "INSERT INTO playdates(\n" +
-                "\tdateAndTime, location, requestmessage)\n"+
-                "\tVALUES(?, ?, ?);";
-        return jdbcTemplate.update(sql, timestamp, location, requestMessage) == 1;
+    public boolean schedulePlayDate(Timestamp dateAndTime, String location, String requestMessage){
+        final String sql = " INSERT INTO playdates (dateandtime, location, requestmessage) " +
+                " VALUES(?, ?, ?); ";
+        return jdbcTemplate.update(sql, dateAndTime, location, requestMessage) == 1;
     }
 
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {
         PlayDate playDate = new PlayDate();
-        playDate.setLocation(rowSet.getString("location"));
         playDate.setPlayDateId(rowSet.getInt("playdate_id"));
+        playDate.setDateAndTime(rowSet.getTimestamp("dateandtime"));
+        playDate.setLocation(rowSet.getString("location"));
         playDate.setRequestMessage(rowSet.getString("requestmessage"));
-        playDate.setDateandtime(rowSet.getTimestamp("dateAndTime"));
         return playDate;
     }
 
