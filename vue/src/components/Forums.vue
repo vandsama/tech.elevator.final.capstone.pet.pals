@@ -1,28 +1,20 @@
 <template>
-  <div class="forums">
-    <h1>Topics</h1>
+  <div>
+    <h1>Threads</h1>
     <table class="forum-table">
       <tbody>
-        <div class="topic-list-css">
-          <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id">
+          <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" class="topic-list-css">
             <td>
               <router-link
                 v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
                 >{{ topic.title }}</router-link
               >
             </td>
-            <td class="topic-list-css">
+            <td>
               {{ topic.timestamp | formatDate }}
               {{ topic.timestamp | formatTime }}
             </td>
-            <!-- <td>
-            <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
-          </td>
-          <td>
-            <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
-          </td> -->
           </tr>
-        </div>
       </tbody>
     </table>
 
@@ -71,38 +63,28 @@ export default {
   font-family: "Quattrocento Sans", sans-serif;
   color: white;
   text-align: left;
-}
-
-.create-new-topic {
-  display: flex;
-  justify-content: center;
-  font-family: "Quattrocento Sans", sans-serif;
-}
-
-.topic-list {
-  font-size: large;
-  font-style: italic;
-  margin: auto;
-  background-color: #5da2d5;
-  width: 60%;
-  border-radius: 12px;
-  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
-  margin-bottom: 5%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
 }
 .topic-list-css {
   font-size: x-large;
   font-style: italic;
+  justify-content: center;
+  align-content: center;
   margin: auto;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-right: 5%;
-  padding-left: 5%;
+  padding: 20px;
   background-color: #5da2d5;
   width: 60%;
   border-radius: 12px;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
   text-decoration: none;
+}
+td {
+  padding: 3%;
+}
+tr {
+  row-gap: 10px;
 }
 .topic-list-css:hover {
   transform: translateY(-7px);
@@ -116,6 +98,9 @@ a:hover {
   color: tomato;
 }
 .create-new-topic {
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
   background-color: #f5c423;
   width: 20%;
   margin: auto;
@@ -139,8 +124,5 @@ input[type="text"] {
 input[type="text"]:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease 0s;
-}
-tr {
-  row-gap: 10px;
 }
 </style>
