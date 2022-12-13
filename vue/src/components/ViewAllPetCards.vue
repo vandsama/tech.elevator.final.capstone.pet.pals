@@ -73,9 +73,6 @@ export default {
   border: 5px solid #5da2d5;
   background-color: #5da2d5;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .thumbnail img {
   position: absolute;
@@ -86,6 +83,7 @@ export default {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  display: flex;
 }
 button:hover {
   background-color: #f3d250;

@@ -152,5 +152,9 @@ footer > div:hover {
   transform: translateY(-7px);
   border-radius: 12px;
 }
+img {
+  height: 250px;
+  width: 250px;
+}
 </style>
 
