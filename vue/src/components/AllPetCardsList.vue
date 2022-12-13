@@ -31,6 +31,7 @@ export default {
 div {
   display: inline-block;
   margin-top: 30px;
+  background-color: #f2f2f2;
 }
 h1 {
   font-size: 48px;

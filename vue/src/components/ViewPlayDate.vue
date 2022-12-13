@@ -1,10 +1,18 @@
 <template>
   <div class="playdatecard">
     <h3>
+      <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
+      &nbsp;
       {{ this.playDate.location }}
     </h3>
-    {{ this.playDate.dateAndTime | formatDate }} <br />
-    {{ this.playDate.dateAndTime | formatTime }} <br />
+    <font-awesome-icon
+      icon="fa-solid fa-calendar-days"
+      color="black"
+      size="xs"
+    />
+    &nbsp;{{ this.playDate.dateAndTime | formatDate }} <br />
+    <font-awesome-icon icon="fa-solid fa-clock" color="black" size="xs" />
+    &nbsp; {{ this.playDate.dateAndTime | formatTime }} <br />
     {{ this.playDate.requestMessage }} <br />
   </div>
 </template>
@@ -57,10 +65,11 @@ export default {
 .playdatecard {
   font-family: "Bebas Neue", cursive;
   font-size: 1.4em;
-  border: 4px solid #5da2d5;
-  background-color: azure;
+  border: 4px solid #f3d250;
+  background-color: #5da2d5;
   border-radius: 6px;
   width: max-content;
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.5);
 }
 
 .thumbnail {
@@ -86,5 +95,11 @@ export default {
 .thumbnail img.portrait {
   width: 100%;
   height: auto;
+}
+div {
+  color: azure;
+}
+h3 {
+  letter-spacing: 1px;
 }
 </style>

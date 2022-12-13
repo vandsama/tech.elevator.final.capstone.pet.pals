@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="outline">
     <h1>My Scheduled Playdates</h1>
     <button>
       <router-link
