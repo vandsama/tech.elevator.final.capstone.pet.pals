@@ -14,5 +14,10 @@ public interface PlayDateDao {
 
     PlayDate getPlayDateById(int playDateId);
 
+
     boolean schedulePlayDate(Timestamp dateAndTime, String location, String requestMessage);
+
+
+    void addPetsToPlaydate(int[] petIds, int playdateId);
+
 }

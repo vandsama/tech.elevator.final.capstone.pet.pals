@@ -56,7 +56,7 @@ public class PlayDateController {
     public List<User> getUsersAttendingPlaydate(@PathVariable int playdateId) {
         List<User> users = this.userDao.listUsersAttendingPlaydate(playdateId);
         for (User user : users) {
-            user.setPets(petDao.listPetsOwnedByUser(user.getId()));
+            user.setPets(petDao.listPetsAttendingPlaydate(playdateId,user.getId()));
         }
         return users;
     }
@@ -74,6 +74,15 @@ public class PlayDateController {
         }
     }
 
+    @RequestMapping(value = "/playdates/{playdateId}/join", method = RequestMethod.POST)
+    public void joinPlaydate(@PathVariable int playdateId, @RequestBody int[] petIds) {
+        try {
+            playDateDao.addPetsToPlaydate(petIds, playdateId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Error adding pets to playdate");
+        }
+    }
 
 
 }

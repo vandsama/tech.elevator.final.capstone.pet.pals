@@ -85,7 +85,7 @@ public class JdbcUserDao implements UserDao {
     @Override
     public List<User> listUsersAttendingPlaydate(int playdateId) {
         List<User> users = new ArrayList<>();
-        String sql = "SELECT u.user_id, password_hash, username, role\n" +
+        String sql = "SELECT DISTINCT u.user_id, password_hash, username, role\n" +
                 "FROM users as u\n" +
                 "JOIN user_pet as up ON u.user_id = up.user_id\n" +
                 "JOIN playdate_pet as pp ON up.pet_id = pp.pet_id\n" +

@@ -11,7 +11,15 @@
     <div class="playDate-list">
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
-        <playdatecard v-bind:playDate="playDate"></playdatecard>
+        <router-link
+          v-bind:to="{
+            name: 'playdatedetails',
+            params: { id: playDate.playDateId },
+          }"
+          style="text-decoration: none"
+        >
+          <playdatecard v-bind:playDate="playDate"></playdatecard>
+        </router-link>
       </div>
     </div>
   </div>
@@ -31,7 +39,7 @@ export default {
     };
   },
   created() {
-    playDateService.listOwn().then((response) => {
+    playDateService.list().then((response) => {
       this.playDates = response.data;
     });
   },

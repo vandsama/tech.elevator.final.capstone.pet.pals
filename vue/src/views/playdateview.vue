@@ -1,5 +1,6 @@
 <template>
 <div class="outer">
+  <br>
   <div class="playdate-full-details">
     <h1>{{ playDate.location }}</h1>
     <h3>
@@ -11,12 +12,23 @@
     <div class="userbox">
       <div class="user-info" v-for="user in users" v-bind:key="user.id">
         {{ user.username }} is attending with:
-        <div class="user-pets" v-for="pet in user.pets" v-bind:key="pet.id">
+        <div class="user-pets">
+        <div v-for="pet in user.pets" v-bind:key="pet.id">
           {{ pet.name }}
+        </div>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  
+  <router-link
+        v-bind:to="{ name: 'playdatejoin', params: {id : playDate.playDateId}}"
+        style="text-decoration: none;"
+        >
+  <button class="btn"> Join this playdate! </button>
+  </router-link>
+  
 </div>
 </template>
 
@@ -59,8 +71,13 @@ export default {
 h1 {
   margin: 1rem;
 }
+.btn {
+  width: fit-content;
+}
 .outer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .playdate-full-details {
@@ -78,8 +95,10 @@ h1 {
 }
 .user-pets{
   display: flex;
+  flex-direction: column;
   justify-content: right;
   flex-grow: 1;
   padding: 0;
+  align-items: flex-end;
 }
 </style>

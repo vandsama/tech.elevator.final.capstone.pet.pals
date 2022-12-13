@@ -2,12 +2,30 @@
   <div class="forums">
     <h1>Topics</h1>
     <table class="forum-table">
+
       <tbody>
+        <div class="topic-list-css">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <input
+                type="text"
+                v-model.trim="search"
+                placeholder="Search..."
+                @keyup="getAllPetOwnersPeople"
+              />
+              <ul v-if="search">
+                <li v-for="person in people" :key="person.id">
+                  {{ person.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" >
           <td width="80%" class="topic-list-css">
             <router-link 
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-            >{{ topic.title }}</router-link>
+            >{{ topic.title }}</router-link> 
           </td>
           <!-- <td>
             <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
@@ -19,8 +37,6 @@
       </tbody>
     </table>
 
-    <br>
-    <br>
     <div class="create-new-topic">
       <router-link
         :to="{ name: 'AddTopic', params: {topicId: $store.state.activeTopic.id} }"
@@ -48,12 +64,36 @@ export default {
             this.getTopics();
           }
         });
-    }
+    },
+    getAllPetOwnersPeople() {
+      fetch("https://swapi.dev/api/people/")
+        .then(response => response.json())
+        .then(res => {
+          if (this.search) {
+            this.people = res.results.filter(people =>
+              people.name.toLowerCase().includes(this.search.toLowerCase())
+            );
+          } else {
+            this.people = res.results;
+          }
+        });
+    }    
   },
   created() {
     this.getTopics();
-  }
+    this.getAllPetOwnersPeople();
+  },
+  data() {
+    return {
+      people: [],
+      search: ""
+    };
+  },  
+  mounted() {
+    console.log("Component mounted.");
+  },
 };
+
 </script>
 
 <style scoped>
@@ -74,10 +114,10 @@ export default {
 .topic-list-css {
   box-sizing: border-box;
   width: auto;
-  position: relative;
+  position: center;
   clear: both;
   flex-basis: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background: #5da2d5;
   background-image: -webkit-gradient(
     linear,

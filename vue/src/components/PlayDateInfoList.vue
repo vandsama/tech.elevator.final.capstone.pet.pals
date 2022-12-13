@@ -1,5 +1,5 @@
 <template>
-  <div class="playDate-list">
+  <div class="playDateinfo-list">
     <div>
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-.playDate-list {
+.playDateinfo-list {
   background-color: #f5c423;
 }
 </style>

@@ -33,7 +33,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
     @Override
     public List<PlayDate> listMyPlayDates(int userId) {
         List<PlayDate> playDateList = new ArrayList<>();
-        String sql = "SELECT p.playdate_id, dateandtime, location, requestmessage\n" +
+        String sql = "SELECT DISTINCT p.playdate_id, dateandtime, location, requestmessage\n" +
                 "FROM playdates as p\n" +
                 "JOIN playdate_pet as pp ON pp.playdate_id =  p.playdate_id\n" +
                 "JOIN user_pet as up ON pp.pet_id = up.pet_id\n" +
@@ -68,6 +68,17 @@ public class JdbcPlayDateDao implements PlayDateDao {
         final String sql = " INSERT INTO playdates (dateandtime, location, requestmessage) " +
                 " VALUES(?, ?, ?); ";
         return jdbcTemplate.update(sql, dateAndTime, location, requestMessage) == 1;
+    }
+
+    @Override
+    public void addPetsToPlaydate(int[] petIds, int playdateId) {
+        String sql = "INSERT INTO playdate_pet(\n" +
+                "\tplaydate_id, pet_id)\n" +
+                "\tVALUES (?, ?);";
+
+        for (int i = 0; i < petIds.length; i++) {
+            jdbcTemplate.update(sql,playdateId, petIds[i]);
+        }
     }
 
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {

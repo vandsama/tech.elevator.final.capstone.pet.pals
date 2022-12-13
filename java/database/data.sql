@@ -59,6 +59,30 @@ INSERT INTO user_pet(
 	user_id, pet_id)
 	VALUES (4, 3);
 
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (4, 4);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (4, 5);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (5, 6);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (5, 7);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (6, 8);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (3, 9);
+
 
 
 INSERT INTO playDates(
@@ -74,9 +98,14 @@ INSERT INTO playDates(
 	VALUES ('2023-1-29 09:30:00-00', 'Washington Park', 'Want to go on a pet date?');
 
 
+
 INSERT INTO playdate_pet(
 	playdate_id, pet_id)
 	VALUES (1, 1);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (1, 4);
 
 INSERT INTO playdate_pet(
 	playdate_id, pet_id)
@@ -92,7 +121,15 @@ INSERT INTO playdate_pet(
 
 INSERT INTO playdate_pet(
 	playdate_id, pet_id)
-	VALUES (3, 1);
+	VALUES (2, 7);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 8);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 5);
 
 INSERT INTO playdate_pet(
 	playdate_id, pet_id)
@@ -101,6 +138,16 @@ INSERT INTO playdate_pet(
 INSERT INTO playdate_pet(
 	playdate_id, pet_id)
 	VALUES (3, 3);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 6);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (3, 9);
+
+
 
 
 INSERT INTO topics(topic_title)

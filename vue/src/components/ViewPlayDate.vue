@@ -27,7 +27,14 @@ export default {
       },
     };
   },
-  created() {},
+  created() {
+    // petService.get(this.playDate.inviterPetId).then((response) => {
+    //   this.inviterPet = response.data;
+    // });
+    // petService.get(this.playDate.inviteePetId).then((response) => {
+    //   this.inviteePet = response.data;
+    // });
+  },
   methods: {
     PetImgPortrait(src) {
       let img = new Image();
