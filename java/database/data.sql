@@ -93,6 +93,18 @@ INSERT INTO user_pet(
 	user_id, pet_id)
 	VALUES (3, 9);
 
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (1, 10);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (5, 11);
+
+INSERT INTO user_pet(
+	user_id, pet_id)
+	VALUES (6, 12);
+
 
 
 INSERT INTO playDates(
