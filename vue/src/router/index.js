@@ -20,7 +20,7 @@ import EditTopic from '../views/EditTopic.vue';
 import NotFound from '../views/NotFound.vue';
 import EditMessage from '../views/EditMessage.vue';
 import allPetCards from "../components/AllPetCardsList.vue";
-import schedulePlayDates from "../components/schedulePlayDate.vue";
+import schedulePlayDates from "../components/schedulePlayDate.vue"
 
 Vue.use(Router)
 
