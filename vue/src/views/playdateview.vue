@@ -9,6 +9,25 @@
       </h3>
       <p>{{ playDate.requestMessage }}</p>
       <p>Pets Attending: {{ totalPets }}</p>
+      <div class="carousel" v-if="renderCards">
+        <carousel-3d
+        :width="500"
+            :height="1000"
+            :autoplay="true" :autoplay-timeout="5000">
+          <slide
+            style="background: none; border: none;"
+            v-for="pet in pets"
+            v-bind:key="pet.id"
+            :index="pets.indexOf(pet)"
+            v-bind:pet="pet"
+            
+            >
+        
+            <petcard class="card" v-bind:pet="pet"
+            ></petcard>
+          </slide>
+        </carousel-3d>
+      </div>
       <div class="userbox">
         <div class="user-info" v-for="user in users" v-bind:key="user.id">
           {{ user.username }} is attending with:
@@ -23,6 +42,7 @@
           </div>
         </div>
       </div>
+      
     </div>
     <br />
 
@@ -37,14 +57,27 @@
 
 <script>
 import playDateService from "../services/PlayDateService";
+import { Carousel3d, Slide } from "vue-carousel-3d";
+import petcard from "../components/ViewFeaturedPetCards.vue";
 export default {
   data() {
     return {
       playDate: {},
       users: [],
+      pets: [],
+      renderCards: false
     };
   },
+  components: {
+    Carousel3d,
+    Slide,
+    petcard,
+  },
   created() {
+    playDateService.listPlaydatePets(this.$route.params.id).then((response) => {
+      this.pets = response.data;
+      this.renderCards = true;
+    });
     playDateService.get(this.$route.params.id).then((response) => {
       this.playDate = response.data;
     });
@@ -71,6 +104,13 @@ export default {
 
 <!-- could use more styling --> 
 <style scoped>
+.card{
+  margin: 0px;
+}
+.carousel{
+  width: auto;
+  height: 1000px;
+}
 h1 {
   margin: 1rem;
 }
