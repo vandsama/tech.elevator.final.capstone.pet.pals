@@ -90,6 +90,23 @@ public class JdbcPetDao implements PetDao {
     }
 
     @Override
+    public List<Pet> listPetsOwnedByUserNotAttending(int userId, int playDateId) {
+        List<Pet> pets = new ArrayList<>();
+
+        String sql = "WITH playdate AS (SELECT * FROM playdate_pet\n" +
+                "WHERE playdate_id = ?)\n" +
+                "SELECT * \n" +
+                "FROM pets AS p\n" +
+                "JOIN user_pet as up ON p.pet_id = up.pet_id\n" +
+                "WHERE user_id = ? AND p.pet_id NOT IN (SELECT pet_id FROM playdate);";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql,playDateId,userId);
+        while(result.next()){
+            pets.add(mapRowToPet(result));
+        }
+        return pets;
+    }
+
+    @Override
     public List<Pet> listPetsAttendingPlaydate(int playdateId) {
         List<Pet> pets = new ArrayList<>();
 
@@ -98,6 +115,23 @@ public class JdbcPetDao implements PetDao {
                 "\tJOIN playdate_pet AS pp ON p.pet_id = pp.pet_id\n" +
                 "\tWHERE playdate_id = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql,playdateId);
+        while(result.next()){
+            pets.add(mapRowToPet(result));
+        }
+
+        return pets;
+    }
+
+    @Override
+    public List<Pet> listPetsAttendingPlaydate(int playdateId, int ownerId) {
+        List<Pet> pets = new ArrayList<>();
+
+        String sql = "SELECT p.pet_id, animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code\n" +
+                "\tFROM pets AS p\n" +
+                "\tJOIN playdate_pet AS pp ON p.pet_id = pp.pet_id\n" +
+                "\tJOIN user_pet AS up ON pp.pet_id = up.pet_id\n" +
+                "\tWHERE playdate_id = ? AND user_id = ?;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql,playdateId, ownerId);
         while(result.next()){
             pets.add(mapRowToPet(result));
         }

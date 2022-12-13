@@ -9,6 +9,7 @@ import petRegistration from '../views/PetRegistration'
 import playDateList from '../components/PlayDateList.vue'
 import aboutUs from '../views/AboutUs.vue'
 import playdateview from '../views/playdateview.vue'
+import playdatejoinview from '../views/JoinPlaydate.vue'
 
 import forums from '../components/Forums.vue'
 
@@ -94,6 +95,11 @@ const router = new Router({
       path: "/playdates/:id",
       name: "playdatedetails",
       component: playdateview
+    },
+    {
+      path: "/playdates/:id/join",
+      name: "playdatejoin",
+      component: playdatejoinview
     },
     {
       path: "/forums",

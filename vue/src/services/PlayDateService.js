@@ -21,6 +21,12 @@ export default {
 
     listPlaydateUsers(id) {
         return axios.get(`/playdates/${id}/users`)
-    }
+    },
+
+    addPets(id,petIds) {
+        return axios.post(`/playdates/${id}/join`, petIds)
+    },
+
+    
 
 }

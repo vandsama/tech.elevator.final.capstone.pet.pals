@@ -32,7 +32,6 @@ public class PetController {
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
 
-
         try {
             petDao.create(pet.getType(), pet.getName(), pet.isPet_experience(), pet.isVaccinated(), pet.isSpayed(),
                     pet.getAge(), pet.getSex(), pet.getPet_friendliness(),pet.getHuman_friendliness(), pet.getActivities(),
@@ -55,9 +54,17 @@ public class PetController {
     @GetMapping("/pets/featured")
     public List<Pet> viewFeaturedPets(){return petDao.listFeaturedPets();}
 
-//    @GetMapping("/users/{id}/pets")
-//    public List<Pet> getUserPets(@PathVariable int id) {
-//        return petDao.listPetsOwnedByUser(id);
-//    }
+    @GetMapping("/users/{id}/pets")
+    public List<Pet> getUserPets(@PathVariable int id) {
+        return petDao.listPetsOwnedByUser(id);
+    }
 
+    //TODO it is 1:23am someone please rename this endpoint
+    @GetMapping("myplaydates/{playdateId}/pets/absent")
+    public List<Pet> listPetsNotAttending(Principal principal, @PathVariable int playdateId) {
+        User user = userDao.findByUsername(principal.getName());
+        int userid = user.getId();
+
+        return petDao.listPetsOwnedByUserNotAttending(userid,playdateId);
+    }
 }
