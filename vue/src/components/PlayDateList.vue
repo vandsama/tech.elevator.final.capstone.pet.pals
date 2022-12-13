@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="outline">
     <h1>My Scheduled Playdates</h1>
     <button>
       <router-link
@@ -50,5 +50,8 @@ export default {
 .playDate-list {
   display: flex;
   justify-content: center;
+}
+.outline {
+  background-color: #f2f2f2;
 }
 </style>

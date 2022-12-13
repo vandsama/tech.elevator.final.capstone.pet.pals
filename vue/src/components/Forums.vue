@@ -1,20 +1,24 @@
 <template>
-  <div>
+  <div class="background">
     <h1>Threads</h1>
     <table class="forum-table">
       <tbody>
-          <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" class="topic-list-css">
-            <td>
-              <router-link
-                v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-                >{{ topic.title }}</router-link
-              >
-            </td>
-            <td>
-              {{ topic.timestamp | formatDate }}
-              {{ topic.timestamp | formatTime }}
-            </td>
-          </tr>
+        <tr
+          v-for="topic in this.$store.state.topics"
+          v-bind:key="topic.id"
+          class="topic-list-css"
+        >
+          <td>
+            <router-link
+              v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
+              >{{ topic.title }}</router-link
+            >
+          </td>
+          <td>
+            {{ topic.timestamp | formatDate }}
+            {{ topic.timestamp | formatTime }}
+          </td>
+        </tr>
       </tbody>
     </table>
 
@@ -124,5 +128,8 @@ input[type="text"] {
 input[type="text"]:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease 0s;
+}
+.background {
+  background-color: #f2f2f2;
 }
 </style>
