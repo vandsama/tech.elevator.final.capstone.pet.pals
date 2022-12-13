@@ -44,7 +44,7 @@ CREATE TABLE user_pet(
 --CREATE SEQUENCE playDates_serial;
 CREATE TABLE playDates (
     playDate_id serial,
-    dateAndTime timestamp NOT NULL,
+    dateandtime timestamp NOT NULL,
     location varchar(100) NOT NULL,
     requestMessage varchar(500) NOT NULL,
     CONSTRAINT PK_playDate PRIMARY KEY (playDate_id)

@@ -15,18 +15,20 @@ export default {
         return axios.get('/myplaydates')
     },
 
-    listPlaydatePets(id) {
-        return axios.get(`/playdates/${id}/pets`)
+    listPlaydatePets(playDateId) {
+        return axios.get(`/playdates/${playDateId}/pets`)
     },
-
+    schedule(playDate) {
+        return axios.post(`/playdates/schedule`, playDate)
+    },
     listPlaydateUsers(id) {
         return axios.get(`/playdates/${id}/users`)
     },
 
-    addPets(id,petIds) {
+    addPets(id, petIds) {
         return axios.post(`/playdates/${id}/join`, petIds)
     },
 
-    
+
 
 }

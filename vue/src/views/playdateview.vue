@@ -1,35 +1,34 @@
 <template>
-<div class="outer">
-  <br>
-  <div class="playdate-full-details">
-    <h1>{{ playDate.location }}</h1>
-    <h3>
-      {{ playDate.timestamp | formatDate }},
-      {{ playDate.timestamp | formatTime }}
-    </h3>
-    <p>{{ playDate.requestMessage }}</p>
-    <p>Pets Attending: {{ totalPets }}</p>
-    <div class="userbox">
-      <div class="user-info" v-for="user in users" v-bind:key="user.id">
-        {{ user.username }} is attending with:
-        <div class="user-pets">
-        <div v-for="pet in user.pets" v-bind:key="pet.id">
-          {{ pet.name }}
-        </div>
+  <div class="outer">
+    <br />
+    <div class="playdate-full-details">
+      <h1>{{ playDate.location }}</h1>
+      <h3>
+        {{ playDate.dateAndTime | formatDate }},
+        {{ playDate.dateAndTime | formatTime }}
+      </h3>
+      <p>{{ playDate.requestMessage }}</p>
+      <p>Pets Attending: {{ totalPets }}</p>
+      <div class="userbox">
+        <div class="user-info" v-for="user in users" v-bind:key="user.id">
+          {{ user.username }} is attending with:
+          <div class="user-pets">
+            <div v-for="pet in user.pets" v-bind:key="pet.id">
+              {{ pet.name }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <br />
+
+    <router-link
+      v-bind:to="{ name: 'playdatejoin', params: { id: playDate.playDateId } }"
+      style="text-decoration: none"
+    >
+      <button class="btn">Join this playdate!</button>
+    </router-link>
   </div>
-  <br>
-  
-  <router-link
-        v-bind:to="{ name: 'playdatejoin', params: {id : playDate.playDateId}}"
-        style="text-decoration: none;"
-        >
-  <button class="btn"> Join this playdate! </button>
-  </router-link>
-  
-</div>
 </template>
 
 <script>
@@ -72,7 +71,7 @@ h1 {
   margin: 1rem;
 }
 .btn {
-  width: fit-content;
+  width: 12em;
 }
 .outer {
   display: flex;
@@ -85,6 +84,8 @@ h1 {
   background-color: #d4f6ff;
   border-radius: 1rem;
   width: 50%;
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 18px;
 }
 .user-info {
   display: flex;
@@ -93,7 +94,7 @@ h1 {
   margin: 5px;
   border-radius: 1rem;
 }
-.user-pets{
+.user-pets {
   display: flex;
   flex-direction: column;
   justify-content: right;

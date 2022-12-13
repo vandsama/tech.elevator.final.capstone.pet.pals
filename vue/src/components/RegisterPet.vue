@@ -218,14 +218,14 @@
       </div>
       <!-- TODO change from link??? -->
       <label for="img"
-        >Please include a Google Drive link to a picture of your pet.</label
+        >Please include an Imgur link to a picture of your pet.</label
       >
       <br />
       <input
         type="text"
         id="img"
         class="form-control"
-        placeholder="Google Drive Link"
+        placeholder="Imgur Link"
         v-model="pet.img"
         required
       />

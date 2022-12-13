@@ -3,6 +3,7 @@ package com.techelevator.dao;
 import com.techelevator.model.PlayDate;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface PlayDateDao {
@@ -14,7 +15,10 @@ public interface PlayDateDao {
 
     PlayDate getPlayDateById(int playDateId);
 
-    boolean schedulePlayDate(Timestamp timestamp, String location, String requestMessage);
+
+    boolean schedulePlayDate(LocalDateTime dateAndTime, String location, String requestMessage);
+
 
     void addPetsToPlaydate(int[] petIds, int playdateId);
+
 }

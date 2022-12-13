@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
 import java.sql.Timestamp;
+
 import java.util.List;
 
 @RestController
@@ -66,8 +67,9 @@ public class PlayDateController {
         int userId = user.getId();
 
         try {
-            playDateDao.schedulePlayDate(playDate.getTimestamp(), playDate.getLocation(), playDate.getRequestMessage());
+            playDateDao.schedulePlayDate(playDate.getDateAndTime(), playDate.getLocation(), playDate.getRequestMessage());
         } catch (Exception e){
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error Scheduling Play Date");
         }
     }
