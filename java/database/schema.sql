@@ -61,6 +61,7 @@ CREATE TABLE playdate_pet (
 --CREATE SEQUENCE topics_serial;
 CREATE TABLE topics (
     topic_id serial,
+    dateAndTime timestamp NOT NULL,
     topic_title varchar(200) NOT NULL,
     CONSTRAINT PK_topic PRIMARY KEY (topic_id)
 );
@@ -68,6 +69,7 @@ CREATE TABLE topics (
 --CREATE SEQUENCE messages_serial;
 CREATE TABLE messages (
     message_id serial,
+    dateAndTime timestamp NOT NULL,
     user_id int NOT NULL,
     topic_id int NOT NULL,
     message_title varchar(200) NOT NULL,

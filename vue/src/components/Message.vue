@@ -2,6 +2,9 @@
   <div class="message">
       <p class="username"> {{this.user.username}} says: </p>
       <p class="message-body">{{ message.text }}</p>
+      <p class="username">{{ this.message.timestamp | formatDate }}</p>
+      <p class="username">{{ this.message.timestamp | formatTime }}</p>
+
   </div>
 </template>
 

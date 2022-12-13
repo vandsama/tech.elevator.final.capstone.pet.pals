@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -42,7 +43,7 @@ public class ForumController {
         int userId = user.getId();
 
         try {
-            topicDao.createTopic(topic.getTitle());
+            topicDao.createTopic(topic.getTimestamp(), topic.getTitle());
             //TODO needs testing
             //not sure topic.getId() will actually return anything here
 //            messageDao.createMessage(userId, topic.getId(), message.getText(), message.getTitle());
@@ -70,7 +71,7 @@ public class ForumController {
         int userId = user.getId();
 
         try {
-            messageDao.createMessage(userId, topicId, message.getText(), message.getTitle());
+            messageDao.createMessage(message.getTimestamp(), userId, topicId, message.getText(), message.getTitle());
         } catch (Exception e) {
             e.printStackTrace();
 //            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error creating message");

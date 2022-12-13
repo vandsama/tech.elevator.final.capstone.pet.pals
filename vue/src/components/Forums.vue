@@ -4,28 +4,14 @@
     <table class="forum-table">
 
       <tbody>
-        <div class="topic-list-css">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <input
-                type="text"
-                v-model.trim="search"
-                placeholder="Search..."
-                @keyup="getAllPetOwnersPeople"
-              />
-              <ul v-if="search">
-                <li v-for="person in people" :key="person.id">
-                  {{ person.name }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" >
+    <!-- {{ this.playDate.timestamp | formatDate }} <br />
+    {{ this.playDate.timestamp | formatTime }} <br /> -->
+
+        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" style="text-decoration: none" >
           <td width="80%" class="topic-list-css">
             <router-link 
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-            >{{ topic.title }}</router-link> 
+            >{{ topic.title }} {{ topic.timestamp | formatDate }}</router-link> 
           </td>
           <!-- <td>
             <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
@@ -34,6 +20,21 @@
             <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
           </td> -->
         </tr>
+        
+        <!-- <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" >
+          <td width="80%" class="topic-list-css">
+            <router-link 
+              v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
+            >{{ topic.timestamp | formatDate }}</router-link> 
+          </td> -->
+          <!-- <td>
+            <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
+          </td>
+          <td>
+            <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
+          </td> -->
+        <!-- </tr> -->
+ 
       </tbody>
     </table>
 
@@ -64,39 +65,18 @@ export default {
             this.getTopics();
           }
         });
-    },
-    getAllPetOwnersPeople() {
-      fetch("https://swapi.dev/api/people/")
-        .then(response => response.json())
-        .then(res => {
-          if (this.search) {
-            this.people = res.results.filter(people =>
-              people.name.toLowerCase().includes(this.search.toLowerCase())
-            );
-          } else {
-            this.people = res.results;
-          }
-        });
-    }    
+    }, 
   },
   created() {
     this.getTopics();
-    this.getAllPetOwnersPeople();
-  },
-  data() {
-    return {
-      people: [],
-      search: ""
-    };
-  },  
-  mounted() {
-    console.log("Component mounted.");
   },
 };
 
 </script>
 
 <style scoped>
+
+
 .forum-table {
   display: flex;
   justify-content: center;
@@ -112,6 +92,17 @@ export default {
 
 
 .topic-list-css {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 1.4em;
+  border: 4px solid #5da2d5;
+  background-color: azure;
+  border-radius: 6px;
+  width: max-content;
+}
+
+
+
+/* .topic-list-css {
   box-sizing: border-box;
   width: auto;
   position: center;
@@ -147,5 +138,5 @@ export default {
   color: #000;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
   word-wrap: break-word;
-}
+} */
 </style>

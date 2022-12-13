@@ -150,45 +150,45 @@ INSERT INTO playdate_pet(
 
 
 
-INSERT INTO topics(topic_title)
-	VALUES ('What''s the best way to socialize my puppy?');
-INSERT INTO topics(topic_title)
-	VALUES ('My sister''s cat loves to eat butter off the counter, does anyone else''s cat do this too or just him?');
-INSERT INTO topics(topic_title)
-	VALUES ('I think my bearded dragon is upset with me but I don''t know why. Help!');
+INSERT INTO topics(dateandtime, topic_title)
+	VALUES ('2022-12-02 07:15:00-00', 'What''s the best way to socialize my puppy?');
+INSERT INTO topics(dateandtime, topic_title)
+	VALUES ('2022-12-04 12:30:05-00', 'My sister''s cat loves to eat butter off the counter, does anyone else''s cat do this too or just him?');
+INSERT INTO topics(dateandtime, topic_title)
+	VALUES ('2022-12-10 19:10:00-00', 'I think my bearded dragon is upset with me but I don''t know why. Help!');
 
 
 
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (4, 1, 'play with other dogs', 'Get your puppy outside and make sure they play with lots of other dogs so they can get used to different attitudes and behaviors.');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-02 22:22:00-00', 4, 1, 'play with other dogs', 'Get your puppy outside and make sure they play with lots of other dogs so they can get used to different attitudes and behaviors.');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (5, 3, 'are you sure it''s mad at you?', 'sometimes I feel like my bearded dragon Stacy is mad at me but she''s really just hungry for some flies.');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-11 20:08:00-00', 5, 3, 'are you sure it''s mad at you?', 'sometimes I feel like my bearded dragon Stacy is mad at me but she''s really just hungry for some flies.');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (3, 3, 'try getting it a friend', 'My bearded dragon buddy was always down in the dumps until I got him a friend to play with. Now he''s happy all the time');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-12 16:29:00-00', 3, 3, 'try getting it a friend', 'My bearded dragon buddy was always down in the dumps until I got him a friend to play with. Now he''s happy all the time');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (4, 2, 'ridiculous', 'I think you''re making that up no offense, you are, aren''t you?');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-04 16:44:00-00', 4, 2, 'woah I''d never heard of that', 'I think you''re making that up no offense, you are, aren''t you?');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (4, 1, 'play with other animals, and take them out often', 'make sure you play with them and introduce them to strangers and other animals. that way they will be used to the world around them');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-03 12:43:00-00', 4, 1, 'play with other animals, and take them out often', 'make sure you play with them and introduce them to strangers and other animals. that way they will be used to the world around them');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (5, 2, 'nah', 'nope you''re the only one');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-05 10:15:00-00', 5, 2, 'nah', 'nope you''re the only one');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (3, 3, 'what did you do', 'It must be mad at you for a reason. If you think really hard, you might be able to remember why it''s upset at you! Then you can mend the bridge between you two.');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-12 18:10:00-00', 3, 3, 'what did you do', 'It must be mad at you for a reason. If you think really hard, you might be able to remember why it''s upset at you! Then you can mend the bridge between you two.');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (6, 1, 'why would you want to socialize them', 'I like my puppies not social');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-04 09:55:00-00', 6, 1, 'why would you want to socialize them', 'I like my puppies not social');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (4, 2, 'yeah actually it''s so weird!', 'My cats do this too. They are such unique little fluff balls!');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-08 02:08:00-00', 4, 2, 'yeah actually it''s so weird!', 'My cats do this too. They are such unique little fluff balls!');
 INSERT INTO messages(
-	user_id, topic_id, message_title, message_text)
-	VALUES (5, 1, 'Train them while they''re young!', 'You simply must train them while they are very very young to get the absolute best results possible.');
+	dateandtime, user_id, topic_id, message_title, message_text)
+	VALUES ('2022-12-04 15:03:00-00', 5, 1, 'Train them while they''re young!', 'You simply must train them while they are very very young to get the absolute best results possible.');
 
 
 

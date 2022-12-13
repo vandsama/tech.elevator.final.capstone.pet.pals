@@ -81,6 +81,22 @@ export default {
   max-width: 600px;
 }
 /** ios1-ios6 bubbles **/
+
+
+.topic-details .bubble {
+  font-size: .8em;
+  border: 4px solid #5da2d5;
+  background-color: azure;
+  border-radius: 6px;
+  width: max-content;
+  display: flex;
+  justify-content: left;
+  align-content: left;
+  font-family: "Quattrocento Sans", sans-serif;
+  text-align: left;
+}
+
+/* 
 .topic-details .bubble {
   box-sizing: border-box;
   width: auto;
@@ -115,7 +131,7 @@ export default {
   color: #000;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
   word-wrap: break-word;
-}
+} */
 .addMessage {
   /* display: block;
   padding: 0 0 10px 10px; */
