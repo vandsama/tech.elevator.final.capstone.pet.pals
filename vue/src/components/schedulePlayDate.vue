@@ -107,4 +107,7 @@ textarea {
 textarea:hover {
   background-color: #90ccf4;
 }
+button:hover {
+  background-color: #f3d250;
+}
 </style>

@@ -11,20 +11,19 @@
       <p>Pets Attending: {{ totalPets }}</p>
       <div class="carousel" v-if="renderCards">
         <carousel-3d
-        :width="500"
-            :height="1000"
-            :autoplay="true" :autoplay-timeout="5000">
+          :width="500"
+          :height="1000"
+          :autoplay="true"
+          :autoplay-timeout="5000"
+        >
           <slide
-            style="background: none; border: none;"
+            style="background: none; border: none"
             v-for="pet in pets"
             v-bind:key="pet.id"
             :index="pets.indexOf(pet)"
             v-bind:pet="pet"
-            
-            >
-        
-            <petcard class="card" v-bind:pet="pet"
-            ></petcard>
+          >
+            <petcard class="card" v-bind:pet="pet"></petcard>
           </slide>
         </carousel-3d>
       </div>
@@ -42,7 +41,6 @@
           </div>
         </div>
       </div>
-      
     </div>
     <br />
 
@@ -65,7 +63,7 @@ export default {
       playDate: {},
       users: [],
       pets: [],
-      renderCards: false
+      renderCards: false,
     };
   },
   components: {
@@ -104,10 +102,10 @@ export default {
 
 <!-- could use more styling --> 
 <style scoped>
-.card{
+.card {
   margin: 0px;
 }
-.carousel{
+.carousel {
   width: auto;
   height: 1000px;
 }
