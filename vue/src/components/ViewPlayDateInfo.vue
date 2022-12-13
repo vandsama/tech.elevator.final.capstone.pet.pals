@@ -65,6 +65,7 @@ h3 {
   justify-content: center;
   align-items: center;
   background-color: #f5c423;
+  /* width: 500px; */
 }
 .location {
   display: flex;
