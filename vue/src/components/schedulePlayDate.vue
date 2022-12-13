@@ -59,7 +59,7 @@ export default {
     schedule() {
       PlayDateService.schedule(this.playDate)
         .then((r) => {
-          if (r.status == 201) {
+          if (r.status == 200) {
             this.$router.push({ name: "home" });
           }
         })

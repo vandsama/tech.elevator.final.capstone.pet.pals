@@ -103,7 +103,10 @@ const router = new Router({
     {
       path: "/playdates/:id/join",
       name: "playdatejoin",
-      component: playdatejoinview
+      component: playdatejoinview,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/forums",

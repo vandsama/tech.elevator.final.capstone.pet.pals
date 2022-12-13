@@ -3,21 +3,20 @@ package com.techelevator.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.apache.tomcat.jni.Local;
 
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class PlayDate {
 
     private int playDateId;
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-//    private Timestamp dateandtime;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-    private Timestamp dateAndTime;
+    private LocalDateTime dateAndTime;
     private String location;
     private String requestMessage;
 
-    public PlayDate(Timestamp dateAndTime, String location, String requestMessage) {
+    public PlayDate(LocalDateTime dateAndTime, String location, String requestMessage) {
         this.dateAndTime = dateAndTime;
         this.location = location;
         this.requestMessage = requestMessage;
@@ -34,11 +33,11 @@ public class PlayDate {
         this.playDateId = playDateId;
     }
 
-    public Timestamp getDateAndTime() {
+    public LocalDateTime getDateAndTime() {
         return dateAndTime;
     }
 
-    public void setDateAndTime(Timestamp dateAndTime) {
+    public void setDateAndTime(LocalDateTime dateAndTime) {
         this.dateAndTime = dateAndTime;
     }
 

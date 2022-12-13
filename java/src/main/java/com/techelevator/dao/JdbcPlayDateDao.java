@@ -6,6 +6,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +65,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
 
     @Override
-    public boolean schedulePlayDate(Timestamp dateAndTime, String location, String requestMessage){
+    public boolean schedulePlayDate(LocalDateTime dateAndTime, String location, String requestMessage){
         final String sql = " INSERT INTO playdates (dateandtime, location, requestmessage) " +
                 " VALUES(?, ?, ?); ";
         return jdbcTemplate.update(sql, dateAndTime, location, requestMessage) == 1;
@@ -84,7 +85,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {
         PlayDate playDate = new PlayDate();
         playDate.setPlayDateId(rowSet.getInt("playdate_id"));
-        playDate.setDateAndTime(rowSet.getTimestamp("dateandtime"));
+        playDate.setDateAndTime(rowSet.getTimestamp("dateandTime").toLocalDateTime());
         playDate.setLocation(rowSet.getString("location"));
         playDate.setRequestMessage(rowSet.getString("requestmessage"));
         return playDate;
