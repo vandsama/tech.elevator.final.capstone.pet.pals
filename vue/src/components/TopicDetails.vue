@@ -2,13 +2,37 @@
   <div class="topic-details">
     <h1>{{ this.topic.title }}</h1>
 
-    <div
+
+    <table class="message-table">
+      <tbody>
+        <tr v-for="message in this.messages" v-bind:key="message.id" v-bind:message="message">
+          <td class="message-list-css">
+            <message v-bind:message="message"></message>
+          </td>
+
+          <td class="message-list-css">
+            {{ message.text }}
+          </td>
+
+          <td class="message-list-css">
+            {{ message.timestamp | formatDate }} {{ message.timestamp | formatTime }}
+          </td>
+<!-- 
+          <td class="message-list-css">
+            {{ message.timestamp | formatTime }}
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <div
       v-for="message in this.messages"
       v-bind:key="message.id"
       v-bind:message="message"
       class="topic-message bubble"
     >
-      <message v-bind:message="message"></message>
+      <message v-bind:message="message"></message> -->
+
       <!-- <h3 class="message-title">{{ message.title }}</h3> -->
       <!-- <p class="username"> {{getUsername(message.user_id)}} hi </p>
       <p class="message-body">{{ message.text }}</p> -->
@@ -18,7 +42,8 @@
         class="btnEditMessage"
       >Edit</router-link>
       <button class="btnDeleteMessage" v-on:click="deleteMessage(message.id)">Delete</button> -->
-    </div>
+      
+    <!-- </div> -->
 
     <router-link
       :to="{ name: 'AddMessage', params: {topicId: $store.state.activeTopic.id} }"
@@ -74,6 +99,24 @@ export default {
 </script>
 
 <style>
+
+.message-table {
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
+  text-align: left;
+}
+
+.message-list-css {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 1.4em;
+  border: 4px solid #5da2d5;
+  background-color: azure;
+  border-radius: 6px;
+  width: max-content;
+}
+
+
 /** page structure **/
 .topic-details {
   padding: 20px 20px;

@@ -7,12 +7,18 @@
     <!-- {{ this.playDate.timestamp | formatDate }} <br />
     {{ this.playDate.timestamp | formatTime }} <br /> -->
 
-        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" style="text-decoration: none" >
+        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id">
           <td width="80%" class="topic-list-css">
             <router-link 
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-            >{{ topic.title }} {{ topic.timestamp | formatDate }}</router-link> 
+            >{{ topic.title }}</router-link> 
           </td>
+          <td class="topic-list-css">
+            {{ topic.timestamp | formatDate }} {{ topic.timestamp | formatTime }}
+          </td>
+          <!-- <td class="topic-list-css">
+            {{ topic.timestamp | formatTime }}
+          </td> -->
           <!-- <td>
             <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
           </td>
