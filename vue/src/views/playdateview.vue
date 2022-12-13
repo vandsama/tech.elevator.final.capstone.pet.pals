@@ -33,7 +33,11 @@
           {{ user.username }} is attending with:
           <div class="user-pets">
             <div v-for="pet in user.pets" v-bind:key="pet.id">
-              {{ pet.name }}
+              <router-link
+                style="text-decoration: none; color: black"
+                v-bind:to="{ name: 'ViewPets', hash: '#petCard' }"
+                >{{ pet.name }}</router-link
+              >
             </div>
           </div>
         </div>
@@ -130,6 +134,7 @@ h1 {
 .user-info {
   display: flex;
   justify-content: left;
+  align-items: center;
   background-color: #a6deed;
   margin: 5px;
   border-radius: 1rem;

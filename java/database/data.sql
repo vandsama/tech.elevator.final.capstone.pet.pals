@@ -11,7 +11,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('Phil','$2a$10$9dUaeaRfB
 
 INSERT INTO pets(
 	animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-	VALUES ('Cat',	'Olive',	True,	True,	True,	'1-11 Months',	'Female',	'They take some warming up to',	'They take some warming up to',	'Napping',	'anything that can be knocked off a table',	'popcorn',	'https://imgur.com/kuVvJSV.jpg', '45219');
+	VALUES ('Cat',	'Olive',	True,	True,	True,	'1-11 Months',	'Female',	'They take some warming up to',	'They take some warming up to',	'Napping',	'anything that can be knocked off a table',	'popcorn',	'https://imgur.com/jJtjRpR.jpg', '45219');
 
 INSERT INTO pets(
 	animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)

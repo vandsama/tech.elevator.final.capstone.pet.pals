@@ -69,7 +69,7 @@
       <div>
         <router-link
           style="text-decoration: none; color: white"
-          v-bind:to="{ name: 'playDates' }"
+          v-bind:to="{ name: 'petRegistration' }"
           >account</router-link
         >
       </div>
