@@ -11,13 +11,13 @@
       <div class="date">
         <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
         &nbsp;
-        {{ this.playDate.timestamp | formatDate }}
+        {{ this.playDate.dateAndTime | formatDate }}
 
         <br />
       </div>
       <div class="time">
         <font-awesome-icon icon="fa-solid fa-clock" color="black" /> &nbsp;
-        {{ this.playDate.timestamp | formatTime }}
+        {{ this.playDate.dateAndTime | formatTime }}
 
         <br />
         <!-- {{ this.playDate.requestMessage }} <br /> -->
