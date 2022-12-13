@@ -21,17 +21,20 @@
     </div>
 
     <router-link
-      :to="{ name: 'AddMessage', params: {topicId: $store.state.activeTopic.id} }"
+      :to="{
+        name: 'AddMessage',
+        params: { topicId: $store.state.activeTopic.id },
+      }"
       class="addMessage"
-    >Add New Message</router-link>
-
+      >Add New Message</router-link
+    >
   </div>
 </template>
 
 <script>
 import topicService from "@/services/TopicService.js";
 import messageService from "@/services/MessageService.js";
-import Message from './Message.vue';
+import Message from "./Message.vue";
 export default {
   components: { Message },
   name: "topic-details",
@@ -40,25 +43,23 @@ export default {
   },
   methods: {
     deleteMessage(id) {
-        messageService
-      .delete(id)
-      .then(response => {
+      messageService.delete(id).then((response) => {
         if (response.status === 200) {
           this.$store.commit("DELETE_MESSAGE", id);
         }
       });
-    }
+    },
   },
   created() {
     topicService.get(this.topicId).then((response) => {
-      this.topic = response.data
-    })
+      this.topic = response.data;
+    });
     messageService
       .get(this.topicId)
-      .then(response => {
+      .then((response) => {
         this.messages = response.data;
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.response.status === 404) {
           this.$router.push("/not-found");
         }
@@ -67,9 +68,9 @@ export default {
   data() {
     return {
       messages: [],
-      topic: {}
-    }
-  }
+      topic: {},
+    };
+  },
 };
 </script>
 
@@ -81,41 +82,6 @@ export default {
   max-width: 600px;
 }
 /** ios1-ios6 bubbles **/
-.topic-details .bubble {
-  box-sizing: border-box;
-  width: auto;
-  position: relative;
-  clear: both;
-  background: #5da2d5;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.15, #bee2ff),
-    color-stop(1, #5da2d5)
-  );
-  background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: -o-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: linear-gradient(to top, #bee2ff 15%, #5da2d5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#5da2d5', endColorstr='#bee2ff');
-  border: solid 1px rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  padding: 6px 20px;
-  color: #000;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-  word-wrap: break-word;
-}
 .addMessage {
   /* display: block;
   padding: 0 0 10px 10px; */
@@ -138,7 +104,5 @@ a.addMessage:hover {
   justify-content: center;
   font-family: "Quattrocento Sans", sans-serif;
   text-align: left;
-
 }
-
 </style>

@@ -89,7 +89,7 @@ h3 {
   border-radius: 5px;
   padding: 5px 0;
   transition: opacity 10s ease-in-out;
-  top: 24%;
+  top: 20%;
   left: 5%;
   z-index: 1;
 }

@@ -2,48 +2,51 @@
   <div class="forums">
     <h1>Topics</h1>
     <table class="forum-table">
-
       <tbody>
-        <div class="topic-list-css">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <input
-                type="text"
-                v-model.trim="search"
-                placeholder="Search..."
-                @keyup="getAllPetOwnersPeople"
-              />
-              <ul v-if="search">
-                <li v-for="person in people" :key="person.id">
-                  {{ person.name }}
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="topic-list">
+          <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+          &nbsp;
+          <input
+            type="text"
+            v-model.trim="search"
+            placeholder="Search..."
+            @keyup="getAllPetOwnersPeople"
+          />
+          <ul v-if="search">
+            <li v-for="person in people" :key="person.id">
+              {{ person.name }}
+            </li>
+          </ul>
         </div>
-        <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id" >
-          <td width="80%" class="topic-list-css">
-            <router-link 
-              v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-            >{{ topic.title }}</router-link> 
-          </td>
-          <!-- <td>
+        <div class="topic-list-css">
+          <tr v-for="topic in this.$store.state.topics" v-bind:key="topic.id">
+            <td>
+              <router-link
+                v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
+                >{{ topic.title }}</router-link
+              >
+            </td>
+            <!-- <td>
             <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
           </td>
           <td>
             <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
           </td> -->
-        </tr>
+          </tr>
+        </div>
       </tbody>
     </table>
 
     <div class="create-new-topic">
       <router-link
-        :to="{ name: 'AddTopic', params: {topicId: $store.state.activeTopic.id} }"
+        :to="{
+          name: 'AddTopic',
+          params: { topicId: $store.state.activeTopic.id },
+        }"
         class="addTopic"
-      >Create New Thread</router-link>
+        >Create New Thread</router-link
+      >
     </div>
-
   </div>
 </template>
 
@@ -54,30 +57,30 @@ export default {
   name: "topic-list",
   methods: {
     getTopics() {
-      forumsService.list().then(response => {
+      forumsService.list().then((response) => {
         this.$store.commit("SET_TOPICS", response.data);
       });
     },
     deleteTopic(id) {
-      forumsService.delete(id).then(response => {
-          if (response.status == 200) {
-            this.getTopics();
-          }
-        });
+      forumsService.delete(id).then((response) => {
+        if (response.status == 200) {
+          this.getTopics();
+        }
+      });
     },
     getAllPetOwnersPeople() {
       fetch("https://swapi.dev/api/people/")
-        .then(response => response.json())
-        .then(res => {
+        .then((response) => response.json())
+        .then((res) => {
           if (this.search) {
-            this.people = res.results.filter(people =>
+            this.people = res.results.filter((people) =>
               people.name.toLowerCase().includes(this.search.toLowerCase())
             );
           } else {
             this.people = res.results;
           }
         });
-    }    
+    },
   },
   created() {
     this.getTopics();
@@ -86,14 +89,13 @@ export default {
   data() {
     return {
       people: [],
-      search: ""
+      search: "",
     };
-  },  
+  },
   mounted() {
     console.log("Component mounted.");
   },
 };
-
 </script>
 
 <style scoped>
@@ -101,6 +103,7 @@ export default {
   display: flex;
   justify-content: center;
   font-family: "Quattrocento Sans", sans-serif;
+  color: white;
   text-align: left;
 }
 
@@ -110,42 +113,68 @@ export default {
   font-family: "Quattrocento Sans", sans-serif;
 }
 
-
+.topic-list {
+  font-size: large;
+  font-style: italic;
+  margin: auto;
+  background-color: #5da2d5;
+  width: 60%;
+  border-radius: 12px;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5%;
+}
 .topic-list-css {
-  box-sizing: border-box;
-  width: auto;
-  position: center;
-  clear: both;
-  flex-basis: flex;
-  justify-content: space-between;
-  background: #5da2d5;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.15, #bee2ff),
-    color-stop(1, #5da2d5)
-  );
-  background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: -o-linear-gradient(bottom, #bee2ff 15%, #5da2d5 100%);
-  background-image: linear-gradient(to top, #bee2ff 15%, #5da2d5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#5da2d5', endColorstr='#bee2ff');
-  border: solid 1px rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  padding: 6px 20px;
-  color: #000;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-  word-wrap: break-word;
+  font-size: x-large;
+  font-style: italic;
+  margin: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-right: 5%;
+  padding-left: 5%;
+  background-color: #5da2d5;
+  width: 60%;
+  border-radius: 12px;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-decoration: none;
+}
+.topic-list-css:hover {
+  transform: translateY(-7px);
+  transition: all 0.3s ease 0s;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: tomato;
+}
+.create-new-topic {
+  background-color: #f5c423;
+  width: 20%;
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  border-radius: 15px;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
+}
+.create-new-topic:hover {
+  background-color: #5da2d5;
+  box-shadow: 0px 15px 20px #69dcf0;
+  transform: translateY(-7px);
+  border-radius: 12px;
+  transition: all 0.3s ease 0s;
+}
+input[type="text"] {
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+  width: 60%;
+}
+input[type="text"]:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease 0s;
+}
+tr {
+  row-gap: 10px;
 }
 </style>

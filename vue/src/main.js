@@ -10,8 +10,9 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { faMapPin } from '@fortawesome/free-solid-svg-icons'
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUserSecret, faMapPin, faCalendarDays, faClock)
+library.add(faUserSecret, faMapPin, faCalendarDays, faClock, faMagnifyingGlass)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
