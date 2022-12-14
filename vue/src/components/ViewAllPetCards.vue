@@ -62,7 +62,7 @@ export default {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  width: auto;
+  /* width: 400px; */
 }
 .thumbnail {
   position: relative;
@@ -84,6 +84,7 @@ export default {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: flex;
+  /* overflow: hidden; */
 }
 button:hover {
   background-color: #f3d250;
