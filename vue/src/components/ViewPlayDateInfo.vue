@@ -1,25 +1,28 @@
 <template>
-  <div class="dateInfo">
-    <div class="location">
-      <h3>
-        <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
-        &nbsp; {{ this.playDate.location }}
-      </h3>
-    </div>
-    <div class="onHoverLocation">Location</div>
-    <div class="date">
-      <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
-      &nbsp;
-      {{ this.playDate.dateAndTime | formatDate }}
+  <div class="playdatecard">
+    <div class="dateInfo" v-bind:class="{ cancelled: playDate.cancelled }">
+      <div class="location">
+        <h3>
+          <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
+          &nbsp; {{ this.playDate.location }}
+        </h3>
+      </div>
+      <div class="onHoverLocation">Location</div>
+      <p v-if="playDate.cancelled == true">Playdate cancelled!</p>
+      <div class="date">
+        <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
+        &nbsp;
+        {{ this.playDate.dateAndTime | formatDate }}
 
-      <br />
-    </div>
-    <div class="time">
-      <font-awesome-icon icon="fa-solid fa-clock" color="black" /> &nbsp;
-      {{ this.playDate.dateAndTime | formatTime }}
+        <br />
+      </div>
+      <div class="time">
+        <font-awesome-icon icon="fa-solid fa-clock" color="black" /> &nbsp;
+        {{ this.playDate.dateAndTime | formatTime }}
 
-      <br />
-      <!-- {{ this.playDate.requestMessage }} <br /> -->
+        <br />
+        <!-- {{ this.playDate.requestMessage }} <br /> -->
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +41,16 @@ export default {
 </script>
 
 <style scoped>
+.cancelled {
+  background-color: darkgrey !important;
+}
+p {
+  text-color: red;
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+
+}
 h3 {
   font-family: "Bebas Neue", cursive;
   font-size: 2.5em;

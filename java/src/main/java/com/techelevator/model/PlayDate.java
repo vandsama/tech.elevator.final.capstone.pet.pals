@@ -2,24 +2,23 @@ package com.techelevator.model;
 
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.apache.tomcat.jni.Local;
-
-
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class PlayDate {
 
     private int playDateId;
+    private int creatorId;
     private LocalDateTime dateAndTime;
     private String location;
     private String requestMessage;
+    private boolean isCancelled;
 
-    public PlayDate(LocalDateTime dateAndTime, String location, String requestMessage) {
+    public PlayDate(int creatorId, LocalDateTime dateAndTime, String location, String requestMessage, boolean isCancelled) {
+        this.creatorId = creatorId;
         this.dateAndTime = dateAndTime;
         this.location = location;
         this.requestMessage = requestMessage;
+        this.isCancelled = isCancelled;
     }
 
     public PlayDate() {
@@ -65,4 +64,19 @@ public class PlayDate {
         this.requestMessage = requestMessage;
     }
 
+    public int getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(int creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    public boolean isCancelled() {
+        return isCancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        isCancelled = cancelled;
+    }
 }

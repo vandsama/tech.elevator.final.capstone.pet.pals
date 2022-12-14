@@ -21,6 +21,7 @@ export default {
     schedule(playDate) {
         return axios.post(`/playdates/schedule`, playDate)
     },
+
     listPlaydateUsers(id) {
         return axios.get(`/playdates/${id}/users`)
     },
@@ -29,6 +30,12 @@ export default {
         return axios.post(`/playdates/${id}/join`, petIds)
     },
 
+    getCreatedPlaydates(userId) {
+        return axios.get(`/playdates/user/${userId}`)
+    },
 
+    cancelPlaydate(playdateId) {
+        return axios.put(`/playdates/${playdateId}/cancel`)
+    }
 
 }
