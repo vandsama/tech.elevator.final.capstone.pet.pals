@@ -1,7 +1,7 @@
 <template>
   <div class="petCard">
     <div class="thumbnail">
-      <img v-bind:src="this.pet.img" alt="the goodest boy" />
+      <img id="pets" v-bind:src="this.pet.img" alt="the goodest boy" />
     </div>
     <div class="nameZip">
       <h2>
@@ -62,7 +62,12 @@ export default {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  /* width: 400px; */
+  width: 400px;
+  height: 1000px;
+}
+#pets {
+  height: 300px;
+  width: 300px;
 }
 .thumbnail {
   position: relative;
@@ -73,21 +78,6 @@ export default {
   border: 5px solid #5da2d5;
   background-color: #5da2d5;
   border-radius: 5px;
-}
-.thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 400px;
-  width: auto;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: flex;
-  /* overflow: hidden; */
-}
-button:hover {
-  background-color: #f3d250;
 }
 .nameZip {
   display: flex;

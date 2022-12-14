@@ -2,7 +2,7 @@
   <div class="info2">
     <div class="petCard">
       <div class="thumbnail">
-        <img v-bind:src="this.pet.img" alt="the goodest boy" />
+        <img id="pet" v-bind:src="this.pet.img" alt="the goodest boy" />
       </div>
       <div class="info" id="specific">
         <div class="firstRow">
@@ -61,7 +61,7 @@ export default {
   border-radius: 5px;
   display: flex;
 }
-img {
+#pet {
   position: absolute;
   left: 50%;
   top: 50%;
