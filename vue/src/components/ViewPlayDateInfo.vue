@@ -1,6 +1,6 @@
 <template>
-  <div class="playdatecard">
-    <div class="dateInfo">
+  <div class="playdatecard" >
+    <div class="dateInfo" v-bind:class="{cancelled: playDate.cancelled}">
       <div class="location">
         <h3>
           <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
@@ -8,6 +8,7 @@
         </h3>
       </div>
       <div class="onHoverLocation">Location</div>
+      <p v-if="playDate.cancelled == true"> Playdate cancelled! </p> 
       <div class="date">
         <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
         &nbsp;
@@ -40,6 +41,13 @@ export default {
 </script>
 
 <style scoped>
+.cancelled{
+  background-color:  darkgrey !important;
+}
+p {
+  text-color: red;
+  font-size: 36px;
+}
 h3 {
   font-family: "Bebas Neue", cursive;
   font-size: 2.5em;

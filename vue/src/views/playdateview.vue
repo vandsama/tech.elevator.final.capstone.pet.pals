@@ -8,7 +8,7 @@
         {{ playDate.dateAndTime | formatTime }}
       </h3>
       <p>{{ playDate.requestMessage }}</p>
-      <p style="margin-bottom: 0;">Pets Attending: {{ totalPets }}</p>
+      <p style="margin-bottom: 0">Pets Attending: {{ totalPets }}</p>
       <div class="carousel" v-if="renderCards">
         <carousel-3d
           :width="500"
@@ -48,8 +48,13 @@
       v-bind:to="{ name: 'playdatejoin', params: { id: playDate.playDateId } }"
       style="text-decoration: none"
     >
-      <button class="btn">Join this playdate!</button>
+      <button class="btn" v-if="playDate.cancelled === true">Join this playdate!</button>
     </router-link>
+    <div 
+    v-show="this.$store.state.user.id === playDate.creatorId && playDate.isCancelled === false"
+    >
+      <button v-on:click="cancelPLaydate" class="btn">Cancel playdate</button>
+    </div>
   </div>
 </template>
 
@@ -70,6 +75,12 @@ export default {
     Carousel3d,
     Slide,
     petcard,
+  },
+  methods: {
+    cancelPLaydate() {
+      playDateService.cancelPlaydate(this.$route.params.id);
+      this.$router.push("/playdates")
+    },
   },
   created() {
     playDateService.listPlaydatePets(this.$route.params.id).then((response) => {
@@ -102,7 +113,7 @@ export default {
 
 <!-- could use more styling --> 
 <style scoped>
-.carousel-3d-container{
+.carousel-3d-container {
   margin: 0;
   padding: 0;
 }

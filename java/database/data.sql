@@ -108,16 +108,20 @@ INSERT INTO user_pet(
 
 
 INSERT INTO playDates(
-	dateandtime, location, requestmessage)
-	VALUES ('2023-06-22 19:10:00-00', 'Pet Play Park', 'Want to go on a pet date?');
+	creator_id, isCancelled, dateandtime, location, requestmessage)
+	VALUES (1, false, '2023-06-22 19:10:00-00', 'Pet Play Park', 'Want to go on a pet date?');
 
 INSERT INTO playDates(
-	dateandtime, location, requestmessage)
-	VALUES ('2023-02-14 15:00:00-00', 'Pet Friendly Dogfe', 'Want to go on a pet date?');
+	creator_id, isCancelled, dateandtime, location, requestmessage)
+	VALUES (3, false, '2023-02-14 15:00:00-00', 'Pet Friendly Dogfe', 'Want to go on a pet date?');
 
 INSERT INTO playDates(
-	dateandtime, location, requestmessage)
-	VALUES ('2023-1-29 09:30:00-00', 'Washington Park', 'Want to go on a pet date?');
+	creator_id, isCancelled, dateandtime, location, requestmessage)
+	VALUES (4, false, '2023-1-29 09:30:00-00', 'Washington Park', 'Want to go on a pet date?');
+
+INSERT INTO playDates(
+	creator_id, isCancelled, dateandtime, location, requestmessage)
+	VALUES (5, true, '2023-1-15 12:30:00-00', 'My House', 'Come on over!');
 
 
 
@@ -169,6 +173,17 @@ INSERT INTO playdate_pet(
 	playdate_id, pet_id)
 	VALUES (3, 9);
 
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (4, 10);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (4, 11);
+
+INSERT INTO playdate_pet(
+	playdate_id, pet_id)
+	VALUES (4, 12);
 
 
 

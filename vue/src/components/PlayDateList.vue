@@ -1,6 +1,6 @@
 <template>
   <div class="outline">
-    <h1>My Scheduled Playdates</h1>
+    <h1>Available Playdates</h1>
     <button>
       <router-link
         style="text-decoration: none; color: white"
@@ -12,13 +12,16 @@
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
         <router-link
+        
           v-bind:to="{
             name: 'playdatedetails',
             params: { id: playDate.playDateId },
           }"
           style="text-decoration: none"
         >
-          <playdatecard v-bind:playDate="playDate"></playdatecard>
+          <playdatecard 
+          v-show="playDate.cancelled == true"
+           v-bind:playDate="playDate"></playdatecard>
         </router-link>
       </div>
     </div>

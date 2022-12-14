@@ -67,7 +67,7 @@ public class PlayDateController {
         int userId = user.getId();
 
         try {
-            playDateDao.schedulePlayDate(playDate.getDateAndTime(), playDate.getLocation(), playDate.getRequestMessage());
+            playDateDao.schedulePlayDate(userId, playDate.getDateAndTime(), playDate.getLocation(), playDate.getRequestMessage());
         } catch (Exception e){
             e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error Scheduling Play Date");
@@ -82,6 +82,33 @@ public class PlayDateController {
             e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Error adding pets to playdate");
         }
+    }
+
+    @RequestMapping(value = "/playdates/{playdateId}/cancel", method = RequestMethod.PUT)
+    public void cancelPlaydate(@PathVariable int playdateId, Principal principal) {
+        User user = userDao.findByUsername(principal.getName());
+        int userId = user.getId();
+        PlayDate playDate = playDateDao.getPlayDateById(playdateId);
+
+        if (playDate.getCreatorId() != userId) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Cannot cancel playdates you did not create");
+        }
+
+        if (playDate.isCancelled()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Playdate already cancelled");
+        }
+
+        try {
+            playDateDao.cancelPlaydate(playdateId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Error cancelling playdate");
+        }
+    }
+
+    @GetMapping(value = "/playdates/user/{userId}")
+    public List<PlayDate> getPlaydatesUserCreated(@PathVariable int userId) {
+        return playDateDao.getPlaydatesUserCreated(userId);
     }
 
 

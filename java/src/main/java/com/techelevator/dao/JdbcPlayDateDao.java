@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
     @Override
     public List<PlayDate> listAllPlayDates() {
         List<PlayDate> playDateList = new ArrayList<>();
-        String sql = "SELECT playdate_id, dateandtime, location, requestmessage\n" +
+        String sql = "SELECT playdate_id, creator_id, isCancelled, dateandtime, location, requestmessage\n" +
                 "\tFROM public.playdates;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
@@ -34,7 +33,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
     @Override
     public List<PlayDate> listMyPlayDates(int userId) {
         List<PlayDate> playDateList = new ArrayList<>();
-        String sql = "SELECT DISTINCT p.playdate_id, dateandtime, location, requestmessage\n" +
+        String sql = "SELECT DISTINCT p.playdate_id, creator_id, isCancelled, dateandtime, location, requestmessage\n" +
                 "FROM playdates as p\n" +
                 "JOIN playdate_pet as pp ON pp.playdate_id =  p.playdate_id\n" +
                 "JOIN user_pet as up ON pp.pet_id = up.pet_id\n" +
@@ -53,7 +52,7 @@ public class JdbcPlayDateDao implements PlayDateDao {
     @Override
     public PlayDate getPlayDateById(int playDateId) {
         PlayDate playDate = null;
-        String sql = "SELECT playdate_id, dateandtime, location, requestmessage\n" +
+        String sql = "SELECT playdate_id, creator_id, isCancelled, dateandtime, location, requestmessage\n" +
                 "\tFROM public.playdates WHERE playdate_id = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, playDateId);
 
@@ -65,10 +64,10 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
 
     @Override
-    public boolean schedulePlayDate(LocalDateTime dateAndTime, String location, String requestMessage){
-        final String sql = " INSERT INTO playdates (dateandtime, location, requestmessage) " +
-                " VALUES(?, ?, ?); ";
-        return jdbcTemplate.update(sql, dateAndTime, location, requestMessage) == 1;
+    public boolean schedulePlayDate(int creatorId,LocalDateTime dateAndTime, String location, String requestMessage){
+        final String sql = " INSERT INTO playdates (creator_id, isCancelled, dateandtime, location, requestmessage) " +
+                " VALUES(?, false ,?, ?, ?); ";
+        return jdbcTemplate.update(sql, creatorId, dateAndTime, location, requestMessage) == 1;
     }
 
     @Override
@@ -82,8 +81,33 @@ public class JdbcPlayDateDao implements PlayDateDao {
         }
     }
 
+    @Override
+    public void cancelPlaydate(int playdateId) {
+        String sql = "UPDATE playdates\n" +
+                "\tSET iscancelled=true\n" +
+                "\tWHERE playdate_id = ?;";
+        jdbcTemplate.update(sql, playdateId);
+    }
+
+    @Override
+    public List<PlayDate> getPlaydatesUserCreated(int userId) {
+        List<PlayDate> playDates = new ArrayList<>();
+        String sql = "SELECT playdate_id, creator_id, dateandtime, location, requestmessage, iscancelled\n" +
+                "\tFROM playdates\n" +
+                "\tWHERE creator_id = ?;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql,userId);
+
+        while (result.next()) {
+            PlayDate playDate = mapRowToPlayDate(result);
+            playDates.add(playDate);
+        }
+        return playDates;
+    }
+
     private PlayDate mapRowToPlayDate(SqlRowSet rowSet) {
         PlayDate playDate = new PlayDate();
+        playDate.setCreatorId(rowSet.getInt("creator_id"));
+        playDate.setCancelled(rowSet.getBoolean("isCancelled"));
         playDate.setPlayDateId(rowSet.getInt("playdate_id"));
         playDate.setDateAndTime(rowSet.getTimestamp("dateandTime").toLocalDateTime());
         playDate.setLocation(rowSet.getString("location"));
