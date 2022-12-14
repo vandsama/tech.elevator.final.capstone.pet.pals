@@ -80,6 +80,9 @@
 
 <script>
 export default {
+  props: {
+    user: Object,
+  },
   computed: {
     isActive() {
       return this.$store.state.token != "";

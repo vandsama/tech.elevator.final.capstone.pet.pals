@@ -1,6 +1,6 @@
 <template>
-  <div class="playdatecard" >
-    <div class="dateInfo" v-bind:class="{cancelled: playDate.cancelled}">
+  <div class="playdatecard">
+    <div class="dateInfo" v-bind:class="{ cancelled: playDate.cancelled }">
       <div class="location">
         <h3>
           <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
@@ -8,7 +8,7 @@
         </h3>
       </div>
       <div class="onHoverLocation">Location</div>
-      <p v-if="playDate.cancelled == true"> Playdate cancelled! </p> 
+      <p v-if="playDate.cancelled == true">Playdate cancelled!</p>
       <div class="date">
         <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
         &nbsp;
@@ -41,12 +41,15 @@ export default {
 </script>
 
 <style scoped>
-.cancelled{
-  background-color:  darkgrey !important;
+.cancelled {
+  background-color: darkgrey !important;
 }
 p {
   text-color: red;
-  font-size: 36px;
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+
 }
 h3 {
   font-family: "Bebas Neue", cursive;
@@ -55,7 +58,7 @@ h3 {
 }
 .dateInfo {
   font-family: "Quattrocento Sans", sans-serif;
-  width: 60%;
+  width: 350px;
   color: #f54c4c;
   background-color: white;
   display: flex;
@@ -65,15 +68,7 @@ h3 {
   border-radius: 12px;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
   position: relative;
-  height: 60%;
-}
-.playdatecard {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5c423;
-  /* width: 500px; */
+  height: 250px;
 }
 .location {
   display: flex;
@@ -81,9 +76,11 @@ h3 {
 }
 .time {
   font-size: 1.5em;
+  margin-top: -30px;
 }
 .date {
   font-size: 1.5em;
+  margin-top: -25px;
 }
 .onHoverLocation {
   display: none;
@@ -98,8 +95,13 @@ h3 {
   border-radius: 5px;
   padding: 5px 0;
   transition: opacity 10s ease-in-out;
-  top: 20%;
-  left: 5%;
+  top: 25%;
+  left: -15%;
   z-index: 1;
+}
+.dateInfo:hover {
+  transform: translateY(-15px);
+  border-radius: 12px;
+  transition: all 0.3s ease 0s;
 }
 </style>
