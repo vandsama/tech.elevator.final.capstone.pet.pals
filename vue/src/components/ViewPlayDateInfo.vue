@@ -1,27 +1,25 @@
 <template>
-  <div class="playdatecard">
-    <div class="dateInfo">
-      <div class="location">
-        <h3>
-          <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
-          &nbsp; {{ this.playDate.location }}
-        </h3>
-      </div>
-      <div class="onHoverLocation">Location</div>
-      <div class="date">
-        <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
-        &nbsp;
-        {{ this.playDate.dateAndTime | formatDate }}
+  <div class="dateInfo">
+    <div class="location">
+      <h3>
+        <font-awesome-icon icon="fa-solid fa-map-pin" color="red" size="xs" />
+        &nbsp; {{ this.playDate.location }}
+      </h3>
+    </div>
+    <div class="onHoverLocation">Location</div>
+    <div class="date">
+      <font-awesome-icon icon="fa-solid fa-calendar-days" color="black" />
+      &nbsp;
+      {{ this.playDate.dateAndTime | formatDate }}
 
-        <br />
-      </div>
-      <div class="time">
-        <font-awesome-icon icon="fa-solid fa-clock" color="black" /> &nbsp;
-        {{ this.playDate.dateAndTime | formatTime }}
+      <br />
+    </div>
+    <div class="time">
+      <font-awesome-icon icon="fa-solid fa-clock" color="black" /> &nbsp;
+      {{ this.playDate.dateAndTime | formatTime }}
 
-        <br />
-        <!-- {{ this.playDate.requestMessage }} <br /> -->
-      </div>
+      <br />
+      <!-- {{ this.playDate.requestMessage }} <br /> -->
     </div>
   </div>
 </template>
@@ -47,7 +45,7 @@ h3 {
 }
 .dateInfo {
   font-family: "Quattrocento Sans", sans-serif;
-  width: 60%;
+  width: 350px;
   color: #f54c4c;
   background-color: white;
   display: flex;
@@ -57,15 +55,7 @@ h3 {
   border-radius: 12px;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
   position: relative;
-  height: 60%;
-}
-.playdatecard {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5c423;
-  /* width: 500px; */
+  height: 350px;
 }
 .location {
   display: flex;
