@@ -62,12 +62,12 @@ public class PlayDateController {
     }
 
     @RequestMapping(value = "/playdates/schedule", method = RequestMethod.POST)
-    public void createPlayDate(@RequestBody PlayDate playDate, Principal principal){
+    public int createPlayDate(@RequestBody PlayDate playDate, Principal principal){
         User user = userDao.findByUsername(principal.getName());
         int userId = user.getId();
 
         try {
-            playDateDao.schedulePlayDate(userId, playDate.getDateAndTime(), playDate.getLocation(), playDate.getRequestMessage());
+            return playDateDao.schedulePlayDate(userId, playDate.getDateAndTime(), playDate.getLocation(), playDate.getRequestMessage());
         } catch (Exception e){
             e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error Scheduling Play Date");
