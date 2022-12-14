@@ -129,6 +129,7 @@ footer {
   height: 15em;
   background-color: #f54c4c;
   border-radius: 12px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 footer > div {
   display: inline-block;
@@ -155,6 +156,7 @@ footer > div:hover {
 img {
   height: 250px;
   width: 250px;
+  margin-bottom: -40px;
 }
 </style>
 

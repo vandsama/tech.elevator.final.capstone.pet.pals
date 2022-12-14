@@ -8,7 +8,7 @@
         {{ playDate.dateAndTime | formatTime }}
       </h3>
       <p>{{ playDate.requestMessage }}</p>
-      <p>Pets Attending: {{ totalPets }}</p>
+      <p style="margin-bottom: 0;">Pets Attending: {{ totalPets }}</p>
       <div class="carousel" v-if="renderCards">
         <carousel-3d
           :width="500"
@@ -102,6 +102,10 @@ export default {
 
 <!-- could use more styling --> 
 <style scoped>
+.carousel-3d-container{
+  margin: 0;
+  padding: 0;
+}
 .card {
   margin: 0px;
 }

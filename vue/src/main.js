@@ -29,7 +29,7 @@ Vue.filter('formatDate', function (value) {
 
 Vue.filter('formatTime', function (value) {
   if (value) {
-    return moment(String(value)).format('h:mm:ss a')
+    return moment(String(value)).format('h:mm a')
   }
 })
 

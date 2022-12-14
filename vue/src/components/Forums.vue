@@ -89,6 +89,7 @@ td {
 }
 tr {
   row-gap: 10px;
+  border-radius: 12px;
 }
 .topic-list-css:hover {
   transform: translateY(-7px);
@@ -128,8 +129,5 @@ input[type="text"] {
 input[type="text"]:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease 0s;
-}
-.background {
-  background-color: #f2f2f2;
 }
 </style>

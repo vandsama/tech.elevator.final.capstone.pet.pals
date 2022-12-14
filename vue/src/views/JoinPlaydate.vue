@@ -16,10 +16,6 @@
         ></joinpetcard>
       </div>
     </div>
-    <h3>
-      Pets selected:
-      <span v-for="name in petnames" v-bind:key="name">{{ name }}</span>
-    </h3>
     <button v-on:click="submit">Submit</button>
   </div>
 </template>
