@@ -11,7 +11,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('Phil','$2a$10$9dUaeaRfB
 
 INSERT INTO pets(
 	animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-	VALUES ('Cat',	'Olive',	True,	True,	True,	'1-11 Months',	'Female',	'They take some warming up to',	'They take some warming up to',	'Napping',	'anything that can be knocked off a table',	'popcorn',	'https://imgur.com/jJtjRpR.jpg', '45219');
+	VALUES ('Cat',	'Olive',	True,	True,	True,	'1-11 Months',	'Female',	'They take some warming up to',	'They take some warming up to',	'Napping',	'mice',	'popcorn',	'https://imgur.com/2wCJr4g.jpg', '45219');
 
 INSERT INTO pets(
 	animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
@@ -35,11 +35,11 @@ INSERT INTO pets(
 
 INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES('Fish', 'The Don Vito Corleone', 'No', 'No', 'No', '1-11 months', 'Male', 'They take some warming up to', 'They take some warming up to', 'Swimming', 'The blood of his enemies', 'The blood of his enemies','https://imgur.com/qY1qfwi.jpg', '45247');
+    VALUES('Fish', 'The Don Vito Corleone', 'No', 'No', 'No', '1-11 months', 'Male', 'They take some warming up to', 'They take some warming up to', 'Swimming', 'The blood of his enemies', 'Fish flakes','https://imgur.com/qY1qfwi.jpg', '45247');
 
 INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
-    VALUES('Dog','Willow', True, True, True, '7-10 years','Female','Sometimes', 'They take some warming up to','Play hunting/wrestling', 'Squeaky lobster', 'PB bananas', 'https://imgur.com/llyXKTN.jpg', '45240');
+    VALUES('Dog','Willow', True, True, True, '7-10 years','Female','Sometimes', 'They take some warming up to','Wrestling', 'Squeaky lobster', 'PB bananas', 'https://imgur.com/llyXKTN.jpg', '45240');
 
 INSERT INTO pets(
     animal_type, pet_name, pet_experience, vaccinated, spayed, age_years, sex, pet_friendliness, human_friendliness, favorite_activities, favorite_toy, favorite_treat, img_link, zip_code)
