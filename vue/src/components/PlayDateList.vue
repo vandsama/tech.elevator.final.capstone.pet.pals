@@ -54,4 +54,7 @@ export default {
 .outline {
   background-color: #f2f2f2;
 }
+button:hover {
+  color: #f3d250;
+}
 </style>
