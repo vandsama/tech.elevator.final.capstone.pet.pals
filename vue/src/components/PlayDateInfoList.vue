@@ -55,6 +55,7 @@ export default {
   background-color: #f5c423;
   border-radius: 12px;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
-  margin-top: 2em;
+  margin-top: 1em;
+  margin-bottom: 5%;
 }
 </style>

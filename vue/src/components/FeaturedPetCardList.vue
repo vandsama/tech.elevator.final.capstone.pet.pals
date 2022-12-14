@@ -30,7 +30,6 @@ export default {
 <style scoped>
 div {
   display: inline-block;
-  margin-top: 40px;
   background-color: #f2f2f2;
 }
 h1 {
