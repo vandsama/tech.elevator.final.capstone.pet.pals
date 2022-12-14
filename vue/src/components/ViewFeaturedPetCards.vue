@@ -56,10 +56,9 @@ export default {
   width: 300px;
   height: 300px;
   overflow: hidden;
-  /* border: 5px solid #f3d250; */
   background-color: #5da2d5;
-  border-radius: 5px;
   display: flex;
+  margin: auto;
 }
 #pet {
   position: absolute;
@@ -67,8 +66,6 @@ export default {
   top: 50%;
   height: 350px;
   width: auto;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .infoNoName {

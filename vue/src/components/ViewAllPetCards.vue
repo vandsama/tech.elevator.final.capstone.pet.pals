@@ -68,6 +68,7 @@ export default {
 #pets {
   height: 300px;
   width: 300px;
+  margin: auto;
 }
 .thumbnail {
   position: relative;
@@ -78,6 +79,7 @@ export default {
   border: 5px solid #5da2d5;
   background-color: #5da2d5;
   border-radius: 5px;
+  margin: auto;
 }
 .nameZip {
   display: flex;
