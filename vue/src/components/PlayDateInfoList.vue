@@ -50,7 +50,7 @@ export default {
   margin: auto;
 }
 .playDateinfo-list {
-  width: 60%;
+  width: 70%;
   margin: auto;
   background-color: #f5c423;
   border-radius: 12px;

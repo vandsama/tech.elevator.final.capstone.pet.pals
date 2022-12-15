@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$10$9dUaeaRfBlPNfc8oOlH9yOhaNHlNLD06O.8Uzz3ZUOLhkAEvoLfxa','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('Steve','$2a$10$9dUaeaRfBlPNfc8oOlH9yOhaNHlNLD06O.8Uzz3ZUOLhkAEvoLfxa','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$10$9dUaeaRfBlPNfc8oOlH9yOhaNHlNLD06O.8Uzz3ZUOLhkAEvoLfxa','ROLE_ADMIN');
 INSERT INTO users (username,password_hash,role) VALUES ('Rob','$2a$10$9dUaeaRfBlPNfc8oOlH9yOhaNHlNLD06O.8Uzz3ZUOLhkAEvoLfxa','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('Dave','$2a$10$9dUaeaRfBlPNfc8oOlH9yOhaNHlNLD06O.8Uzz3ZUOLhkAEvoLfxa','ROLE_USER');
