@@ -64,10 +64,19 @@ public class JdbcPlayDateDao implements PlayDateDao {
     }
 
     @Override
-    public boolean schedulePlayDate(int creatorId,LocalDateTime dateAndTime, String location, String requestMessage){
-        final String sql = " INSERT INTO playdates (creator_id, isCancelled, dateandtime, location, requestmessage) " +
-                " VALUES(?, false ,?, ?, ?); ";
-        return jdbcTemplate.update(sql, creatorId, dateAndTime, location, requestMessage) == 1;
+    public int schedulePlayDate(int creatorId, LocalDateTime dateAndTime, String location, String requestMessage){
+        final String sql = " WITH new_playdate AS (\n" +
+                "INSERT INTO public.playdates(\n" +
+                "\tcreator_id, dateandtime, location, requestmessage, iscancelled)\n" +
+                "\tVALUES (?, ?, ?, ?, false)\n" +
+                "\tRETURNING playdate_id)\n" +
+                "\tSELECT playdate_id FROM new_playdate";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql,creatorId,dateAndTime,location,requestMessage);
+        int newId = 0;
+        if (result.next()) {
+            newId = result.getInt("playdate_id");
+        }
+        return newId;
     }
 
     @Override

@@ -48,7 +48,7 @@
       v-bind:to="{ name: 'playdatejoin', params: { id: playDate.playDateId } }"
       style="text-decoration: none"
     >
-      <button class="btn" v-if="playDate.cancelled === true">Join this playdate!</button>
+      <button class="btn" v-if="playDate.cancelled === false">Join this playdate!</button>
     </router-link>
     <div 
     v-show="this.$store.state.user.id === playDate.creatorId && playDate.isCancelled === false"

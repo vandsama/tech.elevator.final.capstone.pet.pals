@@ -60,7 +60,8 @@ export default {
       PlayDateService.schedule(this.playDate)
         .then((r) => {
           if (r.status == 200) {
-            this.$router.push({ name: "home" });
+            
+            this.$router.push({ name: "playdatejoin", params: { id: r.data} });
           }
         })
         .catch((error) => {

@@ -20,7 +20,7 @@
           style="text-decoration: none"
         >
           <playdatecard 
-          v-show="playDate.cancelled == true"
+          v-show="playDate.cancelled == false"
            v-bind:playDate="playDate"></playdatecard>
         </router-link>
       </div>
