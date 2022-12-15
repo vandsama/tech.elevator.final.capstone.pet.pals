@@ -51,7 +51,7 @@
       <button class="btn" v-if="playDate.cancelled === false">Join this playdate!</button>
     </router-link>
     <div 
-    v-show="this.$store.state.user.id === playDate.creatorId && playDate.isCancelled === false"
+    v-show="this.$store.state.user.id === playDate.creatorId && playDate.cancelled === false"
     >
       <button v-on:click="cancelPLaydate" class="btn">Cancel playdate</button>
     </div>
@@ -79,7 +79,7 @@ export default {
   methods: {
     cancelPLaydate() {
       playDateService.cancelPlaydate(this.$route.params.id);
-      this.$router.push("/playdates")
+      this.$router.push("/")
     },
   },
   created() {
