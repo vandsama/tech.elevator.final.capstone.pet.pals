@@ -45,11 +45,10 @@ export default {
   background-color: darkgrey !important;
 }
 p {
-  text-color: red;
+  color: red;
   font-size: 24px;
   margin: 0;
   padding: 10px;
-
 }
 h3 {
   font-family: "Bebas Neue", cursive;

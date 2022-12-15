@@ -12,16 +12,16 @@
       <br />
       <div v-for="playDate in playDates" v-bind:key="playDate.playDateId">
         <router-link
-        
           v-bind:to="{
             name: 'playdatedetails',
             params: { id: playDate.playDateId },
           }"
           style="text-decoration: none"
         >
-          <playdatecard 
-          v-show="playDate.cancelled == false"
-           v-bind:playDate="playDate"></playdatecard>
+          <playdatecard
+            v-show="playDate.cancelled == false"
+            v-bind:playDate="playDate"
+          ></playdatecard>
         </router-link>
       </div>
     </div>
