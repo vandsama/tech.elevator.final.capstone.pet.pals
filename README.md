@@ -104,7 +104,7 @@ b. The terminal should respond with a message to view the open server at a local
     
 a. Paste the local port into the browser to view the webpage
 
- <br />
+
 ##### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact me at vandsama@gmail.com
 ##### Thank you for reading these instructions and viewing our project!
 
