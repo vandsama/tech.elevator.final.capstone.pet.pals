@@ -51,7 +51,7 @@ Browser: <br />
 
 ### Detailed Project Instructions
 #### 1. Download the project from Github
-  Tools: File Explorer/Finder and Terminal
+##### Tools: File Explorer/Finder and Terminal
 
 a. Visit https://github.com/vandsama/tech.elevator.final.capstone.pet.pals <br />
 b. Click the <>Code button and copy the HTTPS link <br />
@@ -62,8 +62,8 @@ e. Navigate to your Projects folder from your terminal and type "git clone https
 f. Verify the project is now installed locally on your computer in your Projects folder by visiting your File Explorer or Finder
 
 #### 2. Install npm for this project 
-*Note* This needs to be done the first time a project is run locally.
-    Tools: IntelliJ and Node.js
+##### Tools: IntelliJ and Node.js
+*Note:* This needs to be done the first time a project is run locally. 
     
 a. Open IntelliJ <br />
 b. Open the Pet Pals project java file from IntelliJ, e.g., Users/Samantha/IdeaProjects/tech.elevator.final.capstone.pet.pals/java <br />
@@ -71,41 +71,41 @@ c. Open the terminal from IntelliJ and verify you're in the java file location, 
 d. Type "npm install" and read the terminal to ensure it installs correctly
 
 #### 3. Start Postgres
-*Note* Postgres can slow down your computer, so ensure it doesn't open on Startup and only run this program when in use
-    Tools: Postgres
+##### Tools: Postgres
+*Note:* Postgres can slow down your computer, so ensure it doesn't open on Startup and only run this program when in use
     
 a. Open Postgres 
     
 #### 4. Run database script
-*Note* Ensure once the script is ran that it ends in lines with words like "INSERT", "COMMIT", "CREATE ROLE" and "GRANT". If these words do not show, run the script again
-    Tools: terminal or IntelliJ
+##### Tools: terminal or IntelliJ
+*Note:* Ensure once the script is ran that it ends in lines with words like "INSERT", "COMMIT", "CREATE ROLE" and "GRANT". If these words do not show, run the script again
     
 a. Right-click the create.sh file (java [final-capstone-starter] > database > create.sh) and select "Run 'create.sh'" <br />
 b. Alternatively navigate to the database folder from the terminal and type "sh create.sh" <br />
 -To ensure you're in the correct folder, type "pwd" to show the present working directory
 
 #### 5. Run the application
-    Tools: IntelliJ
+##### Tools: IntelliJ
 
 a. From IntelliJ, scroll down in the navigation pane and right-click the Application and select "Run 'Application.main()'" (java [final-capstone-starter] > src > main > java > com.techelevator > security > Application) <br />
 b. The terminal in IntelliJ should display about 20 or so lines of code and end in, e.g., ": Started Application in 7.396 seconds (JVM running for 9.586)"
 
 #### 6. Start the server
-*Note* A port needs to be available on your computer - you can visit your Activity Monitor and close open ports if necessary
-    Tools: terminal
+##### Tools: terminal
+*Note:* A port needs to be available on your computer - you can visit your Activity Monitor and close open ports if necessary
     
 a. Navigate to the vue folder in the project from the terminal and type "npm run serve" then hit enter <br />
 b. The terminal should respond with a message to view the open server at a local port if it compiled successfully, e.g.: "  App running at:
   - Local:   http://localhost:8080/ 
 
 #### 7. Visit the website
-*Note* Ensure you visit "http://..." and **not** "http**s**://..."
-    Tools: browser
+##### Tools: browser
+*Note:* Ensure you visit "http://..." and **not** "http**s**://..."
     
 a. Paste the local port into the browser to view the webpage
 
-
-##### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact me at vandsama@gmail.com
-##### Thank you for reading these instructions and viewing our project!
+ <br />
+#### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact me at vandsama@gmail.com
+#### Thank you for reading these instructions and viewing our project!
 
 
