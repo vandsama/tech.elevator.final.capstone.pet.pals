@@ -98,7 +98,7 @@ b. The terminal in IntelliJ should display about 20 or so lines of code and end 
     
 a. Navigate to the vue folder in the project from the terminal and type "npm run serve" then hit enter
 b. The terminal should respond with a message to view the open server at a local port if it compiled successfully, e.g.: "  App running at:
-  - Local:   http://localhost:8080/ "
+  - Local:   http://localhost:8080/ 
 
 #### 7. Visit the website
 *Note* Ensure you visit "http://..." and **not** "http**s**://..."
