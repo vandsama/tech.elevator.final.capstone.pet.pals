@@ -34,42 +34,42 @@ Troubleshooting with Node.js and npm on a Mac: ensure the Postgres tools folder 
 ## Part 2: Run data and server to view the webpage
 
 ### Outline of Project Instructions
-NPM:
-  i. install npm
-Postgres:
-	a. Start Postgres
-IntelliJ:
-	b. Run database script		
-		cd database/
-		sh create.sh
-	c. Run Application
-Visual Studio Code:
-	d. Start server
-		cd vue/
-		npm run serve
-Browser:
-	e. Visit website
+NPM: <br />
+  i. install npm <br />
+Postgres: <br />
+	a. Start Postgres <br />
+IntelliJ: <br />
+	b. Run database script <br />		
+		cd database/ <br />
+		sh create.sh <br />
+	c. Run Application <br />
+Visual Studio Code: <br />
+	d. Start server <br />
+		cd vue/ <br />
+		npm run serve <br />
+Browser: <br />
+	e. Visit website <br />
 		localhost:8080
 
 ### Detailed Project Instructions
 #### 1. Download the project from Github
   Tools: File Explorer/Finder and Terminal
 
-a. Visit https://github.com/vandsama/tech.elevator.final.capstone.pet.pals
-b. Click the <>Code button and copy the HTTPS link
-c. Open your Terminal and go to your Users folder, e.g., /Users/Samantha
--Navigating the terminal: "cd .." to go back, "ls" to list contents of the present directory, "pwd" to show the present directory you're in, "cd 'folder name'" to enter a folder
-d. Create a folder for your projects, e.g., IdeaProjects. This can also be done from File Explorer
-e. Navigate to your Projects folder from your terminal and type "git clone https://github.com/vandsama/tech.elevator.final.capstone.pet.pals.git" and hit enter
+a. Visit https://github.com/vandsama/tech.elevator.final.capstone.pet.pals <br />
+b. Click the <>Code button and copy the HTTPS link <br />
+c. Open your Terminal and go to your Users folder, e.g., /Users/Samantha <br />
+-Navigating the terminal: "cd .." to go back, "ls" to list contents of the present directory, "pwd" to show the present directory you're in, "cd 'folder name'" to enter a folder <br />
+d. Create a folder for your projects, e.g., IdeaProjects. This can also be done from File Explorer <br />
+e. Navigate to your Projects folder from your terminal and type "git clone https://github.com/vandsama/tech.elevator.final.capstone.pet.pals.git" and hit enter <br />
 f. Verify the project is now installed locally on your computer in your Projects folder by visiting your File Explorer or Finder
 
 #### 2. Install npm for this project 
 *Note* This needs to be done the first time a project is run locally.
     Tools: IntelliJ and Node.js
     
-a. Open IntelliJ
-b. Open the Pet Pals project java file from IntelliJ, e.g., Users/Samantha/IdeaProjects/tech.elevator.final.capstone.pet.pals/java
-c. Open the terminal from IntelliJ and verify you're in the java file location, e.g. Users/Samantha/IdeaProjects/tech.elevator.final.capstone.pet.pals/java by typing "pwd" enter
+a. Open IntelliJ <br />
+b. Open the Pet Pals project java file from IntelliJ, e.g., Users/Samantha/IdeaProjects/tech.elevator.final.capstone.pet.pals/java <br />
+c. Open the terminal from IntelliJ and verify you're in the java file location, e.g. Users/Samantha/IdeaProjects/tech.elevator.final.capstone.pet.pals/java by typing "pwd" enter <br />
 d. Type "npm install" and read the terminal to ensure it installs correctly
 
 #### 3. Start Postgres
@@ -82,21 +82,21 @@ a. Open Postgres
 *Note* Ensure once the script is ran that it ends in lines with words like "INSERT", "COMMIT", "CREATE ROLE" and "GRANT". If these words do not show, run the script again
     Tools: terminal or IntelliJ
     
-a. Right-click the create.sh file (java [final-capstone-starter] > database > create.sh) and select "Run 'create.sh'"
-b. Alternatively navigate to the database folder from the terminal and type "sh create.sh"
+a. Right-click the create.sh file (java [final-capstone-starter] > database > create.sh) and select "Run 'create.sh'" <br />
+b. Alternatively navigate to the database folder from the terminal and type "sh create.sh" <br />
 -To ensure you're in the correct folder, type "pwd" to show the present working directory
 
 #### 5. Run the application
     Tools: IntelliJ
 
-a. From IntelliJ, scroll down in the navigation pane and right-click the Application and select "Run 'Application.main()'" (java [final-capstone-starter] > src > main > java > com.techelevator > security > Application)
+a. From IntelliJ, scroll down in the navigation pane and right-click the Application and select "Run 'Application.main()'" (java [final-capstone-starter] > src > main > java > com.techelevator > security > Application) <br />
 b. The terminal in IntelliJ should display about 20 or so lines of code and end in, e.g., ": Started Application in 7.396 seconds (JVM running for 9.586)"
 
 #### 6. Start the server
 *Note* A port needs to be available on your computer - you can visit your Activity Monitor and close open ports if necessary
     Tools: terminal
     
-a. Navigate to the vue folder in the project from the terminal and type "npm run serve" then hit enter
+a. Navigate to the vue folder in the project from the terminal and type "npm run serve" then hit enter <br />
 b. The terminal should respond with a message to view the open server at a local port if it compiled successfully, e.g.: "  App running at:
   - Local:   http://localhost:8080/ 
 
