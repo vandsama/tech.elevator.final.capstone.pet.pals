@@ -30,26 +30,7 @@ Installation procedures will vary depending on your machine; make sure to instal
 Troubleshooting with Node.js and npm on a Mac: ensure the Postgres tools folder is located in the PATH variable so the database script can run by creating a bash profile and modifying the path variable in it.
 
 ## Part 2: Run data and server to view the webpage
-
-### Outline of Project Instructions
-NPM: <br />
-1. install npm <br />
-Postgres: <br />
-1. Start Postgres <br />
-IntelliJ: <br />
-1. Run database script <br />		
-		cd database/ <br />
-		sh create.sh <br />
-1. Run Application <br />
-Visual Studio Code: <br />
-1. Start server <br />
-		cd vue/ <br />
-		npm run serve <br />
-Browser: <br />
-1. Visit website <br />
-		localhost:8080
-
-### Detailed Project Instructions
+### Project Instructions
 #### 1. Download the project from Github
 ##### Tools: File Explorer/Finder and Terminal
 
