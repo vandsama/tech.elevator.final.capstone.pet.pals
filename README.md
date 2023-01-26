@@ -22,9 +22,9 @@ IntelliJ: runs the Java application
 VSC: the VSC Server runs on our remote development machine, which is the desktop PC or virtual machine (VM) being used
 
 ### Links to Downloads
-Node.js: https://nodejs.org/en/download/ __
-Postgres: https://www.postgresql.org/download/ __
-IntelliJ: https://www.jetbrains.com/help/idea/installation-guide.html, https://www.jetbrains.com/idea/download/?fromIDE=#section=mac __
+Node.js: https://nodejs.org/en/download/ <br />
+Postgres: https://www.postgresql.org/download/ <br />
+IntelliJ: https://www.jetbrains.com/help/idea/installation-guide.html, https://www.jetbrains.com/idea/download/?fromIDE=#section=mac <br />
 VSC: https://code.visualstudio.com/download
 
 ### Installation Procedures
