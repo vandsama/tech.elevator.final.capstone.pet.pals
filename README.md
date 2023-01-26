@@ -16,9 +16,9 @@ Several programs need to be installed to host this website locally from your com
 Required programs: Node.js and Node Package Manager (npm), PostgreSQL (Postgres), IntelliJ IDEA (IntelliJ), Visual Studio Code
 
 ### Functionality 
-Node.js: used with Node Package Manager (npm) to manage JavaScript packages and their dependencies
-Postgres: the database management system that runs the database script containing saved account information
-IntelliJ: runs the Java application
+Node.js: used with Node Package Manager (npm) to manage JavaScript packages and their dependencies <br />
+Postgres: the database management system that runs the database script containing saved account information <br />
+IntelliJ: runs the Java application <br />
 VSC: the VSC Server runs on our remote development machine, which is the desktop PC or virtual machine (VM) being used
 
 ### Links to Downloads
@@ -28,7 +28,7 @@ IntelliJ: https://www.jetbrains.com/help/idea/installation-guide.html, https://w
 VSC: https://code.visualstudio.com/download
 
 ### Installation Procedures
-Installation procedures will vary depending on your machine; make sure to install a version of each software that is compatible with your operating system. 
+Installation procedures will vary depending on your machine; make sure to install a version of each software that is compatible with your operating system. <br />
 Troubleshooting with Node.js and npm on a Mac: ensure the Postgres tools folder is located in the PATH variable so the database script can run by creating a bash profile and modifying the path variable in it.
 
 ## Part 2: Run data and server to view the webpage
