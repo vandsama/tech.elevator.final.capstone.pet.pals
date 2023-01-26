@@ -33,20 +33,20 @@ Troubleshooting with Node.js and npm on a Mac: ensure the Postgres tools folder 
 
 ### Outline of Project Instructions
 NPM: <br />
->> i. install npm <br />
+1. install npm <br />
 Postgres: <br />
->> a. Start Postgres <br />
+2. Start Postgres <br />
 IntelliJ: <br />
->> b. Run database script <br />		
+3. Run database script <br />		
 		cd database/ <br />
 		sh create.sh <br />
->> c. Run Application <br />
+4. Run Application <br />
 Visual Studio Code: <br />
->> d. Start server <br />
+5. Start server <br />
 		cd vue/ <br />
 		npm run serve <br />
 Browser: <br />
->> e. Visit website <br />
+6. Visit website <br />
 		localhost:8080
 
 ### Detailed Project Instructions
