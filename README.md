@@ -33,7 +33,7 @@ Troubleshooting with Node.js and npm on a Mac: ensure the Postgres tools folder 
 
 ### Outline of Project Instructions
 NPM: <br />
- \t i. install npm <br />
+< \t> i. install npm <br />
 Postgres: <br />
 	a. Start Postgres <br />
 IntelliJ: <br />
