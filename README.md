@@ -33,7 +33,7 @@ Troubleshooting with Node.js and npm on a Mac: ensure the Postgres tools folder 
 
 ### Outline of Project Instructions
 NPM: <br />
-  i. install npm <br />
+emsp i. install npm <br />
 Postgres: <br />
 	a. Start Postgres <br />
 IntelliJ: <br />
@@ -56,7 +56,7 @@ Browser: <br />
 a. Visit https://github.com/vandsama/tech.elevator.final.capstone.pet.pals <br />
 b. Click the <>Code button and copy the HTTPS link <br />
 c. Open your Terminal and go to your Users folder, e.g., /Users/Samantha <br />
--Navigating the terminal: "cd .." to go back, "ls" to list contents of the present directory, "pwd" to show the present directory you're in, "cd 'folder name'" to enter a folder <br />
+*Navigating the terminal:* "cd .." to go back, "ls" to list contents of the present directory, "pwd" to show the present directory you're in, "cd 'folder name'" to enter a folder <br />
 d. Create a folder for your projects, e.g., IdeaProjects. This can also be done from File Explorer <br />
 e. Navigate to your Projects folder from your terminal and type "git clone https://github.com/vandsama/tech.elevator.final.capstone.pet.pals.git" and hit enter <br />
 f. Verify the project is now installed locally on your computer in your Projects folder by visiting your File Explorer or Finder
@@ -105,7 +105,7 @@ b. The terminal should respond with a message to view the open server at a local
 a. Paste the local port into the browser to view the webpage
 
  <br />
-#### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact me at vandsama@gmail.com
-#### Thank you for reading these instructions and viewing our project!
+##### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact me at vandsama@gmail.com
+##### Thank you for reading these instructions and viewing our project!
 
 
