@@ -3,9 +3,9 @@
 This directory contains all of the starter projects for the final capstone. Each project contains instructions that provides information about the starting code and explains how to get started with the final capstone project. 
 
 # Instructions for Running Project
-##### Instructions Written by Samantha Vanderburgh
 ##### Project created by Anna Castano, Alex Ellington, Henry Fossett and Samantha Vanderburgh at Tech Elevator Coding Bootcamp under the instruction of Michael Levy in Cincinnati, Ohio
-##### Special Thanks To: Academic Fellow Alumni Evan Amezcua and Robyn Florentz, our Instructor Michael Levy, our Pathway Director Carly Trimboli, and our Campus Director Monica Royal-Fischer
+##### Special Thanks To: Academic Fellow Alumni Evan Amezcua and Robyn Florentz, our Instructor Michael Levy, our Pathway Director Carly Trimboli, and our Campus Director Monika Royal-Fischer
+##### Instructions Written by Samantha Vanderburgh
 
 ## Introduction
 Several programs need to be installed to host this website locally from your computer, including a database management system, an integrated development environment, and a server environment.
@@ -86,7 +86,7 @@ b. The terminal should respond with a message to view the open server at a local
 a. Paste the local port into the browser to view the webpage
 
 
-### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact me at vandsama@gmail.com
+### If you have any suggestions to improve these instructions for followability or have any questions or need help setting up your machine, please do not hesitate to contact Samantha Vanderburgh at vandsama@gmail.com.
 ### Thank you for reading these instructions and viewing our project!
 
 
