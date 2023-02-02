@@ -7,6 +7,9 @@ This directory contains all of the starter projects for the final capstone. Each
 ##### Special Thanks To: Academic Fellow Alumni Evan Amezcua and Robyn Florentz, our Instructor Michael Levy, our Pathway Director Carly Trimboli, and our Campus Director Monika Royal-Fischer
 ##### Instructions Written by Samantha Vanderburgh
 
+  <video playsinline muted controls src="https://user-images.githubusercontent.com/122122309/215668696-d950a0a9-1f08-4832-87a2-600175c2c5f3.mov" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;">
+  </video>
+
 ## Introduction
 Several programs need to be installed to host this website locally from your computer, including a database management system, an integrated development environment, and a server environment.
 
